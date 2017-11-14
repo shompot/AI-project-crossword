@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CrosswordGUI.java" />
     <list default="true" id="77b26164-885a-44f3-9e41-699d00294d0c" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
