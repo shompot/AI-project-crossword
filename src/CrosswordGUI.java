@@ -206,12 +206,23 @@ public class CrosswordGUI {
         crossword.setDownList( g.getDownHints());
         frame.setContentPane(crossword.CWPanel);
         frame.setLocation(400,150);
+<<<<<<< HEAD
 //        System.out.println(g.toString());
 //        for (int i = 0; i < 5; i ++){
 //            for (int j = 0; j < 5; j++)
 //                System.out.print(g.getColors()[index++] + " ");
 //            System.out.print("\n");
 //        }
+=======
+        /*
+        System.out.println(g.toString());
+        for (int i = 0; i < 5; i ++){
+            for (int j = 0; j < 5; j++)
+                System.out.print(g.getColors()[index++] + " ");
+            System.out.print("\n");
+        }
+        */
+>>>>>>> c68014d3908257e5254568dd5440be0bcfda38c5
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
