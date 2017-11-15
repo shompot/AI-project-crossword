@@ -891,6 +891,7 @@
                   <font name="Palatino Linotype" size="12"/>
                   <foreground color="-12430252"/>
                   <lineWrap value="true"/>
+                  <wrapStyleWord value="true"/>
                 </properties>
               </component>
             </children>
