@@ -33,4 +33,7 @@ public class CrosswordGUI {
     private JButton button23;
     private JButton button24;
     private JButton button25;
+
+    public static void main () {
+    }
 }
