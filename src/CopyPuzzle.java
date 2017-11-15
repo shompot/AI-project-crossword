@@ -22,7 +22,6 @@ public class CopyPuzzle {
             clues[i] = elements.get(i).text();
             System.out.println(clues[i]);
         }
-        
 
         return clues;
     }
