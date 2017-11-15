@@ -1,18 +1,30 @@
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import static java.lang.Math.sqrt;
 
 
 public class Crossword {
-    // variables
+
+    // VARIABLES
     private int side = 5;
     private GridNode[] grid;
     private int[] colors;
     private int[] numbers;
 
-    // constructors
+    private ArrayList<String> acrossHints;
+    private ArrayList<String> downHints;
+   // private ArrayList<Integer> acrossHintsNums;
+    //private ArrayList<Integer> downHintsNums;
+
+    // CONSTRUCTORS
     Crossword(){
         this.side = 5;
         this.grid = new GridNode[side*side];
@@ -27,21 +39,58 @@ public class Crossword {
         this.grid = grid;
     }
 
-    // setters
-    public void setGrid(GridNode[] grid) { this.grid = grid; }
-    public void setSide(int side) { this.side = side; }
-    public void setColors(int[] colors) { this.colors = colors; }
-    public void setNumbers(int[] numbers) { this.numbers = numbers; }
 
-    // getters
+    // SETTERS
+    //public void setGrid(GridNode[] grid) { this.grid = grid; }
+    public void setSide(int side) { this.side = side; }
+   // public void setColors(int[] colors) { this.colors = colors; }
+    //public void setNumbers(int[] numbers) { this.numbers = numbers; }
+
+    // GETTERS
     public GridNode[] getGrid() { return grid; }
     public int getSide() { return side; }
     public int[] getColors() { return colors; }
     public int[] getNumbers() { return numbers; }
 
-    // computing methods
-    public void readGrid (String fileName){
-        String text = this.readTxtFile(fileName);
+    public ArrayList<String> getAcrossHints() { return acrossHints; }
+    public ArrayList<String> getDownHints() { return downHints; }
+    //public ArrayList<Integer> getAcrossHintsNums() { return acrossHintsNums; }
+    //public ArrayList<Integer> getDownHintsNums() { return downHintsNums; }
+
+    // METHODS
+    // Read file methods
+    public void readGridFromUrl  () throws IOException{
+        String url = "https://www.nytimes.com/crosswords/game/mini";
+        Document documents = Jsoup.connect(url).get();
+        String html  = documents.html();
+        readCrossword(html);
+    }
+
+    public void readGridFromFile (String fileName) throws IOException{
+        String html = "";
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            String sCurrentLine;
+
+            while ((sCurrentLine = br.readLine()) != null) {
+                html += sCurrentLine;
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        readCrossword(html);
+    }
+
+
+    public void readCrossword (String html){
+
+        readGrid(html);
+        readHints (html);
+    }
+
+    // read grid methods
+    public void readGrid (String html){
+        String text = html;
 
         text = this.extractGridPart(text);
         this.colors = this.getColors(text);
@@ -60,36 +109,23 @@ public class Crossword {
 
     }
 
-    public int [] getNumbers (String text) {
-        int size = this.side*this.side;
-        int [] numbers = new int[size];
 
+    public String extractGridPart (String text){
+        String sStart = "<g data-group=\"cells\"";
+        String sEnd = "<g data-group=\"grid\"";
 
-        for (int i =0; i < size; i++){
+        //System.out.println(text);
 
-            text = text.substring(text.indexOf("<g"));
-            int indexEnd = text.indexOf("</g>");
-            String str = text.substring(0, indexEnd);
+        int indexStart = text.indexOf(sStart) + sStart.length();
+        int indexEnd = text.indexOf(sEnd) - 1;
 
-            int index = str.indexOf("</text>") - 1;
-            //System.out.println (index);
-            if  (index >= 0 && index <str.length() && str.charAt(index)!= '>'){
-                int t = str.charAt(index) - '0';
-                numbers[i] = t;
-                //System.out.print ("Char " + str.charAt(index) + ", saved as " + numbers[i] + "\n");
-            }
-            else {
-                numbers[i] = 0;
-                //System.out.print ("No char, saved as " + numbers[i] + "\n");
-            }
-            text = text.substring(indexEnd);
+        //System.out.println("Start at " + indexStart + "\nEnd at " + indexEnd);
 
-            //System.out.println (numbers[i] + ",");
+        // extract the part of that has data on the grid
+        text = text.substring(indexStart, indexEnd);
 
-        }
-        return numbers;
+        return text;
     }
-
 
     public int [] getColors (String text) {
         // 0 represents white, 1 represents black
@@ -119,40 +155,110 @@ public class Crossword {
         return  colors;
     }
 
-    public String extractGridPart (String text){
-        String sStart = "<g data-group=\"cells\"";
-        String sEnd = "<g data-group=\"grid\"";
+    public int [] getNumbers (String html) {
+        int size = this.side*this.side;
+        int [] numbers = new int[size];
 
-        //System.out.println(text);
+        Document document = Jsoup.parse(html);
+        Elements elements = document.getElementsByTag("g");
 
-        int indexStart = text.indexOf(sStart) + sStart.length();
-        int indexEnd = text.indexOf(sEnd) - 1;
+        for (int i =0; i < elements.size() && i <size ; i++){
 
-        //System.out.println("Start at " + indexStart + "\nEnd at " + indexEnd);
-
-
-        // extract the part of that has data on the grid
-        text = text.substring(indexStart, indexEnd);
-
-        return text;
-    }
-
-    public String readTxtFile  (String fileName){
-        String text = "";
-        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
-            String sCurrentLine;
-
-            while ((sCurrentLine = br.readLine()) != null) {
-                text += sCurrentLine;
+            String text = elements.get(i).text();
+            int l = text.length()-1;
+            while ( !text.isEmpty() && (Character.isLetter(text.charAt(l)))){
+                text = text.substring(0, l);
+                l--;
             }
+            //System.out.println ("Text is " + text );
+            if (!text.isEmpty())
+                numbers[i] = Integer.parseInt(text);
+            else
+                numbers[i] = 0;
 
-        } catch (IOException e) {
-            e.printStackTrace();
+
         }
-        return text;
+        return numbers;
     }
 
-    // print
+    // read hints methods
+    public void readHints (String html){
+
+        String acrossHTML;
+        String downHTML;
+
+        //System.out.println ("Reading hints");
+
+        html = this.extractHintsHTML(html);
+        //System.out.println ("Hints HTML is:\n" + html);
+
+        Document document = Jsoup.parse(html);
+        Elements elements = document.getElementsByClass("ClueList-wrapper--3m-kd");
+
+        acrossHTML = elements.get(0).toString();
+        //System.out.println ("\nAcross\n" + elements.toString() + "\n");
+
+        downHTML = elements.get(1).toString();
+        //System.out.println ("\nDown\n" + elements.toString() + "\n");
+
+        acrossHints = extractHints(acrossHTML);
+        //acrossHintsNums = extractHintsNums(acrossHTML);
+
+        downHints = extractHints(downHTML);
+        //downHintsNums = extractHintsNums(downHTML);
+    }
+    public String extractHintsHTML (String html){
+
+        Document document = Jsoup.parse(html);
+        Elements elements = document.getElementsByClass("Layout-clueLists--10_Xl");
+
+        String text = elements.toString();
+        return text;
+    }
+    public ArrayList <String> extractHints(String html){
+
+        ArrayList <String> hints = new ArrayList<String>();
+        Document document = Jsoup.parse(html);
+
+        Elements numsElements = document.getElementsByClass("Clue-label--2IdMY");
+        Elements hintsElements = document.getElementsByClass("Clue-text--3lZl7");
+
+        for (int i= 0; i< numsElements.size() && i < hintsElements.size(); i++) {
+            hints.add( numsElements.get(i).text() + ". " + hintsElements.get(i).text());
+            //System.out.println(hints.get(hints.size()-1));
+        }
+
+        return hints;
+    }
+/*
+    public ArrayList <String> extractOnlyHints(String html){
+
+        ArrayList <String> hints = new ArrayList<String>();
+        Document document = Jsoup.parse(html);
+        Elements elements = document.getElementsByClass("Clue-text--3lZl7");
+        for (int i= 0; i< elements.size(); i++) {
+            hints.add(elements.get(i).text());
+            //System.out.println(hints.get(hints.size()-1));
+        }
+
+        return hints;
+    }
+
+    public ArrayList <Integer> extractHintsNums(String html){
+
+        ArrayList <Integer> hintsNums = new ArrayList<Integer>();
+        Document document = Jsoup.parse(html);
+        Elements elements = document.getElementsByClass("Clue-label--2IdMY");
+        for (int i= 0; i< elements.size(); i++) {
+            hintsNums.add(Integer.parseInt(elements.get(i).text()));
+            //System.out.println(hintsNums.get(hintsNums.size()-1));
+        }
+
+        return hintsNums;
+    }
+ */
+
+    // PRINT
     public String toString (){
         String s = "";
 
@@ -164,46 +270,45 @@ public class Crossword {
         return s;
     }
 
-    // main method
-    public static void main(String[] args){
+
+    // MAIN
+    public static void main(String[] args) throws IOException{
         Crossword g = new Crossword();
 
-        /*String text = g.readTxtFile("txt/crossword1.txt");
-        text = g.extractGridPart(text);
-        //System.out.println(text);
+        g.readGridFromFile("crosswords/November 14, 2017.html");
+        System.out.println(g.toString());
 
-        System.out.print("\nPrint Colors:\n");
-
-        int [] colors = g.getColors(text);
-
-        int index = 0;
-        for (int i = 0; i < 5; i ++){
-            for (int j = 0; j < 5; j++)
-                System.out.print(colors[index++] + " ");
-            System.out.print("\n");
+        System.out.println("Across:");
+        for (int i = 0; i < g.getAcrossHints().size(); i++){
+            System.out.println(  g.getAcrossHints().get(i));
+        }
+        System.out.println("Down:");
+        for (int i = 0; i < g.getDownHints().size(); i++){
+            System.out.println(  g.getDownHints().get(i));
         }
 
-        System.out.print("\n\nPrint Numbers:\n");
+        g.readGridFromUrl();
+        System.out.println(g.toString());
 
-        int [] numbers = g.getNumbers(text);
-
-        index = 0;
-        for (int i = 0; i < 5; i ++){
-            for (int j = 0; j < 5; j++)
-                System.out.print(numbers[index++] + " ");
-            System.out.print("\n");
+        System.out.println("Across:");
+        for (int i = 0; i < g.getAcrossHints().size(); i++){
+            System.out.println(  g.getAcrossHints().get(i));
         }
-        */
+        System.out.println("Down:");
+        for (int i = 0; i < g.getDownHints().size(); i++){
+            System.out.println(  g.getDownHints().get(i));
+        }
 
-        g.readGrid("crosswords/November 14, 2017.html");
-        System.out.print(g.toString());
-        int [] colors = g.getColors();
+        g.readGridFromFile("crosswords/November 8, 2017.html");
+        System.out.println(g.toString());
 
-        int index = 0;
-        for (int i = 0; i < 5; i ++){
-            for (int j = 0; j < 5; j++)
-                System.out.print(colors[index++] + " ");
-            System.out.print("\n");
+        System.out.println("Across:");
+        for (int i = 0; i < g.getAcrossHints().size(); i++){
+            System.out.println(  g.getAcrossHints().get(i));
+        }
+        System.out.println("Down:");
+        for (int i = 0; i < g.getDownHints().size(); i++){
+            System.out.println(  g.getDownHints().get(i));
         }
     }
 

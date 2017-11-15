@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -143,10 +144,10 @@ public class CrosswordGUI {
         //getLog().append( "\nGot Down Hints!");
         getLog().append( "\nHints retrieval complete!");
     }
-    public static void main(String[] args)
+    public static void main(String[] args) throws IOException
     {
         Crossword g = new Crossword();
-        g.readGrid("crosswords/November 14, 2017.html");
+        g.readGridFromFile("crosswords/November 14, 2017.html");
         int [] colors = g.getColors();
         int index = 0;
         JFrame frame;
