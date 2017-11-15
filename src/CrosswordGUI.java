@@ -48,6 +48,7 @@ public class CrosswordGUI {
     private Color dark = new Color(123,86,78);
     public CrosswordGUI()
     {
+        log.append( "\n Welcome! Starting project.");
         getCrossword.addActionListener(new ActionListener()
         {
             @Override
@@ -191,10 +192,10 @@ public class CrosswordGUI {
                 null,
                 options,
                 options[0]);
-        if( option == "Today") {g.readGridFromUrl();}
-        else if( option == "Oct 24, 2017"){ g.readGridFromFile("crosswords/October 24, 2017.html");}
-        else if( option == "Nov 8, 2017"){ g.readGridFromFile("crosswords/November 8, 2017.html");}
-        else if( option == "November 14,2017") { g.readGridFromFile("crosswords/November 14, 2017.html");}
+        if( option == "Today") { System.out.println("Retrieving today's puzzle...Please wait"); g.readGridFromUrl();}
+        else if( option == "Oct 24, 2017"){ System.out.println("Retrieving saved puzzle...Please wait"); g.readGridFromFile("crosswords/October 24, 2017.html");}
+        else if( option == "Nov 8, 2017"){ System.out.println("Retrieving saved puzzle...Please wait");g.readGridFromFile("crosswords/November 8, 2017.html");}
+        else if( option == "November 14,2017") { System.out.println("Retrieving saved puzzle...Please wait");g.readGridFromFile("crosswords/November 14, 2017.html");}
         else { crossword.getLog().append( "Cannot display puzzle"); }
 
         int index = 0;
@@ -206,23 +207,6 @@ public class CrosswordGUI {
         crossword.setDownList( g.getDownHints());
         frame.setContentPane(crossword.CWPanel);
         frame.setLocation(400,150);
-<<<<<<< HEAD
-//        System.out.println(g.toString());
-//        for (int i = 0; i < 5; i ++){
-//            for (int j = 0; j < 5; j++)
-//                System.out.print(g.getColors()[index++] + " ");
-//            System.out.print("\n");
-//        }
-=======
-        /*
-        System.out.println(g.toString());
-        for (int i = 0; i < 5; i ++){
-            for (int j = 0; j < 5; j++)
-                System.out.print(g.getColors()[index++] + " ");
-            System.out.print("\n");
-        }
-        */
->>>>>>> c68014d3908257e5254568dd5440be0bcfda38c5
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
