@@ -181,8 +181,8 @@ public class CrosswordGUI {
     public static void main(String[] args) throws IOException
     {
         Crossword g = new Crossword();
-        //g.readGridFromUrl( "");
-        g.readGridFromFile("crosswords/November 14, 2017.html");
+        g.readGridFromUrl();
+        //g.readGridFromFile("crosswords/November 14, 2017.html");
         int index = 0;
         JFrame frame;
         frame = new JFrame("CS461 faglAIno Crossword");
