@@ -21,8 +21,10 @@ public class Crossword {
 
     private ArrayList<String> acrossHints;
     private ArrayList<String> downHints;
-   // private ArrayList<Integer> acrossHintsNums;
-    //private ArrayList<Integer> downHintsNums;
+    private ArrayList<String> acrossHintsOnly;
+    private ArrayList<String> downHintsOnly;
+    private ArrayList<Integer> acrossHintsNums;
+    private ArrayList<Integer> downHintsNums;
 
     // CONSTRUCTORS
     Crossword(){
@@ -54,8 +56,8 @@ public class Crossword {
 
     public ArrayList<String> getAcrossHints() { return acrossHints; }
     public ArrayList<String> getDownHints() { return downHints; }
-    //public ArrayList<Integer> getAcrossHintsNums() { return acrossHintsNums; }
-    //public ArrayList<Integer> getDownHintsNums() { return downHintsNums; }
+    public ArrayList<Integer> getAcrossHintsNums() { return acrossHintsNums; }
+    public ArrayList<Integer> getDownHintsNums() { return downHintsNums; }
 
     // METHODS
     // Read file methods
@@ -202,10 +204,12 @@ public class Crossword {
         //System.out.println ("\nDown\n" + elements.toString() + "\n");
 
         acrossHints = extractHints(acrossHTML);
-        //acrossHintsNums = extractHintsNums(acrossHTML);
+        acrossHintsNums = extractHintsNums(acrossHTML);
+        acrossHintsOnly = extractOnlyHints(acrossHTML);
 
         downHints = extractHints(downHTML);
-        //downHintsNums = extractHintsNums(downHTML);
+        downHintsNums = extractHintsNums(downHTML);
+        downHintsOnly = extractOnlyHints(downHTML);
     }
     public String extractHintsHTML (String html){
 
@@ -230,7 +234,7 @@ public class Crossword {
 
         return hints;
     }
-/*
+
     public ArrayList <String> extractOnlyHints(String html){
 
         ArrayList <String> hints = new ArrayList<String>();
@@ -256,7 +260,6 @@ public class Crossword {
 
         return hintsNums;
     }
- */
 
     // PRINT
     public String toString (){
