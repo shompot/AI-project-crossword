@@ -6,7 +6,7 @@
       <xy x="20" y="20" width="949" height="486"/>
     </constraints>
     <properties>
-      <background color="-722955"/>
+      <background color="-5454688"/>
     </properties>
     <border type="none"/>
     <children>
@@ -15,7 +15,7 @@
           <grid row="0" column="0" row-span="1" col-span="5" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <background color="-16249831"/>
+          <background color="-12430252"/>
           <foreground color="-722955"/>
         </properties>
         <border type="none"/>
@@ -26,9 +26,9 @@
               <gridbag weightx="1.0" weighty="1.0"/>
             </constraints>
             <properties>
-              <background color="-526345"/>
-              <font name="Calibri" size="26" style="1"/>
-              <foreground color="-722955"/>
+              <background color="-725324"/>
+              <font name="Palatino Linotype" size="24" style="1"/>
+              <foreground color="-725324"/>
               <text value="faglAIno Crossword Solver"/>
             </properties>
           </component>
@@ -54,13 +54,13 @@
             </constraints>
             <properties>
               <alignmentY value="0.0"/>
-              <background color="-15132391"/>
+              <background color="-8694194"/>
               <contentAreaFilled value="true"/>
               <defaultCapable value="false"/>
               <enabled value="false"/>
               <focusPainted value="false"/>
               <focusable value="false"/>
-              <foreground color="-15132391"/>
+              <foreground color="-8694194"/>
               <hideActionText value="false"/>
               <iconTextGap value="0"/>
               <label value=" "/>
@@ -81,13 +81,13 @@
             </constraints>
             <properties>
               <alignmentY value="0.0"/>
-              <background color="-15132391"/>
+              <background color="-8694194"/>
               <contentAreaFilled value="true"/>
               <defaultCapable value="false"/>
               <enabled value="false"/>
               <focusPainted value="false"/>
               <focusable value="false"/>
-              <foreground color="-15132391"/>
+              <foreground color="-8694194"/>
               <hideActionText value="false"/>
               <iconTextGap value="0"/>
               <label value=" "/>
@@ -108,13 +108,13 @@
             </constraints>
             <properties>
               <alignmentY value="0.0"/>
-              <background color="-2304034"/>
+              <background color="-725324"/>
               <contentAreaFilled value="true"/>
               <defaultCapable value="false"/>
               <enabled value="false"/>
               <focusPainted value="false"/>
               <focusable value="false"/>
-              <foreground color="-15132391"/>
+              <foreground color="-8694194"/>
               <hideActionText value="false"/>
               <iconTextGap value="0"/>
               <label value=" "/>
@@ -135,13 +135,13 @@
             </constraints>
             <properties>
               <alignmentY value="0.0"/>
-              <background color="-2304034"/>
+              <background color="-725324"/>
               <contentAreaFilled value="true"/>
               <defaultCapable value="false"/>
               <enabled value="false"/>
               <focusPainted value="false"/>
               <focusable value="false"/>
-              <foreground color="-15132391"/>
+              <foreground color="-8694194"/>
               <hideActionText value="false"/>
               <iconTextGap value="0"/>
               <label value=" "/>
@@ -162,13 +162,13 @@
             </constraints>
             <properties>
               <alignmentY value="0.0"/>
-              <background color="-2304034"/>
+              <background color="-725324"/>
               <contentAreaFilled value="true"/>
               <defaultCapable value="false"/>
               <enabled value="false"/>
               <focusPainted value="false"/>
               <focusable value="false"/>
-              <foreground color="-15132391"/>
+              <foreground color="-8694194"/>
               <hideActionText value="false"/>
               <iconTextGap value="0"/>
               <label value=" "/>
@@ -189,13 +189,13 @@
             </constraints>
             <properties>
               <alignmentY value="0.0"/>
-              <background color="-2304034"/>
+              <background color="-725324"/>
               <contentAreaFilled value="true"/>
               <defaultCapable value="false"/>
               <enabled value="false"/>
               <focusPainted value="false"/>
               <focusable value="false"/>
-              <foreground color="-15132391"/>
+              <foreground color="-8694194"/>
               <hideActionText value="false"/>
               <iconTextGap value="0"/>
               <label value=" "/>
@@ -216,13 +216,13 @@
             </constraints>
             <properties>
               <alignmentY value="0.0"/>
-              <background color="-2304034"/>
+              <background color="-725324"/>
               <contentAreaFilled value="true"/>
               <defaultCapable value="false"/>
               <enabled value="false"/>
               <focusPainted value="false"/>
               <focusable value="false"/>
-              <foreground color="-15132391"/>
+              <foreground color="-8694194"/>
               <hideActionText value="false"/>
               <iconTextGap value="0"/>
               <label value=" "/>
@@ -243,13 +243,13 @@
             </constraints>
             <properties>
               <alignmentY value="0.0"/>
-              <background color="-2304034"/>
+              <background color="-725324"/>
               <contentAreaFilled value="true"/>
               <defaultCapable value="false"/>
               <enabled value="false"/>
               <focusPainted value="false"/>
               <focusable value="false"/>
-              <foreground color="-15132391"/>
+              <foreground color="-8694194"/>
               <hideActionText value="false"/>
               <iconTextGap value="0"/>
               <label value=" "/>
@@ -270,13 +270,13 @@
             </constraints>
             <properties>
               <alignmentY value="0.0"/>
-              <background color="-2304034"/>
+              <background color="-725324"/>
               <contentAreaFilled value="true"/>
               <defaultCapable value="false"/>
               <enabled value="false"/>
               <focusPainted value="false"/>
               <focusable value="false"/>
-              <foreground color="-15132391"/>
+              <foreground color="-8694194"/>
               <hideActionText value="false"/>
               <iconTextGap value="0"/>
               <label value=" "/>
@@ -297,13 +297,13 @@
             </constraints>
             <properties>
               <alignmentY value="0.0"/>
-              <background color="-2304034"/>
+              <background color="-725324"/>
               <contentAreaFilled value="true"/>
               <defaultCapable value="false"/>
               <enabled value="false"/>
               <focusPainted value="false"/>
               <focusable value="false"/>
-              <foreground color="-15132391"/>
+              <foreground color="-8694194"/>
               <hideActionText value="false"/>
               <iconTextGap value="0"/>
               <label value=" "/>
@@ -324,13 +324,13 @@
             </constraints>
             <properties>
               <alignmentY value="0.0"/>
-              <background color="-2304034"/>
+              <background color="-725324"/>
               <contentAreaFilled value="true"/>
               <defaultCapable value="false"/>
               <enabled value="false"/>
               <focusPainted value="false"/>
               <focusable value="false"/>
-              <foreground color="-15132391"/>
+              <foreground color="-8694194"/>
               <hideActionText value="false"/>
               <iconTextGap value="0"/>
               <label value=" "/>
@@ -351,13 +351,13 @@
             </constraints>
             <properties>
               <alignmentY value="0.0"/>
-              <background color="-2304034"/>
+              <background color="-725324"/>
               <contentAreaFilled value="true"/>
               <defaultCapable value="false"/>
               <enabled value="false"/>
               <focusPainted value="false"/>
               <focusable value="false"/>
-              <foreground color="-15132391"/>
+              <foreground color="-8694194"/>
               <hideActionText value="false"/>
               <iconTextGap value="0"/>
               <label value=" "/>
@@ -378,13 +378,13 @@
             </constraints>
             <properties>
               <alignmentY value="0.0"/>
-              <background color="-2304034"/>
+              <background color="-725324"/>
               <contentAreaFilled value="true"/>
               <defaultCapable value="false"/>
               <enabled value="false"/>
               <focusPainted value="false"/>
               <focusable value="false"/>
-              <foreground color="-15132391"/>
+              <foreground color="-8694194"/>
               <hideActionText value="false"/>
               <iconTextGap value="0"/>
               <label value=" "/>
@@ -405,13 +405,13 @@
             </constraints>
             <properties>
               <alignmentY value="0.0"/>
-              <background color="-2304034"/>
+              <background color="-725324"/>
               <contentAreaFilled value="true"/>
               <defaultCapable value="false"/>
               <enabled value="false"/>
               <focusPainted value="false"/>
               <focusable value="false"/>
-              <foreground color="-15132391"/>
+              <foreground color="-8694194"/>
               <hideActionText value="false"/>
               <iconTextGap value="0"/>
               <label value=" "/>
@@ -432,13 +432,13 @@
             </constraints>
             <properties>
               <alignmentY value="0.0"/>
-              <background color="-2304034"/>
+              <background color="-725324"/>
               <contentAreaFilled value="true"/>
               <defaultCapable value="false"/>
               <enabled value="false"/>
               <focusPainted value="false"/>
               <focusable value="false"/>
-              <foreground color="-15132391"/>
+              <foreground color="-8694194"/>
               <hideActionText value="false"/>
               <iconTextGap value="0"/>
               <label value=" "/>
@@ -459,13 +459,13 @@
             </constraints>
             <properties>
               <alignmentY value="0.0"/>
-              <background color="-2304034"/>
+              <background color="-725324"/>
               <contentAreaFilled value="true"/>
               <defaultCapable value="false"/>
               <enabled value="false"/>
               <focusPainted value="false"/>
               <focusable value="false"/>
-              <foreground color="-15132391"/>
+              <foreground color="-8694194"/>
               <hideActionText value="false"/>
               <iconTextGap value="0"/>
               <label value=" "/>
@@ -486,13 +486,13 @@
             </constraints>
             <properties>
               <alignmentY value="0.0"/>
-              <background color="-2304034"/>
+              <background color="-725324"/>
               <contentAreaFilled value="true"/>
               <defaultCapable value="false"/>
               <enabled value="false"/>
               <focusPainted value="false"/>
               <focusable value="false"/>
-              <foreground color="-15132391"/>
+              <foreground color="-8694194"/>
               <hideActionText value="false"/>
               <iconTextGap value="0"/>
               <label value=" "/>
@@ -513,13 +513,13 @@
             </constraints>
             <properties>
               <alignmentY value="0.0"/>
-              <background color="-2304034"/>
+              <background color="-725324"/>
               <contentAreaFilled value="true"/>
               <defaultCapable value="false"/>
               <enabled value="false"/>
               <focusPainted value="false"/>
               <focusable value="false"/>
-              <foreground color="-15132391"/>
+              <foreground color="-8694194"/>
               <hideActionText value="false"/>
               <iconTextGap value="0"/>
               <label value=" "/>
@@ -540,13 +540,13 @@
             </constraints>
             <properties>
               <alignmentY value="0.0"/>
-              <background color="-2304034"/>
+              <background color="-725324"/>
               <contentAreaFilled value="true"/>
               <defaultCapable value="false"/>
               <enabled value="false"/>
               <focusPainted value="false"/>
               <focusable value="false"/>
-              <foreground color="-15132391"/>
+              <foreground color="-8694194"/>
               <hideActionText value="false"/>
               <iconTextGap value="0"/>
               <label value=" "/>
@@ -567,13 +567,13 @@
             </constraints>
             <properties>
               <alignmentY value="0.0"/>
-              <background color="-2304034"/>
+              <background color="-725324"/>
               <contentAreaFilled value="true"/>
               <defaultCapable value="false"/>
               <enabled value="false"/>
               <focusPainted value="false"/>
               <focusable value="false"/>
-              <foreground color="-15132391"/>
+              <foreground color="-8694194"/>
               <hideActionText value="false"/>
               <iconTextGap value="0"/>
               <label value=" "/>
@@ -594,13 +594,13 @@
             </constraints>
             <properties>
               <alignmentY value="0.0"/>
-              <background color="-2304034"/>
+              <background color="-725324"/>
               <contentAreaFilled value="true"/>
               <defaultCapable value="false"/>
               <enabled value="false"/>
               <focusPainted value="false"/>
               <focusable value="false"/>
-              <foreground color="-15132391"/>
+              <foreground color="-8694194"/>
               <hideActionText value="false"/>
               <iconTextGap value="0"/>
               <label value=" "/>
@@ -621,13 +621,13 @@
             </constraints>
             <properties>
               <alignmentY value="0.0"/>
-              <background color="-2304034"/>
+              <background color="-725324"/>
               <contentAreaFilled value="true"/>
               <defaultCapable value="false"/>
               <enabled value="false"/>
               <focusPainted value="false"/>
               <focusable value="false"/>
-              <foreground color="-15132391"/>
+              <foreground color="-8694194"/>
               <hideActionText value="false"/>
               <iconTextGap value="0"/>
               <label value=" "/>
@@ -648,13 +648,13 @@
             </constraints>
             <properties>
               <alignmentY value="0.0"/>
-              <background color="-2304034"/>
+              <background color="-725324"/>
               <contentAreaFilled value="true"/>
               <defaultCapable value="false"/>
               <enabled value="false"/>
               <focusPainted value="false"/>
               <focusable value="false"/>
-              <foreground color="-15132391"/>
+              <foreground color="-8694194"/>
               <hideActionText value="false"/>
               <iconTextGap value="0"/>
               <label value=" "/>
@@ -675,13 +675,13 @@
             </constraints>
             <properties>
               <alignmentY value="0.0"/>
-              <background color="-2304034"/>
+              <background color="-725324"/>
               <contentAreaFilled value="true"/>
               <defaultCapable value="false"/>
               <enabled value="false"/>
               <focusPainted value="false"/>
               <focusable value="false"/>
-              <foreground color="-15132391"/>
+              <foreground color="-8694194"/>
               <hideActionText value="false"/>
               <iconTextGap value="0"/>
               <label value=" "/>
@@ -702,13 +702,13 @@
             </constraints>
             <properties>
               <alignmentY value="0.0"/>
-              <background color="-2304034"/>
+              <background color="-725324"/>
               <contentAreaFilled value="true"/>
               <defaultCapable value="false"/>
               <enabled value="false"/>
               <focusPainted value="false"/>
               <focusable value="false"/>
-              <foreground color="-15132391"/>
+              <foreground color="-8694194"/>
               <hideActionText value="false"/>
               <iconTextGap value="0"/>
               <label value=" "/>
@@ -728,7 +728,7 @@
           <grid row="1" column="3" row-span="2" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <background color="-722955"/>
+          <background color="-5454688"/>
         </properties>
         <border type="none"/>
         <children>
@@ -738,7 +738,7 @@
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <background color="-1382932"/>
+              <background color="-11171459"/>
             </properties>
             <border type="none"/>
             <children>
@@ -747,8 +747,10 @@
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <font name="Calibri" size="14" style="1"/>
-                  <foreground color="-14540254"/>
+                  <background color="-725324"/>
+                  <enabled value="true"/>
+                  <font name="Palatino Linotype" size="14" style="1"/>
+                  <foreground color="-725324"/>
                   <text value="Across"/>
                 </properties>
               </component>
@@ -767,9 +769,9 @@
                       </grid>
                     </constraints>
                     <properties>
-                      <background color="-722955"/>
-                      <font name="Calibri" size="12" style="0"/>
-                      <foreground color="-14540254"/>
+                      <background color="-5454688"/>
+                      <font name="Palatino Linotype" size="10"/>
+                      <foreground color="-12430252"/>
                       <text value="1.&#10;2.&#10;3.&#10;4.&#10;5."/>
                     </properties>
                   </component>
@@ -783,7 +785,7 @@
               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <background color="-1382932"/>
+              <background color="-11171459"/>
             </properties>
             <border type="none"/>
             <children>
@@ -792,8 +794,9 @@
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <font name="Calibri" size="14" style="1"/>
-                  <foreground color="-14540254"/>
+                  <background color="-725324"/>
+                  <font name="Palatino Linotype" size="14" style="1"/>
+                  <foreground color="-725324"/>
                   <text value="Down"/>
                 </properties>
               </component>
@@ -812,9 +815,9 @@
                       </grid>
                     </constraints>
                     <properties>
-                      <background color="-722955"/>
-                      <font name="Calibri" size="12" style="0"/>
-                      <foreground color="-14540254"/>
+                      <background color="-5454688"/>
+                      <font name="Palatino Linotype" size="10"/>
+                      <foreground color="-12430252"/>
                       <text value="1.&#10;2.&#10;3.&#10;4.&#10;5."/>
                     </properties>
                   </component>
@@ -829,7 +832,9 @@
         <constraints>
           <grid row="3" column="2" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
-        <properties/>
+        <properties>
+          <background color="-5454688"/>
+        </properties>
         <border type="none"/>
         <children>
           <component id="f81b8" class="javax.swing.JEditorPane" binding="logEditorPane" default-binding="true">
@@ -839,9 +844,9 @@
               </grid>
             </constraints>
             <properties>
-              <background color="-722955"/>
-              <font name="Calibri" size="10" style="0"/>
-              <foreground color="-14540254"/>
+              <background color="-5454688"/>
+              <font name="Palatino Linotype" size="10"/>
+              <foreground color="-12430252"/>
               <text value="Log:"/>
             </properties>
           </component>
