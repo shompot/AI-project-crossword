@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-/*
->>>>>>> 02e11ff86f8e86e2f831984469492cabfbfecd9f
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
@@ -48,10 +44,3 @@ public class CopyPuzzle {
     }
 
 }
-<<<<<<< HEAD
-
-
-
-=======
-*/
->>>>>>> 02e11ff86f8e86e2f831984469492cabfbfecd9f

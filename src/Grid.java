@@ -1,3 +1,7 @@
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -42,8 +46,29 @@ public class Grid {
     public int[] getNumbers() { return numbers; }
 
     // computing methods
-    public void readGrid (String fileName){
-        String text = this.readTxtFile(fileName);
+    public void readGridFromUrl  () throws IOException{
+        String url = "https://www.nytimes.com/crosswords/game/mini";
+        Document documents = Jsoup.connect(url).get();
+        String html  = documents.html();
+        readGrid(html);
+    }
+
+    public void readGridFromFile (String fileName) throws IOException{
+        String html = "";
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            String sCurrentLine;
+
+            while ((sCurrentLine = br.readLine()) != null) {
+                html += sCurrentLine;
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        readGrid(html);
+    }
+
+    public void readGrid (String text){
 
         text = this.extractGridPart(text);
         this.colors = this.getColors(text);
@@ -62,36 +87,22 @@ public class Grid {
 
     }
 
-    public int [] getNumbers (String text) {
-        int size = this.side*this.side;
-        int [] numbers = new int[size];
+    public String extractGridPart (String text){
+        String sStart = "<g data-group=\"cells\"";
+        String sEnd = "<g data-group=\"grid\"";
 
+        //System.out.println(text);
 
-        for (int i =0; i < size; i++){
+        int indexStart = text.indexOf(sStart) + sStart.length();
+        int indexEnd = text.indexOf(sEnd) - 1;
 
-            text = text.substring(text.indexOf("<g"));
-            int indexEnd = text.indexOf("</g>");
-            String str = text.substring(0, indexEnd);
+        //System.out.println("Start at " + indexStart + "\nEnd at " + indexEnd);
 
-            int index = str.indexOf("</text>") - 1;
-            //System.out.println (index);
-            if  (index >= 0 && index <str.length() && str.charAt(index)!= '>'){
-                int t = str.charAt(index) - '0';
-                numbers[i] = t;
-                //System.out.print ("Char " + str.charAt(index) + ", saved as " + numbers[i] + "\n");
-            }
-            else {
-                numbers[i] = 0;
-                //System.out.print ("No char, saved as " + numbers[i] + "\n");
-            }
-            text = text.substring(indexEnd);
+        // extract the part of that has data on the grid
+        text = text.substring(indexStart, indexEnd);
 
-            //System.out.println (numbers[i] + ",");
-
-        }
-        return numbers;
+        return text;
     }
-
 
     public int [] getColors (String text) {
         // 0 represents white, 1 represents black
@@ -121,38 +132,54 @@ public class Grid {
         return  colors;
     }
 
-    public String extractGridPart (String text){
-        String sStart = "<g data-group=\"cells\"";
-        String sEnd = "<g data-group=\"grid\"";
+    public int [] getNumbers (String html) {
+        int size = this.side*this.side;
+        int [] numbers = new int[size];
 
-        //System.out.println(text);
+        Document document = Jsoup.parse(html);
+        Elements elements = document.getElementsByTag("g");
 
-        int indexStart = text.indexOf(sStart) + sStart.length();
-        int indexEnd = text.indexOf(sEnd) - 1;
+        for (int i =0; i < elements.size() && i <size ; i++){
 
-        //System.out.println("Start at " + indexStart + "\nEnd at " + indexEnd);
-
-
-        // extract the part of that has data on the grid
-        text = text.substring(indexStart, indexEnd);
-
-        return text;
-    }
-
-    public String readTxtFile  (String fileName){
-        String text = "";
-        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
-            String sCurrentLine;
-
-            while ((sCurrentLine = br.readLine()) != null) {
-                text += sCurrentLine;
+            String text = elements.get(i).text();
+            int l = text.length()-1;
+            while ( !text.isEmpty() && (Character.isLetter(text.charAt(l)))){
+                text = text.substring(0, l);
+                l--;
             }
+            //System.out.println ("Text is " + text );
+            if (!text.isEmpty())
+                numbers[i] = Integer.parseInt(text);
+            else
+                numbers[i] = 0;
+            /*
+            text = text.substring(text.indexOf("<g"));
+            int indexEnd = text.indexOf("</g>");
+            String str = text.substring(0, indexEnd);
 
-        } catch (IOException e) {
-            e.printStackTrace();
+            int index = str.indexOf("</text>") - 1;
+            //System.out.println (index);
+            if  (index >= 0 && index <str.length() && str.charAt(index)!= '>'){
+                int t = str.charAt(index) - '0';
+                numbers[i] = t;
+                //System.out.print ("Char " + str.charAt(index) + ", saved as " + numbers[i] + "\n");
+            }
+            else {
+                numbers[i] = 0;
+                //System.out.print ("No char, saved as " + numbers[i] + "\n");
+            }
+            text = text.substring(indexEnd);
+
+            //System.out.println (numbers[i] + ",");*/
+
+
         }
-        return text;
+        return numbers;
     }
+
+
+
+
 
     // print
     public String toString (){
@@ -167,7 +194,7 @@ public class Grid {
     }
 
     // main method
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException{
         Grid g = new Grid();
 
         /*String text = g.readTxtFile("txt/crossword1.txt");
@@ -197,8 +224,12 @@ public class Grid {
         }
         */
 
-        g.readGrid("crosswords/November 14, 2017.html");
-        System.out.print(g.toString());
+        g.readGridFromFile("crosswords/November 14, 2017.html");
+        System.out.println(g.toString());
+        g.readGridFromUrl();
+        System.out.println(g.toString());
+        g.readGridFromFile("crosswords/November 8, 2017.html");
+        System.out.println(g.toString());
     }
 
 }
