@@ -1,3 +1,4 @@
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
@@ -11,15 +12,19 @@ import static java.lang.Math.sqrt;
 
 
 public class Crossword {
+
     // VARIABLES
     private int side = 5;
     private GridNode[] grid;
     private int[] colors;
     private int[] numbers;
+
     private ArrayList<String> acrossHints;
     private ArrayList<String> downHints;
-   // private ArrayList<Integer> acrossHintsNums;
-    //private ArrayList<Integer> downHintsNums;
+    private ArrayList<String> acrossHintsOnly;
+    private ArrayList<String> downHintsOnly;
+    private ArrayList<Integer> acrossHintsNums;
+    private ArrayList<Integer> downHintsNums;
 
     // CONSTRUCTORS
     Crossword(){
@@ -36,6 +41,7 @@ public class Crossword {
         this.grid = grid;
     }
 
+
     // SETTERS
     //public void setGrid(GridNode[] grid) { this.grid = grid; }
     public void setSide(int side) { this.side = side; }
@@ -47,10 +53,11 @@ public class Crossword {
     public int getSide() { return side; }
     public int[] getColors() { return colors; }
     public int[] getNumbers() { return numbers; }
+
     public ArrayList<String> getAcrossHints() { return acrossHints; }
     public ArrayList<String> getDownHints() { return downHints; }
-    //public ArrayList<Integer> getAcrossHintsNums() { return acrossHintsNums; }
-    //public ArrayList<Integer> getDownHintsNums() { return downHintsNums; }
+    public ArrayList<Integer> getAcrossHintsNums() { return acrossHintsNums; }
+    public ArrayList<Integer> getDownHintsNums() { return downHintsNums; }
 
     // METHODS
     // Read file methods
@@ -103,6 +110,7 @@ public class Crossword {
         }
 
     }
+
 
     public String extractGridPart (String text){
         String sStart = "<g data-group=\"cells\"";
@@ -196,10 +204,12 @@ public class Crossword {
         //System.out.println ("\nDown\n" + elements.toString() + "\n");
 
         acrossHints = extractHints(acrossHTML);
-        //acrossHintsNums = extractHintsNums(acrossHTML);
+        acrossHintsNums = extractHintsNums(acrossHTML);
+        acrossHintsOnly = extractOnlyHints(acrossHTML);
 
         downHints = extractHints(downHTML);
-        //downHintsNums = extractHintsNums(downHTML);
+        downHintsNums = extractHintsNums(downHTML);
+        downHintsOnly = extractOnlyHints(downHTML);
     }
     public String extractHintsHTML (String html){
 
@@ -224,7 +234,7 @@ public class Crossword {
 
         return hints;
     }
-/*
+
     public ArrayList <String> extractOnlyHints(String html){
 
         ArrayList <String> hints = new ArrayList<String>();
@@ -250,7 +260,6 @@ public class Crossword {
 
         return hintsNums;
     }
- */
 
     // PRINT
     public String toString (){
@@ -263,6 +272,7 @@ public class Crossword {
         }
         return s;
     }
+
 
     // MAIN
     public static void main(String[] args) throws IOException{
@@ -303,8 +313,6 @@ public class Crossword {
         for (int i = 0; i < g.getDownHints().size(); i++){
             System.out.println(  g.getDownHints().get(i));
         }
-
-
     }
 
 }
