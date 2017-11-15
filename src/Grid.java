@@ -152,34 +152,12 @@ public class Grid {
                 numbers[i] = Integer.parseInt(text);
             else
                 numbers[i] = 0;
-            /*
-            text = text.substring(text.indexOf("<g"));
-            int indexEnd = text.indexOf("</g>");
-            String str = text.substring(0, indexEnd);
-
-            int index = str.indexOf("</text>") - 1;
-            //System.out.println (index);
-            if  (index >= 0 && index <str.length() && str.charAt(index)!= '>'){
-                int t = str.charAt(index) - '0';
-                numbers[i] = t;
-                //System.out.print ("Char " + str.charAt(index) + ", saved as " + numbers[i] + "\n");
-            }
-            else {
-                numbers[i] = 0;
-                //System.out.print ("No char, saved as " + numbers[i] + "\n");
-            }
-            text = text.substring(indexEnd);
-
-            //System.out.println (numbers[i] + ",");*/
 
 
         }
         return numbers;
     }
-
-
-
-
+    
 
     // print
     public String toString (){
