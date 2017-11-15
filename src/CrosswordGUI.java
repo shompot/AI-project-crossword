@@ -57,7 +57,7 @@ public class CrosswordGUI {
             @Override
             public void actionPerformed(ActionEvent e)
             {
-                fillGrid();
+                fillHints();
             }
         });
     }
