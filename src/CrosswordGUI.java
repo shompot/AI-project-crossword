@@ -39,6 +39,8 @@ public class CrosswordGUI {
     private JButton getHints;
     private JTextArea downHints;
     private JTextArea acrossHints;
+    private ArrayList<String> acrossList = new ArrayList<String>();
+    private ArrayList<String> downList = new ArrayList<String>();
     private ArrayList<JButton> buttonlist;
     private int[] colors;
     private int[] numbers;
@@ -120,46 +122,81 @@ public class CrosswordGUI {
     {
         return this.log;
     }
+    public ArrayList<String> getAcrossList()
+    {
+        return this.acrossList;
+    }
+    public ArrayList<String> getDownList()
+    {
+        return this.downList;
+    }
+    public void setAcrossList( ArrayList<String> acrossList)
+    {
+        this.acrossList = acrossList;
+    }
+    public void setDownList( ArrayList<String> downList)
+    {
+        this.downList = downList;
+    }
+
     public void fillGrid()
     {
         getLog().append( "\nRetrieve crossword...");
-        int[] temp;
-        temp = this.getColors();
+        int[] colorsArr;
+        colorsArr = this.getColors();
+        int[] numbersArr;
+        numbersArr = this.getNumbers();
         for( int i = 0; i < 25; i++)
         {
-            if( temp[i] == 1)
+            if( colorsArr[i] == 1)
             {
                 getbuttonlist().get(i).setBackground( dark);
+            }
+            if( numbersArr[i] != 0)
+            {
+                getbuttonlist().get(i).setText("" + numbersArr[i]);
             }
         }
         getLog().append( "\nCrossword retrieval complete!");
     }
     public void fillHints()
     {
+        String across = "";
+        String down = "";
         getLog().append( "\nRetrieve hints...");
-        //to be filled
-        //getAcrossHints().setText();
-        //getLog().append( "\nGot Across Hints!");
-        //getDownHints().setText();
-        //getLog().append( "\nGot Down Hints!");
+        for( int i = 0; i < this.acrossList.size(); i++)
+        {
+            across = across + this.acrossList.get(i) + "\n";
+        }
+        getAcrossHints().setText( across);
+        getLog().append( "\nGot Across Hints!");
+        for( int i = 0; i < this.downList.size(); i++)
+        {
+            down = down + this.downList.get(i) + "\n";
+        }
+        getDownHints().setText( down);
+        getLog().append( "\nGot Down Hints!");
         getLog().append( "\nHints retrieval complete!");
     }
     public static void main(String[] args) throws IOException
     {
         Crossword g = new Crossword();
+        //g.readGridFromUrl( "");
         g.readGridFromFile("crosswords/November 14, 2017.html");
-        int [] colors = g.getColors();
         int index = 0;
         JFrame frame;
         frame = new JFrame("CS461 faglAIno Crossword");
         CrosswordGUI crossword = new CrosswordGUI();
-        crossword.setColors(colors);
+        crossword.setColors(g.getColors());
+        crossword.setNumbers( g.getNumbers());
+        crossword.setAcrossList( g.getAcrossHints());
+        crossword.setDownList( g.getDownHints());
         frame.setContentPane(crossword.CWPanel);
         frame.setLocation(400,150);
         System.out.println(g.toString());
         for (int i = 0; i < 5; i ++){
             for (int j = 0; j < 5; j++)
-                System.out.print(colors[index++] + " ");
+                System.out.print(g.getColors()[index++] + " ");
             System.out.print("\n");
         }
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
