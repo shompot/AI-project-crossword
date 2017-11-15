@@ -20,6 +20,8 @@ public class Grid {
     private int[] numbers;
     private ArrayList<String> acrossHints;
     private ArrayList<String> downHints;
+   // private ArrayList<Integer> acrossHintsNums;
+    //private ArrayList<Integer> downHintsNums;
 
     // CONSTRUCTORS
     Grid (){
@@ -37,16 +39,20 @@ public class Grid {
     }
 
     // SETTERS
-    public void setGrid(GridNode[] grid) { this.grid = grid; }
+    //public void setGrid(GridNode[] grid) { this.grid = grid; }
     public void setSide(int side) { this.side = side; }
-    public void setColors(int[] colors) { this.colors = colors; }
-    public void setNumbers(int[] numbers) { this.numbers = numbers; }
+   // public void setColors(int[] colors) { this.colors = colors; }
+    //public void setNumbers(int[] numbers) { this.numbers = numbers; }
 
     // GETTERS
     public GridNode[] getGrid() { return grid; }
     public int getSide() { return side; }
     public int[] getColors() { return colors; }
     public int[] getNumbers() { return numbers; }
+    public ArrayList<String> getAcrossHints() { return acrossHints; }
+    public ArrayList<String> getDownHints() { return downHints; }
+    //public ArrayList<Integer> getAcrossHintsNums() { return acrossHintsNums; }
+    //public ArrayList<Integer> getDownHintsNums() { return downHintsNums; }
 
     // METHODS
     // Read file methods
@@ -54,7 +60,7 @@ public class Grid {
         String url = "https://www.nytimes.com/crosswords/game/mini";
         Document documents = Jsoup.connect(url).get();
         String html  = documents.html();
-        readGrid(html);
+        readCrossword(html);
     }
 
     public void readGridFromFile (String fileName) throws IOException{
@@ -69,11 +75,19 @@ public class Grid {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        readCrossword(html);
+    }
+
+
+    public void readCrossword (String html){
+
         readGrid(html);
+        readHints (html);
     }
 
     // read grid methods
-    public void readGrid (String text){
+    public void readGrid (String html){
+        String text = html;
 
         text = this.extractGridPart(text);
         this.colors = this.getColors(text);
@@ -164,6 +178,81 @@ public class Grid {
     }
 
     // read hints methods
+    public void readHints (String html){
+
+        String acrossHTML;
+        String downHTML;
+
+        //System.out.println ("Reading hints");
+
+        html = this.extractHintsHTML(html);
+        //System.out.println ("Hints HTML is:\n" + html);
+
+        Document document = Jsoup.parse(html);
+        Elements elements = document.getElementsByClass("ClueList-wrapper--3m-kd");
+
+        acrossHTML = elements.get(0).toString();
+        //System.out.println ("\nAcross\n" + elements.toString() + "\n");
+
+        downHTML = elements.get(1).toString();
+        //System.out.println ("\nDown\n" + elements.toString() + "\n");
+
+        acrossHints = extractHints(acrossHTML);
+        //acrossHintsNums = extractHintsNums(acrossHTML);
+
+        downHints = extractHints(downHTML);
+        //downHintsNums = extractHintsNums(downHTML);
+    }
+    public String extractHintsHTML (String html){
+
+        Document document = Jsoup.parse(html);
+        Elements elements = document.getElementsByClass("Layout-clueLists--10_Xl");
+
+        String text = elements.toString();
+        return text;
+    }
+    public ArrayList <String> extractHints(String html){
+
+        ArrayList <String> hints = new ArrayList<String>();
+        Document document = Jsoup.parse(html);
+
+        Elements numsElements = document.getElementsByClass("Clue-label--2IdMY");
+        Elements hintsElements = document.getElementsByClass("Clue-text--3lZl7");
+
+        for (int i= 0; i< numsElements.size() && i < hintsElements.size(); i++) {
+            hints.add( numsElements.get(i).text() + ". " + hintsElements.get(i).text());
+            //System.out.println(hints.get(hints.size()-1));
+        }
+
+        return hints;
+    }
+/*
+    public ArrayList <String> extractOnlyHints(String html){
+
+        ArrayList <String> hints = new ArrayList<String>();
+        Document document = Jsoup.parse(html);
+        Elements elements = document.getElementsByClass("Clue-text--3lZl7");
+        for (int i= 0; i< elements.size(); i++) {
+            hints.add(elements.get(i).text());
+            //System.out.println(hints.get(hints.size()-1));
+        }
+
+        return hints;
+    }
+
+    public ArrayList <Integer> extractHintsNums(String html){
+
+        ArrayList <Integer> hintsNums = new ArrayList<Integer>();
+        Document document = Jsoup.parse(html);
+        Elements elements = document.getElementsByClass("Clue-label--2IdMY");
+        for (int i= 0; i< elements.size(); i++) {
+            hintsNums.add(Integer.parseInt(elements.get(i).text()));
+            //System.out.println(hintsNums.get(hintsNums.size()-1));
+        }
+
+        return hintsNums;
+    }
+ */
 
     // PRINT
     public String toString (){
@@ -184,11 +273,40 @@ public class Grid {
         g.readGridFromFile("crosswords/November 14, 2017.html");
         System.out.println(g.toString());
 
+        System.out.println("Across:");
+        for (int i = 0; i < g.getAcrossHints().size(); i++){
+            System.out.println(  g.getAcrossHints().get(i));
+        }
+        System.out.println("Down:");
+        for (int i = 0; i < g.getDownHints().size(); i++){
+            System.out.println(  g.getDownHints().get(i));
+        }
+
         g.readGridFromUrl();
         System.out.println(g.toString());
 
+        System.out.println("Across:");
+        for (int i = 0; i < g.getAcrossHints().size(); i++){
+            System.out.println(  g.getAcrossHints().get(i));
+        }
+        System.out.println("Down:");
+        for (int i = 0; i < g.getDownHints().size(); i++){
+            System.out.println(  g.getDownHints().get(i));
+        }
+
         g.readGridFromFile("crosswords/November 8, 2017.html");
         System.out.println(g.toString());
+
+        System.out.println("Across:");
+        for (int i = 0; i < g.getAcrossHints().size(); i++){
+            System.out.println(  g.getAcrossHints().get(i));
+        }
+        System.out.println("Down:");
+        for (int i = 0; i < g.getDownHints().size(); i++){
+            System.out.println(  g.getDownHints().get(i));
+        }
+
+
     }
 
 }
