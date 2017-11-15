@@ -2,7 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Shiha on 11/11/2017.
@@ -146,7 +145,7 @@ public class CrosswordGUI {
     }
     public static void main(String[] args)
     {
-        Grid g = new Grid();
+        Crossword g = new Crossword();
         g.readGrid("crosswords/November 14, 2017.html");
         int [] colors = g.getColors();
         int index = 0;
