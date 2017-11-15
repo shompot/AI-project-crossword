@@ -145,7 +145,6 @@ public class CrosswordGUI {
                 System.out.print(colors[index++] + " ");
             System.out.print("\n");
         }
-
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
