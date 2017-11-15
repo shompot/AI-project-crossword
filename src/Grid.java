@@ -199,6 +199,14 @@ public class Grid {
 
         g.readGrid("crosswords/November 14, 2017.html");
         System.out.print(g.toString());
+        int [] colors = g.getColors();
+
+        int index = 0;
+        for (int i = 0; i < 5; i ++){
+            for (int j = 0; j < 5; j++)
+                System.out.print(colors[index++] + " ");
+            System.out.print("\n");
+        }
     }
 
 }
