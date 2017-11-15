@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
-/*
->>>>>>> 02e11ff86f8e86e2f831984469492cabfbfecd9f
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
@@ -25,6 +22,7 @@ public class CopyPuzzle {
             clues[i] = elements.get(i).text();
             System.out.println(clues[i]);
         }
+        
 
         return clues;
     }
@@ -46,12 +44,3 @@ public class CopyPuzzle {
         System.out.println(blockedGrids.toString());
 
     }
-
-}
-<<<<<<< HEAD
-
-
-
-=======
-*/
->>>>>>> 02e11ff86f8e86e2f831984469492cabfbfecd9f
