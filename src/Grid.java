@@ -69,7 +69,7 @@ public class Grid {
 
         for (int i =0; i < size; i++){
 
-            text = text.substring(text.indexOf("<g>"));
+            text = text.substring(text.indexOf("<g"));
             int indexEnd = text.indexOf("</g>");
             String str = text.substring(0, indexEnd);
 
@@ -122,13 +122,16 @@ public class Grid {
     }
 
     public String extractGridPart (String text){
-        String sStart = "<g data-group=\"cells\">";
-        String sEnd = "<g data-group=\"grid\">";
+        String sStart = "<g data-group=\"cells\"";
+        String sEnd = "<g data-group=\"grid\"";
+
+        //System.out.println(text);
 
         int indexStart = text.indexOf(sStart) + sStart.length();
         int indexEnd = text.indexOf(sEnd) - 1;
 
         //System.out.println("Start at " + indexStart + "\nEnd at " + indexEnd);
+
 
         // extract the part of that has data on the grid
         text = text.substring(indexStart, indexEnd);
@@ -194,7 +197,7 @@ public class Grid {
         }
         */
 
-        g.readGrid("crosswords/crossword1.html");
+        g.readGrid("crosswords/November 14, 2017.html");
         System.out.print(g.toString());
     }
 
