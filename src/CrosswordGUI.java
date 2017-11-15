@@ -9,7 +9,6 @@ public class CrosswordGUI {
     private JPanel CWPanel;
     private JEditorPane acrossPane;
     private JEditorPane downPane;
-    private JEditorPane logPane;
     private JButton button1;
     private JButton button2;
     private JButton button3;
@@ -35,6 +34,9 @@ public class CrosswordGUI {
     private JButton button23;
     private JButton button24;
     private JButton button25;
+    private JTextArea log;
+    private JButton getCrossword;
+    private JButton getHints;
     private ArrayList<JButton> buttonlist;
     private int[] colors;
     private int[] numbers;
@@ -97,9 +99,9 @@ public class CrosswordGUI {
     {
         return this.acrossPane;
     }
-    public JEditorPane getLogPane()
+    public JTextArea getLog()
     {
-        return this.logPane;
+        return this.log;
     }
     public void fillGrid()
     {
