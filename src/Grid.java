@@ -6,19 +6,22 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 import static java.lang.Math.sqrt;
 import static javax.script.ScriptEngine.FILENAME;
 
 
 public class Grid {
-    // variables
+    // VARIABLES
     private int side = 5;
     private GridNode[] grid;
     private int[] colors;
     private int[] numbers;
+    private ArrayList<String> acrossHints;
+    private ArrayList<String> downHints;
 
-    // constructors
+    // CONSTRUCTORS
     Grid (){
         this.side = 5;
         this.grid = new GridNode[side*side];
@@ -33,19 +36,20 @@ public class Grid {
         this.grid = grid;
     }
 
-    // setters
+    // SETTERS
     public void setGrid(GridNode[] grid) { this.grid = grid; }
     public void setSide(int side) { this.side = side; }
     public void setColors(int[] colors) { this.colors = colors; }
     public void setNumbers(int[] numbers) { this.numbers = numbers; }
 
-    // getters
+    // GETTERS
     public GridNode[] getGrid() { return grid; }
     public int getSide() { return side; }
     public int[] getColors() { return colors; }
     public int[] getNumbers() { return numbers; }
 
-    // computing methods
+    // METHODS
+    // Read file methods
     public void readGridFromUrl  () throws IOException{
         String url = "https://www.nytimes.com/crosswords/game/mini";
         Document documents = Jsoup.connect(url).get();
@@ -68,6 +72,7 @@ public class Grid {
         readGrid(html);
     }
 
+    // read grid methods
     public void readGrid (String text){
 
         text = this.extractGridPart(text);
@@ -157,9 +162,10 @@ public class Grid {
         }
         return numbers;
     }
-    
 
-    // print
+    // read hints methods
+
+    // PRINT
     public String toString (){
         String s = "";
 
@@ -171,41 +177,16 @@ public class Grid {
         return s;
     }
 
-    // main method
+    // MAIN
     public static void main(String[] args) throws IOException{
         Grid g = new Grid();
 
-        /*String text = g.readTxtFile("txt/crossword1.txt");
-        text = g.extractGridPart(text);
-        //System.out.println(text);
-
-        System.out.print("\nPrint Colors:\n");
-
-        int [] colors = g.getColors(text);
-
-        int index = 0;
-        for (int i = 0; i < 5; i ++){
-            for (int j = 0; j < 5; j++)
-                System.out.print(colors[index++] + " ");
-            System.out.print("\n");
-        }
-
-        System.out.print("\n\nPrint Numbers:\n");
-
-        int [] numbers = g.getNumbers(text);
-
-        index = 0;
-        for (int i = 0; i < 5; i ++){
-            for (int j = 0; j < 5; j++)
-                System.out.print(numbers[index++] + " ");
-            System.out.print("\n");
-        }
-        */
-
         g.readGridFromFile("crosswords/November 14, 2017.html");
         System.out.println(g.toString());
+
         g.readGridFromUrl();
         System.out.println(g.toString());
+
         g.readGridFromFile("crosswords/November 8, 2017.html");
         System.out.println(g.toString());
     }
