@@ -193,12 +193,14 @@ public class CrosswordGUI {
         crossword.setDownList( g.getDownHints());
         frame.setContentPane(crossword.CWPanel);
         frame.setLocation(400,150);
+        /*
         System.out.println(g.toString());
         for (int i = 0; i < 5; i ++){
             for (int j = 0; j < 5; j++)
                 System.out.print(g.getColors()[index++] + " ");
             System.out.print("\n");
         }
+        */
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
