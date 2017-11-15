@@ -41,7 +41,7 @@
           </grid>
         </constraints>
         <properties>
-          <background color="-5454688"/>
+          <background color="-725324"/>
         </properties>
         <border type="none"/>
         <children>
@@ -63,11 +63,11 @@
               <foreground color="-8694194"/>
               <hideActionText value="false"/>
               <iconTextGap value="0"/>
-              <label value=" "/>
+              <label value=""/>
               <margin top="0" left="0" bottom="0" right="0"/>
               <requestFocusEnabled value="false"/>
               <rolloverEnabled value="false"/>
-              <text value=" "/>
+              <text value=""/>
               <verifyInputWhenFocusTarget value="false"/>
               <verticalAlignment value="0"/>
             </properties>
@@ -90,11 +90,11 @@
               <foreground color="-8694194"/>
               <hideActionText value="false"/>
               <iconTextGap value="0"/>
-              <label value=" "/>
+              <label value=""/>
               <margin top="0" left="0" bottom="0" right="0"/>
               <requestFocusEnabled value="false"/>
               <rolloverEnabled value="false"/>
-              <text value=" "/>
+              <text value=""/>
               <verifyInputWhenFocusTarget value="false"/>
               <verticalAlignment value="0"/>
             </properties>

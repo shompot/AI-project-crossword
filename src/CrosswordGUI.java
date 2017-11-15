@@ -1,6 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Shiha on 11/11/2017.
@@ -43,7 +45,14 @@ public class CrosswordGUI {
     private Color dark = new Color(123,86,78);
     public CrosswordGUI()
     {
-        //todo
+        getCrossword.addActionListener(new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                fillGrid();
+            }
+        });
     }
     public ArrayList<JButton> getbuttonlist()
     {
@@ -105,6 +114,7 @@ public class CrosswordGUI {
     }
     public void fillGrid()
     {
+        getLog().append( "\nRetrieve crossword...");
         int[] temp;
         temp = this.getColors();
         for( int i = 0; i < 25; i++)
@@ -114,6 +124,7 @@ public class CrosswordGUI {
                 getbuttonlist().get(i).setBackground( dark);
             }
         }
+        getLog().append( "\nCrossword retrieval complete!");
     }
 
     public static void main(String[] args)
@@ -126,10 +137,8 @@ public class CrosswordGUI {
         frame = new JFrame("CS461 faglAIno Crossword");
         CrosswordGUI crossword = new CrosswordGUI();
         crossword.setColors(colors);
-        crossword.fillGrid();
         frame.setContentPane(crossword.CWPanel);
         frame.setLocation(400,150);
-
         System.out.println(g.toString());
         for (int i = 0; i < 5; i ++){
             for (int j = 0; j < 5; j++)
