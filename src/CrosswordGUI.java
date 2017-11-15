@@ -9,8 +9,6 @@ import java.util.concurrent.TimeUnit;
  */
 public class CrosswordGUI {
     private JPanel CWPanel;
-    private JEditorPane acrossPane;
-    private JEditorPane downPane;
     private JButton button1;
     private JButton button2;
     private JButton button3;
@@ -39,6 +37,8 @@ public class CrosswordGUI {
     private JTextArea log;
     private JButton getCrossword;
     private JButton getHints;
+    private JTextArea downHints;
+    private JTextArea acrossHints;
     private ArrayList<JButton> buttonlist;
     private int[] colors;
     private int[] numbers;
@@ -46,6 +46,14 @@ public class CrosswordGUI {
     public CrosswordGUI()
     {
         getCrossword.addActionListener(new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                fillGrid();
+            }
+        });
+        getHints.addActionListener(new ActionListener()
         {
             @Override
             public void actionPerformed(ActionEvent e)
@@ -100,13 +108,13 @@ public class CrosswordGUI {
     {
         this.numbers = numbers;
     }
-    public JEditorPane getDownPane()
+    public JTextArea getDownHints()
     {
-        return this.downPane;
+        return this.downHints;
     }
-    public JEditorPane getAcrossPane()
+    public JTextArea getAcrossHints()
     {
-        return this.acrossPane;
+        return this.acrossHints;
     }
     public JTextArea getLog()
     {
@@ -126,7 +134,16 @@ public class CrosswordGUI {
         }
         getLog().append( "\nCrossword retrieval complete!");
     }
-
+    public void fillHints()
+    {
+        getLog().append( "\nRetrieve hints...");
+        //to be filled
+        //getAcrossHints().setText();
+        //getLog().append( "\nGot Across Hints!");
+        //getDownHints().setText();
+        //getLog().append( "\nGot Down Hints!");
+        getLog().append( "\nHints retrieval complete!");
+    }
     public static void main(String[] args)
     {
         Grid g = new Grid();

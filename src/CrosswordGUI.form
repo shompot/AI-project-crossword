@@ -754,31 +754,19 @@
                   <text value="Across"/>
                 </properties>
               </component>
-              <grid id="27ae4" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-                <margin top="0" left="0" bottom="0" right="0"/>
+              <component id="19f46" class="javax.swing.JTextArea" binding="acrossHints">
                 <constraints>
-                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="50"/>
+                  </grid>
                 </constraints>
                 <properties>
                   <background color="-5454688"/>
+                  <caretColor color="-725324"/>
+                  <font name="Palatino Linotype" size="12"/>
+                  <foreground color="-12430252"/>
                 </properties>
-                <border type="none"/>
-                <children>
-                  <component id="b580a" class="javax.swing.JEditorPane" binding="acrossPane">
-                    <constraints>
-                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                        <preferred-size width="150" height="50"/>
-                      </grid>
-                    </constraints>
-                    <properties>
-                      <background color="-5454688"/>
-                      <font name="Palatino Linotype" size="10"/>
-                      <foreground color="-12430252"/>
-                      <text value="1.&#10;2.&#10;3.&#10;4.&#10;5."/>
-                    </properties>
-                  </component>
-                </children>
-              </grid>
+              </component>
             </children>
           </grid>
           <grid id="211ce" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -802,31 +790,19 @@
                   <text value="Down"/>
                 </properties>
               </component>
-              <grid id="58837" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-                <margin top="0" left="0" bottom="0" right="0"/>
+              <component id="44893" class="javax.swing.JTextArea" binding="downHints">
                 <constraints>
-                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="50"/>
+                  </grid>
                 </constraints>
                 <properties>
                   <background color="-5454688"/>
+                  <caretColor color="-725324"/>
+                  <font name="Palatino Linotype" size="12"/>
+                  <foreground color="-12430252"/>
                 </properties>
-                <border type="none"/>
-                <children>
-                  <component id="76d54" class="javax.swing.JEditorPane" binding="downPane">
-                    <constraints>
-                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                        <preferred-size width="150" height="50"/>
-                      </grid>
-                    </constraints>
-                    <properties>
-                      <background color="-5454688"/>
-                      <font name="Palatino Linotype" size="10"/>
-                      <foreground color="-12430252"/>
-                      <text value="1.&#10;2.&#10;3.&#10;4.&#10;5."/>
-                    </properties>
-                  </component>
-                </children>
-              </grid>
+              </component>
             </children>
           </grid>
         </children>
