@@ -8,6 +8,7 @@ import java.util.ArrayList;
  * Created by Shiha on 11/11/2017.
  */
 public class CrosswordGUI {
+    public static final String[] options = { "Today", "Oct 24, 2017", "Nov 8, 2017", "November 14,2017" };
     private JPanel CWPanel;
     private JButton button1;
     private JButton button2;
@@ -47,6 +48,7 @@ public class CrosswordGUI {
     private Color dark = new Color(123,86,78);
     public CrosswordGUI()
     {
+        log.append( "\n Welcome! Starting project.");
         getCrossword.addActionListener(new ActionListener()
         {
             @Override
@@ -181,26 +183,30 @@ public class CrosswordGUI {
     public static void main(String[] args) throws IOException
     {
         Crossword g = new Crossword();
-        g.readGridFromUrl();
-        //g.readGridFromFile("crosswords/November 14, 2017.html");
+        CrosswordGUI crossword = new CrosswordGUI();
+        JFrame frame0 = new JFrame("Which Crossword?");
+        String option = (String) JOptionPane.showInputDialog(frame0,
+                "Which crossword would you like to solve?",
+                "Crossword to Solve",
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                options,
+                options[0]);
+        if( option == "Today") { System.out.println("Retrieving today's puzzle...Please wait"); g.readGridFromUrl();}
+        else if( option == "Oct 24, 2017"){ System.out.println("Retrieving saved puzzle...Please wait"); g.readGridFromFile("crosswords/October 24, 2017.html");}
+        else if( option == "Nov 8, 2017"){ System.out.println("Retrieving saved puzzle...Please wait");g.readGridFromFile("crosswords/November 8, 2017.html");}
+        else if( option == "November 14,2017") { System.out.println("Retrieving saved puzzle...Please wait");g.readGridFromFile("crosswords/November 14, 2017.html");}
+        else { crossword.getLog().append( "Cannot display puzzle"); }
+
         int index = 0;
         JFrame frame;
         frame = new JFrame("CS461 faglAIno Crossword");
-        CrosswordGUI crossword = new CrosswordGUI();
         crossword.setColors(g.getColors());
         crossword.setNumbers( g.getNumbers());
         crossword.setAcrossList( g.getAcrossHints());
         crossword.setDownList( g.getDownHints());
         frame.setContentPane(crossword.CWPanel);
         frame.setLocation(400,150);
-        /*
-        System.out.println(g.toString());
-        for (int i = 0; i < 5; i ++){
-            for (int j = 0; j < 5; j++)
-                System.out.print(g.getColors()[index++] + " ");
-            System.out.print("\n");
-        }
-        */
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
