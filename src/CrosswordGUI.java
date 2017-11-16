@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * Created by Shiha on 11/11/2017.
  */
 public class CrosswordGUI {
-    public static final String[] options = { "Today", "Oct 24, 2017", "Nov 8, 2017", "November 14,2017" };
+    public static final String[] options = { "Today", "Oct 24, 2017", "Nov 8, 2017", "Nov 14, 2017", "Nov 15, 2017" };
     private JPanel CWPanel;
     private JButton button1;
     private JButton button2;
@@ -195,7 +195,8 @@ public class CrosswordGUI {
         if( option == "Today") { System.out.println("Retrieving today's puzzle...Please wait"); g.readGridFromUrl();}
         else if( option == "Oct 24, 2017"){ System.out.println("Retrieving saved puzzle...Please wait"); g.readGridFromFile("crosswords/October 24, 2017.html");}
         else if( option == "Nov 8, 2017"){ System.out.println("Retrieving saved puzzle...Please wait");g.readGridFromFile("crosswords/November 8, 2017.html");}
-        else if( option == "November 14,2017") { System.out.println("Retrieving saved puzzle...Please wait");g.readGridFromFile("crosswords/November 14, 2017.html");}
+        else if( option == "Nov 14, 2017") { System.out.println("Retrieving saved puzzle...Please wait");g.readGridFromFile("crosswords/November 14, 2017.html");}
+        else if( option == "Nov 15, 2017") { System.out.println("Retrieving saved puzzle...Please wait");g.readGridFromFile("crosswords/November 15, 2017.html");}
         else { crossword.getLog().append( "Cannot display puzzle"); }
 
         int index = 0;
