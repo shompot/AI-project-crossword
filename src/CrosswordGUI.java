@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.text.AbstractDocument;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
@@ -40,15 +41,117 @@ public class CrosswordGUI {
     private JButton getHints;
     private JTextArea downHints;
     private JTextArea acrossHints;
+    private JTextArea textArea1;
+    private JTextArea textArea2;
+    private JTextArea textArea3;
+    private JTextArea textArea4;
+    private JTextArea textArea5;
+    private JTextArea textArea6;
+    private JTextArea textArea7;
+    private JTextArea textArea8;
+    private JTextArea textArea9;
+    private JTextArea textArea10;
+    private JTextArea textArea11;
+    private JTextArea textArea12;
+    private JTextArea textArea13;
+    private JTextArea textArea14;
+    private JTextArea textArea15;
+    private JTextArea textArea16;
+    private JTextArea textArea17;
+    private JTextArea textArea18;
+    private JTextArea textArea19;
+    private JTextArea textArea20;
+    private JTextArea textArea21;
+    private JTextArea textArea22;
+    private JTextArea textArea23;
+    private JTextArea textArea24;
+    private JTextArea textArea25;
+    private JPanel box1;
+    private JPanel box2;
+    private JPanel box3;
+    private JPanel box4;
+    private JPanel box5;
+    private JPanel box6;
+    private JPanel box7;
+    private JPanel box8;
+    private JPanel box9;
+    private JPanel box10;
+    private JPanel box11;
+    private JPanel box12;
+    private JPanel box13;
+    private JPanel box14;
+    private JPanel box15;
+    private JPanel box16;
+    private JPanel box17;
+    private JPanel box18;
+    private JPanel box19;
+    private JPanel box20;
+    private JPanel box21;
+    private JPanel box22;
+    private JPanel box23;
+    private JPanel box24;
+    private JPanel box25;
     private ArrayList<String> acrossList = new ArrayList<String>();
     private ArrayList<String> downList = new ArrayList<String>();
-    private ArrayList<JButton> buttonlist;
+    private ArrayList<JPanel> panelList = new ArrayList<JPanel>();
+    private ArrayList<JButton> buttonlist = new ArrayList<JButton>();;
+    private ArrayList<JTextArea> textlist = new ArrayList<JTextArea>();;
     private int[] colors;
     private int[] numbers;
     private Color dark = new Color(123,86,78);
     public CrosswordGUI()
     {
         log.append( "\n Welcome! Starting project.");
+        AbstractDocument doc1=(AbstractDocument)textArea1.getDocument();
+        doc1.setDocumentFilter(new DocumentSizeFilter(1));
+        AbstractDocument doc2=(AbstractDocument)textArea2.getDocument();
+        doc2.setDocumentFilter(new DocumentSizeFilter(1));
+        AbstractDocument doc3=(AbstractDocument)textArea3.getDocument();
+        doc3.setDocumentFilter(new DocumentSizeFilter(1));
+        AbstractDocument doc4=(AbstractDocument)textArea4.getDocument();
+        doc4.setDocumentFilter(new DocumentSizeFilter(1));
+        AbstractDocument doc5=(AbstractDocument)textArea5.getDocument();
+        doc5.setDocumentFilter(new DocumentSizeFilter(1));
+        AbstractDocument doc6=(AbstractDocument)textArea6.getDocument();
+        doc6.setDocumentFilter(new DocumentSizeFilter(1));
+        AbstractDocument doc7=(AbstractDocument)textArea7.getDocument();
+        doc7.setDocumentFilter(new DocumentSizeFilter(1));
+        AbstractDocument doc8=(AbstractDocument)textArea8.getDocument();
+        doc8.setDocumentFilter(new DocumentSizeFilter(1));
+        AbstractDocument doc9=(AbstractDocument)textArea9.getDocument();
+        doc9.setDocumentFilter(new DocumentSizeFilter(1));
+        AbstractDocument doc10=(AbstractDocument)textArea10.getDocument();
+        doc10.setDocumentFilter(new DocumentSizeFilter(1));
+        AbstractDocument doc11=(AbstractDocument)textArea11.getDocument();
+        doc11.setDocumentFilter(new DocumentSizeFilter(1));
+        AbstractDocument doc12=(AbstractDocument)textArea12.getDocument();
+        doc12.setDocumentFilter(new DocumentSizeFilter(1));
+        AbstractDocument doc13=(AbstractDocument)textArea13.getDocument();
+        doc13.setDocumentFilter(new DocumentSizeFilter(1));
+        AbstractDocument doc14=(AbstractDocument)textArea14.getDocument();
+        doc14.setDocumentFilter(new DocumentSizeFilter(1));
+        AbstractDocument doc15=(AbstractDocument)textArea15.getDocument();
+        doc15.setDocumentFilter(new DocumentSizeFilter(1));
+        AbstractDocument doc16=(AbstractDocument)textArea16.getDocument();
+        doc16.setDocumentFilter(new DocumentSizeFilter(1));
+        AbstractDocument doc17=(AbstractDocument)textArea17.getDocument();
+        doc17.setDocumentFilter(new DocumentSizeFilter(1));
+        AbstractDocument doc18=(AbstractDocument)textArea18.getDocument();
+        doc18.setDocumentFilter(new DocumentSizeFilter(1));
+        AbstractDocument doc19=(AbstractDocument)textArea19.getDocument();
+        doc19.setDocumentFilter(new DocumentSizeFilter(1));
+        AbstractDocument doc20=(AbstractDocument)textArea20.getDocument();
+        doc20.setDocumentFilter(new DocumentSizeFilter(1));
+        AbstractDocument doc21=(AbstractDocument)textArea21.getDocument();
+        doc21.setDocumentFilter(new DocumentSizeFilter(1));
+        AbstractDocument doc22=(AbstractDocument)textArea22.getDocument();
+        doc22.setDocumentFilter(new DocumentSizeFilter(1));
+        AbstractDocument doc23=(AbstractDocument)textArea23.getDocument();
+        doc23.setDocumentFilter(new DocumentSizeFilter(1));
+        AbstractDocument doc24=(AbstractDocument)textArea24.getDocument();
+        doc24.setDocumentFilter(new DocumentSizeFilter(1));
+        AbstractDocument doc25=(AbstractDocument)textArea25.getDocument();
+        doc25.setDocumentFilter(new DocumentSizeFilter(1));
         getCrossword.addActionListener(new ActionListener()
         {
             @Override
@@ -66,35 +169,90 @@ public class CrosswordGUI {
             }
         });
     }
-    public ArrayList<JButton> getbuttonlist()
+    public ArrayList<JButton> getButtonlist()
     {
-        ArrayList<JButton> buttonList= new ArrayList<JButton>();
-        buttonList.add( button1);
-        buttonList.add( button2);
-        buttonList.add( button3);
-        buttonList.add( button4);
-        buttonList.add( button5);
-        buttonList.add( button6);
-        buttonList.add( button7);
-        buttonList.add( button8);
-        buttonList.add( button9);
-        buttonList.add( button10);
-        buttonList.add( button11);
-        buttonList.add( button12);
-        buttonList.add( button13);
-        buttonList.add( button14);
-        buttonList.add( button15);
-        buttonList.add( button16);
-        buttonList.add( button17);
-        buttonList.add( button18);
-        buttonList.add( button19);
-        buttonList.add( button20);
-        buttonList.add( button21);
-        buttonList.add( button22);
-        buttonList.add( button23);
-        buttonList.add( button24);
-        buttonList.add( button25);
-        return buttonList;
+        buttonlist.add( button1);
+        buttonlist.add( button2);
+        buttonlist.add( button3);
+        buttonlist.add( button4);
+        buttonlist.add( button5);
+        buttonlist.add( button6);
+        buttonlist.add( button7);
+        buttonlist.add( button8);
+        buttonlist.add( button9);
+        buttonlist.add( button10);
+        buttonlist.add( button11);
+        buttonlist.add( button12);
+        buttonlist.add( button13);
+        buttonlist.add( button14);
+        buttonlist.add( button15);
+        buttonlist.add( button16);
+        buttonlist.add( button17);
+        buttonlist.add( button18);
+        buttonlist.add( button19);
+        buttonlist.add( button20);
+        buttonlist.add( button21);
+        buttonlist.add( button22);
+        buttonlist.add( button23);
+        buttonlist.add( button24);
+        buttonlist.add( button25);
+        return buttonlist;
+    }
+    public ArrayList<JTextArea> getTextlist() {
+        textlist.add(textArea1);
+        textlist.add(textArea2);
+        textlist.add(textArea3);
+        textlist.add(textArea4);
+        textlist.add(textArea5);
+        textlist.add(textArea6);
+        textlist.add(textArea7);
+        textlist.add(textArea8);
+        textlist.add(textArea9);
+        textlist.add(textArea10);
+        textlist.add(textArea11);
+        textlist.add(textArea12);
+        textlist.add(textArea13);
+        textlist.add(textArea14);
+        textlist.add(textArea15);
+        textlist.add(textArea16);
+        textlist.add(textArea17);
+        textlist.add(textArea18);
+        textlist.add(textArea19);
+        textlist.add(textArea20);
+        textlist.add(textArea21);
+        textlist.add(textArea22);
+        textlist.add(textArea23);
+        textlist.add(textArea24);
+        textlist.add(textArea25);
+        return textlist;
+    }
+    public ArrayList<JPanel> getPanellist() {
+        panelList.add(box1);
+        panelList.add(box2);
+        panelList.add(box3);
+        panelList.add(box4);
+        panelList.add(box5);
+        panelList.add(box6);
+        panelList.add(box7);
+        panelList.add(box8);
+        panelList.add(box9);
+        panelList.add(box10);
+        panelList.add(box11);
+        panelList.add(box12);
+        panelList.add(box13);
+        panelList.add(box14);
+        panelList.add(box15);
+        panelList.add(box16);
+        panelList.add(box17);
+        panelList.add(box18);
+        panelList.add(box19);
+        panelList.add(box20);
+        panelList.add(box21);
+        panelList.add(box22);
+        panelList.add(box23);
+        panelList.add(box24);
+        panelList.add(box25);
+        return panelList;
     }
     public int[] getColors()
     {
@@ -152,11 +310,13 @@ public class CrosswordGUI {
         {
             if( colorsArr[i] == 1)
             {
-                getbuttonlist().get(i).setBackground( dark);
+                getPanellist().get(i).setBackground(dark);
+                getTextlist().get(i).setBackground( dark);
+                getButtonlist().get(i).setBackground( dark);
             }
             if( numbersArr[i] != 0)
             {
-                getbuttonlist().get(i).setText("" + numbersArr[i]);
+                getButtonlist().get(i).setText("" + numbersArr[i]);
             }
         }
         getLog().append( "\nCrossword retrieval complete!");

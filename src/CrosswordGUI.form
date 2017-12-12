@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="CrosswordGUI">
-  <grid id="27dc6" binding="CWPanel" layout-manager="GridLayoutManager" row-count="6" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="CWPanel" layout-manager="GridLayoutManager" row-count="5" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="955" height="486"/>
+      <xy x="20" y="20" width="2979" height="634"/>
     </constraints>
     <properties>
       <background color="-5454688"/>
@@ -34,775 +34,10 @@
           </component>
         </children>
       </grid>
-      <grid id="d7be5" layout-manager="GridBagLayout">
-        <constraints>
-          <grid row="1" column="1" row-span="3" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
-            <minimum-size width="200" height="200"/>
-            <preferred-size width="200" height="200"/>
-            <maximum-size width="200" height="200"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-5454688"/>
-        </properties>
-        <border type="none"/>
-        <children>
-          <component id="e4556" class="javax.swing.JButton" binding="button1" default-binding="true">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="50" height="50"/>
-              </grid>
-              <gridbag weightx="1.0" weighty="1.0"/>
-            </constraints>
-            <properties>
-              <alignmentY value="0.0"/>
-              <background color="-725324"/>
-              <contentAreaFilled value="true"/>
-              <defaultCapable value="false"/>
-              <enabled value="false"/>
-              <focusPainted value="false"/>
-              <focusable value="false"/>
-              <foreground color="-8694194"/>
-              <hideActionText value="false"/>
-              <horizontalAlignment value="2"/>
-              <horizontalTextPosition value="2"/>
-              <iconTextGap value="0"/>
-              <label value=""/>
-              <margin top="0" left="0" bottom="0" right="0"/>
-              <requestFocusEnabled value="false"/>
-              <rolloverEnabled value="false"/>
-              <text value=""/>
-              <verifyInputWhenFocusTarget value="false"/>
-              <verticalAlignment value="1"/>
-              <verticalTextPosition value="1"/>
-            </properties>
-          </component>
-          <component id="837e2" class="javax.swing.JButton" binding="button2" default-binding="true">
-            <constraints>
-              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="50" height="50"/>
-              </grid>
-              <gridbag weightx="1.0" weighty="1.0"/>
-            </constraints>
-            <properties>
-              <alignmentY value="0.0"/>
-              <background color="-725324"/>
-              <contentAreaFilled value="true"/>
-              <defaultCapable value="false"/>
-              <enabled value="false"/>
-              <focusPainted value="false"/>
-              <focusable value="false"/>
-              <foreground color="-8694194"/>
-              <hideActionText value="false"/>
-              <horizontalAlignment value="2"/>
-              <horizontalTextPosition value="2"/>
-              <iconTextGap value="0"/>
-              <label value=""/>
-              <margin top="0" left="0" bottom="0" right="0"/>
-              <requestFocusEnabled value="false"/>
-              <rolloverEnabled value="false"/>
-              <text value=""/>
-              <verifyInputWhenFocusTarget value="false"/>
-              <verticalAlignment value="1"/>
-              <verticalTextPosition value="1"/>
-            </properties>
-          </component>
-          <component id="ad853" class="javax.swing.JButton" binding="button3" default-binding="true">
-            <constraints>
-              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="50" height="50"/>
-              </grid>
-              <gridbag weightx="1.0" weighty="1.0"/>
-            </constraints>
-            <properties>
-              <alignmentY value="0.0"/>
-              <background color="-725324"/>
-              <contentAreaFilled value="true"/>
-              <defaultCapable value="false"/>
-              <enabled value="false"/>
-              <focusPainted value="false"/>
-              <focusable value="false"/>
-              <foreground color="-8694194"/>
-              <hideActionText value="false"/>
-              <horizontalAlignment value="2"/>
-              <horizontalTextPosition value="2"/>
-              <iconTextGap value="0"/>
-              <label value=" "/>
-              <margin top="0" left="0" bottom="0" right="0"/>
-              <requestFocusEnabled value="false"/>
-              <rolloverEnabled value="false"/>
-              <text value=" "/>
-              <verifyInputWhenFocusTarget value="false"/>
-              <verticalAlignment value="1"/>
-              <verticalTextPosition value="1"/>
-            </properties>
-          </component>
-          <component id="d0e64" class="javax.swing.JButton" binding="button4" default-binding="true">
-            <constraints>
-              <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="50" height="50"/>
-              </grid>
-              <gridbag weightx="1.0" weighty="1.0"/>
-            </constraints>
-            <properties>
-              <alignmentY value="0.0"/>
-              <background color="-725324"/>
-              <contentAreaFilled value="true"/>
-              <defaultCapable value="false"/>
-              <enabled value="false"/>
-              <focusPainted value="false"/>
-              <focusable value="false"/>
-              <foreground color="-8694194"/>
-              <hideActionText value="false"/>
-              <horizontalAlignment value="2"/>
-              <horizontalTextPosition value="2"/>
-              <iconTextGap value="0"/>
-              <label value=" "/>
-              <margin top="0" left="0" bottom="0" right="0"/>
-              <requestFocusEnabled value="false"/>
-              <rolloverEnabled value="false"/>
-              <text value=" "/>
-              <verifyInputWhenFocusTarget value="false"/>
-              <verticalAlignment value="1"/>
-              <verticalTextPosition value="1"/>
-            </properties>
-          </component>
-          <component id="95a6d" class="javax.swing.JButton" binding="button5" default-binding="true">
-            <constraints>
-              <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="50" height="50"/>
-              </grid>
-              <gridbag weightx="1.0" weighty="1.0"/>
-            </constraints>
-            <properties>
-              <alignmentY value="0.0"/>
-              <background color="-725324"/>
-              <contentAreaFilled value="true"/>
-              <defaultCapable value="false"/>
-              <enabled value="false"/>
-              <focusPainted value="false"/>
-              <focusable value="false"/>
-              <foreground color="-8694194"/>
-              <hideActionText value="false"/>
-              <horizontalAlignment value="2"/>
-              <horizontalTextPosition value="2"/>
-              <iconTextGap value="0"/>
-              <label value=" "/>
-              <margin top="0" left="0" bottom="0" right="0"/>
-              <requestFocusEnabled value="false"/>
-              <rolloverEnabled value="false"/>
-              <text value=" "/>
-              <verifyInputWhenFocusTarget value="false"/>
-              <verticalAlignment value="1"/>
-              <verticalTextPosition value="1"/>
-            </properties>
-          </component>
-          <component id="325c8" class="javax.swing.JButton" binding="button7" default-binding="true">
-            <constraints>
-              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="50" height="50"/>
-              </grid>
-              <gridbag weightx="1.0" weighty="1.0"/>
-            </constraints>
-            <properties>
-              <alignmentY value="0.0"/>
-              <background color="-725324"/>
-              <contentAreaFilled value="true"/>
-              <defaultCapable value="false"/>
-              <enabled value="false"/>
-              <focusPainted value="false"/>
-              <focusable value="false"/>
-              <foreground color="-8694194"/>
-              <hideActionText value="false"/>
-              <horizontalAlignment value="2"/>
-              <horizontalTextPosition value="2"/>
-              <iconTextGap value="0"/>
-              <label value=" "/>
-              <margin top="0" left="0" bottom="0" right="0"/>
-              <requestFocusEnabled value="false"/>
-              <rolloverEnabled value="false"/>
-              <text value=" "/>
-              <verifyInputWhenFocusTarget value="false"/>
-              <verticalAlignment value="1"/>
-              <verticalTextPosition value="1"/>
-            </properties>
-          </component>
-          <component id="30d55" class="javax.swing.JButton" binding="button8" default-binding="true">
-            <constraints>
-              <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="50" height="50"/>
-              </grid>
-              <gridbag weightx="1.0" weighty="1.0"/>
-            </constraints>
-            <properties>
-              <alignmentY value="0.0"/>
-              <background color="-725324"/>
-              <contentAreaFilled value="true"/>
-              <defaultCapable value="false"/>
-              <enabled value="false"/>
-              <focusPainted value="false"/>
-              <focusable value="false"/>
-              <foreground color="-8694194"/>
-              <hideActionText value="false"/>
-              <horizontalAlignment value="2"/>
-              <horizontalTextPosition value="2"/>
-              <iconTextGap value="0"/>
-              <label value=" "/>
-              <margin top="0" left="0" bottom="0" right="0"/>
-              <requestFocusEnabled value="false"/>
-              <rolloverEnabled value="false"/>
-              <text value=" "/>
-              <verifyInputWhenFocusTarget value="false"/>
-              <verticalAlignment value="1"/>
-              <verticalTextPosition value="1"/>
-            </properties>
-          </component>
-          <component id="7807e" class="javax.swing.JButton" binding="button9" default-binding="true">
-            <constraints>
-              <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="50" height="50"/>
-              </grid>
-              <gridbag weightx="1.0" weighty="1.0"/>
-            </constraints>
-            <properties>
-              <alignmentY value="0.0"/>
-              <background color="-725324"/>
-              <contentAreaFilled value="true"/>
-              <defaultCapable value="false"/>
-              <enabled value="false"/>
-              <focusPainted value="false"/>
-              <focusable value="false"/>
-              <foreground color="-8694194"/>
-              <hideActionText value="false"/>
-              <horizontalAlignment value="2"/>
-              <horizontalTextPosition value="2"/>
-              <iconTextGap value="0"/>
-              <label value=" "/>
-              <margin top="0" left="0" bottom="0" right="0"/>
-              <requestFocusEnabled value="false"/>
-              <rolloverEnabled value="false"/>
-              <text value=" "/>
-              <verifyInputWhenFocusTarget value="false"/>
-              <verticalAlignment value="1"/>
-              <verticalTextPosition value="1"/>
-            </properties>
-          </component>
-          <component id="c7d4d" class="javax.swing.JButton" binding="button10" default-binding="true">
-            <constraints>
-              <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="50" height="50"/>
-              </grid>
-              <gridbag weightx="1.0" weighty="1.0"/>
-            </constraints>
-            <properties>
-              <alignmentY value="0.0"/>
-              <background color="-725324"/>
-              <contentAreaFilled value="true"/>
-              <defaultCapable value="false"/>
-              <enabled value="false"/>
-              <focusPainted value="false"/>
-              <focusable value="false"/>
-              <foreground color="-8694194"/>
-              <hideActionText value="false"/>
-              <horizontalAlignment value="2"/>
-              <horizontalTextPosition value="2"/>
-              <iconTextGap value="0"/>
-              <label value=" "/>
-              <margin top="0" left="0" bottom="0" right="0"/>
-              <requestFocusEnabled value="false"/>
-              <rolloverEnabled value="false"/>
-              <text value=" "/>
-              <verifyInputWhenFocusTarget value="false"/>
-              <verticalAlignment value="1"/>
-              <verticalTextPosition value="1"/>
-            </properties>
-          </component>
-          <component id="5b2ee" class="javax.swing.JButton" binding="button11" default-binding="true">
-            <constraints>
-              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="50" height="50"/>
-              </grid>
-              <gridbag weightx="1.0" weighty="1.0"/>
-            </constraints>
-            <properties>
-              <alignmentY value="0.0"/>
-              <background color="-725324"/>
-              <contentAreaFilled value="true"/>
-              <defaultCapable value="false"/>
-              <enabled value="false"/>
-              <focusPainted value="false"/>
-              <focusable value="false"/>
-              <foreground color="-8694194"/>
-              <hideActionText value="false"/>
-              <horizontalAlignment value="2"/>
-              <horizontalTextPosition value="2"/>
-              <iconTextGap value="0"/>
-              <label value=" "/>
-              <margin top="0" left="0" bottom="0" right="0"/>
-              <requestFocusEnabled value="false"/>
-              <rolloverEnabled value="false"/>
-              <text value=" "/>
-              <verifyInputWhenFocusTarget value="false"/>
-              <verticalAlignment value="1"/>
-              <verticalTextPosition value="1"/>
-            </properties>
-          </component>
-          <component id="2f573" class="javax.swing.JButton" binding="button12" default-binding="true">
-            <constraints>
-              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="50" height="50"/>
-              </grid>
-              <gridbag weightx="1.0" weighty="1.0"/>
-            </constraints>
-            <properties>
-              <alignmentY value="0.0"/>
-              <background color="-725324"/>
-              <contentAreaFilled value="true"/>
-              <defaultCapable value="false"/>
-              <enabled value="false"/>
-              <focusPainted value="false"/>
-              <focusable value="false"/>
-              <foreground color="-8694194"/>
-              <hideActionText value="false"/>
-              <horizontalAlignment value="2"/>
-              <horizontalTextPosition value="2"/>
-              <iconTextGap value="0"/>
-              <label value=" "/>
-              <margin top="0" left="0" bottom="0" right="0"/>
-              <requestFocusEnabled value="false"/>
-              <rolloverEnabled value="false"/>
-              <text value=" "/>
-              <verifyInputWhenFocusTarget value="false"/>
-              <verticalAlignment value="1"/>
-              <verticalTextPosition value="1"/>
-            </properties>
-          </component>
-          <component id="5e549" class="javax.swing.JButton" binding="button13" default-binding="true">
-            <constraints>
-              <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="50" height="50"/>
-              </grid>
-              <gridbag weightx="1.0" weighty="1.0"/>
-            </constraints>
-            <properties>
-              <alignmentY value="0.0"/>
-              <background color="-725324"/>
-              <contentAreaFilled value="true"/>
-              <defaultCapable value="false"/>
-              <enabled value="false"/>
-              <focusPainted value="false"/>
-              <focusable value="false"/>
-              <foreground color="-8694194"/>
-              <hideActionText value="false"/>
-              <horizontalAlignment value="2"/>
-              <horizontalTextPosition value="2"/>
-              <iconTextGap value="0"/>
-              <label value=" "/>
-              <margin top="0" left="0" bottom="0" right="0"/>
-              <requestFocusEnabled value="false"/>
-              <rolloverEnabled value="false"/>
-              <text value=" "/>
-              <verifyInputWhenFocusTarget value="false"/>
-              <verticalAlignment value="1"/>
-              <verticalTextPosition value="1"/>
-            </properties>
-          </component>
-          <component id="db0fd" class="javax.swing.JButton" binding="button14" default-binding="true">
-            <constraints>
-              <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="50" height="50"/>
-              </grid>
-              <gridbag weightx="1.0" weighty="1.0"/>
-            </constraints>
-            <properties>
-              <alignmentY value="0.0"/>
-              <background color="-725324"/>
-              <contentAreaFilled value="true"/>
-              <defaultCapable value="false"/>
-              <enabled value="false"/>
-              <focusPainted value="false"/>
-              <focusable value="false"/>
-              <foreground color="-8694194"/>
-              <hideActionText value="false"/>
-              <horizontalAlignment value="2"/>
-              <horizontalTextPosition value="2"/>
-              <iconTextGap value="0"/>
-              <label value=" "/>
-              <margin top="0" left="0" bottom="0" right="0"/>
-              <requestFocusEnabled value="false"/>
-              <rolloverEnabled value="false"/>
-              <text value=" "/>
-              <verifyInputWhenFocusTarget value="false"/>
-              <verticalAlignment value="1"/>
-              <verticalTextPosition value="1"/>
-            </properties>
-          </component>
-          <component id="d6a97" class="javax.swing.JButton" binding="button15" default-binding="true">
-            <constraints>
-              <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="50" height="50"/>
-              </grid>
-              <gridbag weightx="1.0" weighty="1.0"/>
-            </constraints>
-            <properties>
-              <alignmentY value="0.0"/>
-              <background color="-725324"/>
-              <contentAreaFilled value="true"/>
-              <defaultCapable value="false"/>
-              <enabled value="false"/>
-              <focusPainted value="false"/>
-              <focusable value="false"/>
-              <foreground color="-8694194"/>
-              <hideActionText value="false"/>
-              <horizontalAlignment value="2"/>
-              <horizontalTextPosition value="2"/>
-              <iconTextGap value="0"/>
-              <label value=" "/>
-              <margin top="0" left="0" bottom="0" right="0"/>
-              <requestFocusEnabled value="false"/>
-              <rolloverEnabled value="false"/>
-              <text value=" "/>
-              <verifyInputWhenFocusTarget value="false"/>
-              <verticalAlignment value="1"/>
-              <verticalTextPosition value="1"/>
-            </properties>
-          </component>
-          <component id="9642d" class="javax.swing.JButton" binding="button16" default-binding="true">
-            <constraints>
-              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="50" height="50"/>
-              </grid>
-              <gridbag weightx="1.0" weighty="1.0"/>
-            </constraints>
-            <properties>
-              <alignmentY value="0.0"/>
-              <background color="-725324"/>
-              <contentAreaFilled value="true"/>
-              <defaultCapable value="false"/>
-              <enabled value="false"/>
-              <focusPainted value="false"/>
-              <focusable value="false"/>
-              <foreground color="-8694194"/>
-              <hideActionText value="false"/>
-              <horizontalAlignment value="2"/>
-              <horizontalTextPosition value="2"/>
-              <iconTextGap value="0"/>
-              <label value=" "/>
-              <margin top="0" left="0" bottom="0" right="0"/>
-              <requestFocusEnabled value="false"/>
-              <rolloverEnabled value="false"/>
-              <text value=" "/>
-              <verifyInputWhenFocusTarget value="false"/>
-              <verticalAlignment value="1"/>
-              <verticalTextPosition value="1"/>
-            </properties>
-          </component>
-          <component id="9c45d" class="javax.swing.JButton" binding="button17" default-binding="true">
-            <constraints>
-              <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="50" height="50"/>
-              </grid>
-              <gridbag weightx="1.0" weighty="1.0"/>
-            </constraints>
-            <properties>
-              <alignmentY value="0.0"/>
-              <background color="-725324"/>
-              <contentAreaFilled value="true"/>
-              <defaultCapable value="false"/>
-              <enabled value="false"/>
-              <focusPainted value="false"/>
-              <focusable value="false"/>
-              <foreground color="-8694194"/>
-              <hideActionText value="false"/>
-              <horizontalAlignment value="2"/>
-              <horizontalTextPosition value="2"/>
-              <iconTextGap value="0"/>
-              <label value=" "/>
-              <margin top="0" left="0" bottom="0" right="0"/>
-              <requestFocusEnabled value="false"/>
-              <rolloverEnabled value="false"/>
-              <text value=" "/>
-              <verifyInputWhenFocusTarget value="false"/>
-              <verticalAlignment value="1"/>
-              <verticalTextPosition value="1"/>
-            </properties>
-          </component>
-          <component id="bf4f7" class="javax.swing.JButton" binding="button18" default-binding="true">
-            <constraints>
-              <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="50" height="50"/>
-              </grid>
-              <gridbag weightx="1.0" weighty="1.0"/>
-            </constraints>
-            <properties>
-              <alignmentY value="0.0"/>
-              <background color="-725324"/>
-              <contentAreaFilled value="true"/>
-              <defaultCapable value="false"/>
-              <enabled value="false"/>
-              <focusPainted value="false"/>
-              <focusable value="false"/>
-              <foreground color="-8694194"/>
-              <hideActionText value="false"/>
-              <horizontalAlignment value="2"/>
-              <horizontalTextPosition value="2"/>
-              <iconTextGap value="0"/>
-              <label value=" "/>
-              <margin top="0" left="0" bottom="0" right="0"/>
-              <requestFocusEnabled value="false"/>
-              <rolloverEnabled value="false"/>
-              <text value=" "/>
-              <verifyInputWhenFocusTarget value="false"/>
-              <verticalAlignment value="1"/>
-              <verticalTextPosition value="1"/>
-            </properties>
-          </component>
-          <component id="acbd2" class="javax.swing.JButton" binding="button19" default-binding="true">
-            <constraints>
-              <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="50" height="50"/>
-              </grid>
-              <gridbag weightx="1.0" weighty="1.0"/>
-            </constraints>
-            <properties>
-              <alignmentY value="0.0"/>
-              <background color="-725324"/>
-              <contentAreaFilled value="true"/>
-              <defaultCapable value="false"/>
-              <enabled value="false"/>
-              <focusPainted value="false"/>
-              <focusable value="false"/>
-              <foreground color="-8694194"/>
-              <hideActionText value="false"/>
-              <horizontalAlignment value="2"/>
-              <horizontalTextPosition value="2"/>
-              <iconTextGap value="0"/>
-              <label value=" "/>
-              <margin top="0" left="0" bottom="0" right="0"/>
-              <requestFocusEnabled value="false"/>
-              <rolloverEnabled value="false"/>
-              <text value=" "/>
-              <verifyInputWhenFocusTarget value="false"/>
-              <verticalAlignment value="1"/>
-              <verticalTextPosition value="1"/>
-            </properties>
-          </component>
-          <component id="409d" class="javax.swing.JButton" binding="button20" default-binding="true">
-            <constraints>
-              <grid row="3" column="4" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="50" height="50"/>
-              </grid>
-              <gridbag weightx="1.0" weighty="1.0"/>
-            </constraints>
-            <properties>
-              <alignmentY value="0.0"/>
-              <background color="-725324"/>
-              <contentAreaFilled value="true"/>
-              <defaultCapable value="false"/>
-              <enabled value="false"/>
-              <focusPainted value="false"/>
-              <focusable value="false"/>
-              <foreground color="-8694194"/>
-              <hideActionText value="false"/>
-              <horizontalAlignment value="2"/>
-              <horizontalTextPosition value="2"/>
-              <iconTextGap value="0"/>
-              <label value=" "/>
-              <margin top="0" left="0" bottom="0" right="0"/>
-              <requestFocusEnabled value="false"/>
-              <rolloverEnabled value="false"/>
-              <text value=" "/>
-              <verifyInputWhenFocusTarget value="false"/>
-              <verticalAlignment value="1"/>
-              <verticalTextPosition value="1"/>
-            </properties>
-          </component>
-          <component id="13741" class="javax.swing.JButton" binding="button21" default-binding="true">
-            <constraints>
-              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="50" height="50"/>
-              </grid>
-              <gridbag weightx="1.0" weighty="1.0"/>
-            </constraints>
-            <properties>
-              <alignmentY value="0.0"/>
-              <background color="-725324"/>
-              <contentAreaFilled value="true"/>
-              <defaultCapable value="false"/>
-              <enabled value="false"/>
-              <focusPainted value="false"/>
-              <focusable value="false"/>
-              <foreground color="-8694194"/>
-              <hideActionText value="false"/>
-              <horizontalAlignment value="2"/>
-              <horizontalTextPosition value="2"/>
-              <iconTextGap value="0"/>
-              <label value=" "/>
-              <margin top="0" left="0" bottom="0" right="0"/>
-              <requestFocusEnabled value="false"/>
-              <rolloverEnabled value="false"/>
-              <text value=" "/>
-              <verifyInputWhenFocusTarget value="false"/>
-              <verticalAlignment value="1"/>
-              <verticalTextPosition value="1"/>
-            </properties>
-          </component>
-          <component id="69ea5" class="javax.swing.JButton" binding="button22" default-binding="true">
-            <constraints>
-              <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="50" height="50"/>
-              </grid>
-              <gridbag weightx="1.0" weighty="1.0"/>
-            </constraints>
-            <properties>
-              <alignmentY value="0.0"/>
-              <background color="-725324"/>
-              <contentAreaFilled value="true"/>
-              <defaultCapable value="false"/>
-              <enabled value="false"/>
-              <focusPainted value="false"/>
-              <focusable value="false"/>
-              <foreground color="-8694194"/>
-              <hideActionText value="false"/>
-              <horizontalAlignment value="2"/>
-              <horizontalTextPosition value="2"/>
-              <iconTextGap value="0"/>
-              <label value=" "/>
-              <margin top="0" left="0" bottom="0" right="0"/>
-              <requestFocusEnabled value="false"/>
-              <rolloverEnabled value="false"/>
-              <text value=" "/>
-              <verifyInputWhenFocusTarget value="false"/>
-              <verticalAlignment value="1"/>
-              <verticalTextPosition value="1"/>
-            </properties>
-          </component>
-          <component id="1aa56" class="javax.swing.JButton" binding="button23" default-binding="true">
-            <constraints>
-              <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="50" height="50"/>
-              </grid>
-              <gridbag weightx="1.0" weighty="1.0"/>
-            </constraints>
-            <properties>
-              <alignmentY value="0.0"/>
-              <background color="-725324"/>
-              <contentAreaFilled value="true"/>
-              <defaultCapable value="false"/>
-              <enabled value="false"/>
-              <focusPainted value="false"/>
-              <focusable value="false"/>
-              <foreground color="-8694194"/>
-              <hideActionText value="false"/>
-              <horizontalAlignment value="2"/>
-              <horizontalTextPosition value="2"/>
-              <iconTextGap value="0"/>
-              <label value=" "/>
-              <margin top="0" left="0" bottom="0" right="0"/>
-              <requestFocusEnabled value="false"/>
-              <rolloverEnabled value="false"/>
-              <text value=" "/>
-              <verifyInputWhenFocusTarget value="false"/>
-              <verticalAlignment value="1"/>
-              <verticalTextPosition value="1"/>
-            </properties>
-          </component>
-          <component id="94d67" class="javax.swing.JButton" binding="button24" default-binding="true">
-            <constraints>
-              <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="50" height="50"/>
-              </grid>
-              <gridbag weightx="1.0" weighty="1.0"/>
-            </constraints>
-            <properties>
-              <alignmentY value="0.0"/>
-              <background color="-725324"/>
-              <contentAreaFilled value="true"/>
-              <defaultCapable value="false"/>
-              <enabled value="false"/>
-              <focusPainted value="false"/>
-              <focusable value="false"/>
-              <foreground color="-8694194"/>
-              <hideActionText value="false"/>
-              <horizontalAlignment value="2"/>
-              <horizontalTextPosition value="2"/>
-              <iconTextGap value="0"/>
-              <label value=" "/>
-              <margin top="0" left="0" bottom="0" right="0"/>
-              <requestFocusEnabled value="false"/>
-              <rolloverEnabled value="false"/>
-              <text value=" "/>
-              <verifyInputWhenFocusTarget value="false"/>
-              <verticalAlignment value="1"/>
-              <verticalTextPosition value="1"/>
-            </properties>
-          </component>
-          <component id="838b4" class="javax.swing.JButton" binding="button25" default-binding="true">
-            <constraints>
-              <grid row="4" column="4" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="50" height="50"/>
-              </grid>
-              <gridbag weightx="1.0" weighty="1.0"/>
-            </constraints>
-            <properties>
-              <alignmentY value="0.0"/>
-              <background color="-725324"/>
-              <contentAreaFilled value="true"/>
-              <defaultCapable value="false"/>
-              <enabled value="false"/>
-              <focusPainted value="false"/>
-              <focusable value="false"/>
-              <foreground color="-8694194"/>
-              <hideActionText value="false"/>
-              <horizontalAlignment value="2"/>
-              <horizontalTextPosition value="2"/>
-              <iconTextGap value="0"/>
-              <label value=" "/>
-              <margin top="0" left="0" bottom="0" right="0"/>
-              <requestFocusEnabled value="false"/>
-              <rolloverEnabled value="false"/>
-              <text value=" "/>
-              <verifyInputWhenFocusTarget value="false"/>
-              <verticalAlignment value="1"/>
-              <verticalTextPosition value="1"/>
-            </properties>
-          </component>
-          <component id="2cce9" class="javax.swing.JButton" binding="button6" default-binding="true">
-            <constraints>
-              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="50" height="50"/>
-              </grid>
-              <gridbag weightx="1.0" weighty="1.0"/>
-            </constraints>
-            <properties>
-              <alignmentY value="0.0"/>
-              <background color="-725324"/>
-              <contentAreaFilled value="true"/>
-              <defaultCapable value="false"/>
-              <enabled value="false"/>
-              <focusPainted value="false"/>
-              <focusable value="false"/>
-              <foreground color="-8694194"/>
-              <hideActionText value="false"/>
-              <horizontalAlignment value="2"/>
-              <horizontalTextPosition value="2"/>
-              <iconTextGap value="0"/>
-              <label value=" "/>
-              <margin top="0" left="0" bottom="0" right="0"/>
-              <requestFocusEnabled value="false"/>
-              <rolloverEnabled value="false"/>
-              <text value=" "/>
-              <verifyInputWhenFocusTarget value="false"/>
-              <verticalAlignment value="1"/>
-              <verticalTextPosition value="1"/>
-            </properties>
-          </component>
-        </children>
-      </grid>
       <grid id="30043" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="1" column="2" row-span="3" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="2" row-span="2" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-5454688"/>
@@ -901,7 +136,7 @@
       <grid id="89088" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="4" column="1" row-span="2" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="1" row-span="2" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-5454688"/>
@@ -978,7 +213,7 @@
       <grid id="f367d" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="1" column="0" row-span="2" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-5454688"/>
@@ -989,13 +224,1609 @@
       <grid id="aa13b" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="1" column="3" row-span="2" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-5454688"/>
         </properties>
         <border type="none"/>
         <children/>
+      </grid>
+      <grid id="46015" layout-manager="GridLayoutManager" row-count="5" column-count="5" same-size-horizontally="true" same-size-vertically="true" hgap="1" vgap="1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-8694194"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <grid id="d0469" binding="box1" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="50" height="50"/>
+                <preferred-size width="50" height="50"/>
+                <maximum-size width="50" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-725324"/>
+              <foreground color="-8694194"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="f8f80" class="javax.swing.JButton" binding="button1" default-binding="true">
+                <constraints border-constraint="First"/>
+                <properties>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="true"/>
+                  <enabled value="true"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <font name="Palatino Linotype" size="10" style="1"/>
+                  <foreground color="-8694194"/>
+                  <horizontalAlignment value="2"/>
+                  <horizontalTextPosition value="2"/>
+                  <iconTextGap value="0"/>
+                  <inheritsPopupMenu value="true"/>
+                  <label value=" "/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <name value=""/>
+                  <requestFocusEnabled value="false"/>
+                  <rolloverEnabled value="false"/>
+                  <text value=" "/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                  <verticalAlignment value="1"/>
+                  <verticalTextPosition value="1"/>
+                  <visible value="true"/>
+                </properties>
+              </component>
+              <component id="a1414" class="javax.swing.JTextArea" binding="textArea1" default-binding="true">
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <alignmentX value="0.0"/>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <caretColor color="-8694194"/>
+                  <columns value="1"/>
+                  <editable value="true"/>
+                  <enabled value="true"/>
+                  <font name="Palatino Linotype" size="24" style="1"/>
+                  <foreground color="-8694194"/>
+                  <lineWrap value="true"/>
+                  <margin top="0" left="15" bottom="0" right="0"/>
+                  <maximumSize width="1" height="1"/>
+                  <minimumSize width="1" height="1"/>
+                  <preferredSize width="36" height="33"/>
+                  <rows value="1"/>
+                  <selectionColor color="-11171459"/>
+                  <text value=""/>
+                  <wrapStyleWord value="true"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="659d9" binding="box2" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="50" height="50"/>
+                <preferred-size width="50" height="50"/>
+                <maximum-size width="50" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-725324"/>
+              <foreground color="-8694194"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="40fe7" class="javax.swing.JButton" binding="button2" default-binding="true">
+                <constraints border-constraint="First"/>
+                <properties>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="true"/>
+                  <enabled value="true"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <font name="Palatino Linotype" size="10" style="1"/>
+                  <foreground color="-8694194"/>
+                  <horizontalAlignment value="2"/>
+                  <horizontalTextPosition value="2"/>
+                  <iconTextGap value="0"/>
+                  <inheritsPopupMenu value="true"/>
+                  <label value=" "/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <name value="1"/>
+                  <requestFocusEnabled value="false"/>
+                  <rolloverEnabled value="false"/>
+                  <text value=" "/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                  <verticalAlignment value="1"/>
+                  <verticalTextPosition value="1"/>
+                  <visible value="true"/>
+                </properties>
+              </component>
+              <component id="c5247" class="javax.swing.JTextArea" binding="textArea2" default-binding="true">
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <alignmentX value="1.0"/>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <caretColor color="-8694194"/>
+                  <columns value="1"/>
+                  <editable value="true"/>
+                  <enabled value="true"/>
+                  <font name="Palatino Linotype" size="24" style="1"/>
+                  <foreground color="-8694194"/>
+                  <lineWrap value="true"/>
+                  <margin top="0" left="15" bottom="0" right="0"/>
+                  <preferredSize width="36" height="33"/>
+                  <rows value="1"/>
+                  <selectionColor color="-11171459"/>
+                  <wrapStyleWord value="true"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="70083" binding="box3" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="50" height="50"/>
+                <preferred-size width="50" height="50"/>
+                <maximum-size width="50" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-725324"/>
+              <foreground color="-8694194"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="bae67" class="javax.swing.JButton" binding="button3" default-binding="true">
+                <constraints border-constraint="First"/>
+                <properties>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="true"/>
+                  <enabled value="true"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <font name="Palatino Linotype" size="10" style="1"/>
+                  <foreground color="-8694194"/>
+                  <horizontalAlignment value="2"/>
+                  <horizontalTextPosition value="2"/>
+                  <iconTextGap value="0"/>
+                  <inheritsPopupMenu value="true"/>
+                  <label value=" "/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <name value="1"/>
+                  <requestFocusEnabled value="false"/>
+                  <rolloverEnabled value="false"/>
+                  <text value=" "/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                  <verticalAlignment value="1"/>
+                  <verticalTextPosition value="1"/>
+                  <visible value="true"/>
+                </properties>
+              </component>
+              <component id="c6269" class="javax.swing.JTextArea" binding="textArea3" default-binding="true">
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <alignmentX value="1.0"/>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <caretColor color="-8694194"/>
+                  <columns value="1"/>
+                  <editable value="true"/>
+                  <font name="Palatino Linotype" size="24" style="1"/>
+                  <foreground color="-8694194"/>
+                  <lineWrap value="true"/>
+                  <margin top="0" left="15" bottom="0" right="0"/>
+                  <preferredSize width="36" height="33"/>
+                  <rows value="1"/>
+                  <selectionColor color="-11171459"/>
+                  <wrapStyleWord value="true"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="a8424" binding="box4" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="50" height="50"/>
+                <preferred-size width="50" height="50"/>
+                <maximum-size width="50" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-725324"/>
+              <foreground color="-8694194"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="f8ea" class="javax.swing.JButton" binding="button4" default-binding="true">
+                <constraints border-constraint="First"/>
+                <properties>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="true"/>
+                  <enabled value="true"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <font name="Palatino Linotype" size="10" style="1"/>
+                  <foreground color="-8694194"/>
+                  <horizontalAlignment value="2"/>
+                  <horizontalTextPosition value="2"/>
+                  <iconTextGap value="0"/>
+                  <inheritsPopupMenu value="true"/>
+                  <label value=" "/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <name value="1"/>
+                  <requestFocusEnabled value="false"/>
+                  <rolloverEnabled value="false"/>
+                  <text value=" "/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                  <verticalAlignment value="1"/>
+                  <verticalTextPosition value="1"/>
+                  <visible value="true"/>
+                </properties>
+              </component>
+              <component id="3b4e3" class="javax.swing.JTextArea" binding="textArea4" default-binding="true">
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <alignmentX value="1.0"/>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <caretColor color="-8694194"/>
+                  <columns value="1"/>
+                  <font name="Palatino Linotype" size="24" style="1"/>
+                  <foreground color="-8694194"/>
+                  <lineWrap value="true"/>
+                  <margin top="0" left="15" bottom="0" right="0"/>
+                  <preferredSize width="36" height="33"/>
+                  <rows value="1"/>
+                  <selectionColor color="-11171459"/>
+                  <wrapStyleWord value="true"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="cbb7c" binding="box5" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="50" height="50"/>
+                <preferred-size width="50" height="50"/>
+                <maximum-size width="50" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-725324"/>
+              <foreground color="-8694194"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="d8c2f" class="javax.swing.JButton" binding="button5" default-binding="true">
+                <constraints border-constraint="First"/>
+                <properties>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="true"/>
+                  <enabled value="true"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <font name="Palatino Linotype" size="10" style="1"/>
+                  <foreground color="-8694194"/>
+                  <horizontalAlignment value="2"/>
+                  <horizontalTextPosition value="2"/>
+                  <iconTextGap value="0"/>
+                  <inheritsPopupMenu value="true"/>
+                  <label value=" "/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <name value="1"/>
+                  <requestFocusEnabled value="false"/>
+                  <rolloverEnabled value="false"/>
+                  <text value=" "/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                  <verticalAlignment value="1"/>
+                  <verticalTextPosition value="1"/>
+                  <visible value="true"/>
+                </properties>
+              </component>
+              <component id="1829d" class="javax.swing.JTextArea" binding="textArea5" default-binding="true">
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <alignmentX value="1.0"/>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <caretColor color="-8694194"/>
+                  <columns value="1"/>
+                  <font name="Palatino Linotype" size="24" style="1"/>
+                  <foreground color="-8694194"/>
+                  <lineWrap value="true"/>
+                  <margin top="0" left="15" bottom="0" right="0"/>
+                  <preferredSize width="36" height="33"/>
+                  <rows value="1"/>
+                  <selectionColor color="-11171459"/>
+                  <wrapStyleWord value="true"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="8a807" binding="box6" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="50" height="50"/>
+                <preferred-size width="50" height="50"/>
+                <maximum-size width="50" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-725324"/>
+              <foreground color="-8694194"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="129a5" class="javax.swing.JButton" binding="button6" default-binding="true">
+                <constraints border-constraint="First"/>
+                <properties>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="true"/>
+                  <enabled value="true"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <font name="Palatino Linotype" size="10" style="1"/>
+                  <foreground color="-8694194"/>
+                  <horizontalAlignment value="2"/>
+                  <horizontalTextPosition value="2"/>
+                  <iconTextGap value="0"/>
+                  <inheritsPopupMenu value="true"/>
+                  <label value=" "/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <name value="1"/>
+                  <requestFocusEnabled value="false"/>
+                  <rolloverEnabled value="false"/>
+                  <text value=" "/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                  <verticalAlignment value="1"/>
+                  <verticalTextPosition value="1"/>
+                  <visible value="true"/>
+                </properties>
+              </component>
+              <component id="f5d50" class="javax.swing.JTextArea" binding="textArea6" default-binding="true">
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <alignmentX value="1.0"/>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <caretColor color="-8694194"/>
+                  <columns value="1"/>
+                  <font name="Palatino Linotype" size="24" style="1"/>
+                  <foreground color="-8694194"/>
+                  <lineWrap value="true"/>
+                  <margin top="0" left="15" bottom="0" right="0"/>
+                  <preferredSize width="36" height="33"/>
+                  <rows value="1"/>
+                  <selectionColor color="-11171459"/>
+                  <wrapStyleWord value="true"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="dba24" binding="box7" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="50" height="50"/>
+                <preferred-size width="50" height="50"/>
+                <maximum-size width="50" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-725324"/>
+              <foreground color="-8694194"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="2335" class="javax.swing.JButton" binding="button7" default-binding="true">
+                <constraints border-constraint="First"/>
+                <properties>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="true"/>
+                  <enabled value="true"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <font name="Palatino Linotype" size="10" style="1"/>
+                  <foreground color="-8694194"/>
+                  <horizontalAlignment value="2"/>
+                  <horizontalTextPosition value="2"/>
+                  <iconTextGap value="0"/>
+                  <inheritsPopupMenu value="true"/>
+                  <label value=" "/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <name value="1"/>
+                  <requestFocusEnabled value="false"/>
+                  <rolloverEnabled value="false"/>
+                  <text value=" "/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                  <verticalAlignment value="1"/>
+                  <verticalTextPosition value="1"/>
+                  <visible value="true"/>
+                </properties>
+              </component>
+              <component id="c0e05" class="javax.swing.JTextArea" binding="textArea7" default-binding="true">
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <alignmentX value="1.0"/>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <caretColor color="-8694194"/>
+                  <columns value="1"/>
+                  <font name="Palatino Linotype" size="24" style="1"/>
+                  <foreground color="-8694194"/>
+                  <lineWrap value="true"/>
+                  <margin top="0" left="15" bottom="0" right="0"/>
+                  <preferredSize width="36" height="33"/>
+                  <rows value="1"/>
+                  <selectionColor color="-11171459"/>
+                  <wrapStyleWord value="true"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="a557e" binding="box8" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="50" height="50"/>
+                <preferred-size width="50" height="50"/>
+                <maximum-size width="50" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-725324"/>
+              <foreground color="-8694194"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="b4ac0" class="javax.swing.JButton" binding="button8" default-binding="true">
+                <constraints border-constraint="First"/>
+                <properties>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="true"/>
+                  <enabled value="true"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <font name="Palatino Linotype" size="10" style="1"/>
+                  <foreground color="-8694194"/>
+                  <horizontalAlignment value="2"/>
+                  <horizontalTextPosition value="2"/>
+                  <iconTextGap value="0"/>
+                  <inheritsPopupMenu value="true"/>
+                  <label value=" "/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <name value="1"/>
+                  <requestFocusEnabled value="false"/>
+                  <rolloverEnabled value="false"/>
+                  <text value=" "/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                  <verticalAlignment value="1"/>
+                  <verticalTextPosition value="1"/>
+                  <visible value="true"/>
+                </properties>
+              </component>
+              <component id="a5fba" class="javax.swing.JTextArea" binding="textArea8" default-binding="true">
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <alignmentX value="1.0"/>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <caretColor color="-8694194"/>
+                  <columns value="1"/>
+                  <font name="Palatino Linotype" size="24" style="1"/>
+                  <foreground color="-8694194"/>
+                  <lineWrap value="true"/>
+                  <margin top="0" left="15" bottom="0" right="0"/>
+                  <preferredSize width="36" height="33"/>
+                  <rows value="1"/>
+                  <selectionColor color="-11171459"/>
+                  <wrapStyleWord value="true"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="85a24" binding="box9" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="50" height="50"/>
+                <preferred-size width="50" height="50"/>
+                <maximum-size width="50" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-725324"/>
+              <foreground color="-8694194"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="18242" class="javax.swing.JButton" binding="button9" default-binding="true">
+                <constraints border-constraint="First"/>
+                <properties>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="true"/>
+                  <enabled value="true"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <font name="Palatino Linotype" size="10" style="1"/>
+                  <foreground color="-8694194"/>
+                  <horizontalAlignment value="2"/>
+                  <horizontalTextPosition value="2"/>
+                  <iconTextGap value="0"/>
+                  <inheritsPopupMenu value="true"/>
+                  <label value=" "/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <name value="1"/>
+                  <requestFocusEnabled value="false"/>
+                  <rolloverEnabled value="false"/>
+                  <text value=" "/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                  <verticalAlignment value="1"/>
+                  <verticalTextPosition value="1"/>
+                  <visible value="true"/>
+                </properties>
+              </component>
+              <component id="b2d9d" class="javax.swing.JTextArea" binding="textArea9" default-binding="true">
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <alignmentX value="1.0"/>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <caretColor color="-8694194"/>
+                  <columns value="1"/>
+                  <font name="Palatino Linotype" size="24" style="1"/>
+                  <foreground color="-8694194"/>
+                  <lineWrap value="true"/>
+                  <margin top="0" left="15" bottom="0" right="0"/>
+                  <preferredSize width="36" height="33"/>
+                  <rows value="1"/>
+                  <selectionColor color="-11171459"/>
+                  <wrapStyleWord value="true"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="c3ca5" binding="box10" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="50" height="50"/>
+                <preferred-size width="50" height="50"/>
+                <maximum-size width="50" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-725324"/>
+              <foreground color="-8694194"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="6bf2" class="javax.swing.JButton" binding="button10" default-binding="true">
+                <constraints border-constraint="First"/>
+                <properties>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="true"/>
+                  <enabled value="true"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <font name="Palatino Linotype" size="10" style="1"/>
+                  <foreground color="-8694194"/>
+                  <horizontalAlignment value="2"/>
+                  <horizontalTextPosition value="2"/>
+                  <iconTextGap value="0"/>
+                  <inheritsPopupMenu value="true"/>
+                  <label value=" "/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <name value="1"/>
+                  <requestFocusEnabled value="false"/>
+                  <rolloverEnabled value="false"/>
+                  <text value=" "/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                  <verticalAlignment value="1"/>
+                  <verticalTextPosition value="1"/>
+                  <visible value="true"/>
+                </properties>
+              </component>
+              <component id="af2e0" class="javax.swing.JTextArea" binding="textArea10" default-binding="true">
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <alignmentX value="1.0"/>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <caretColor color="-8694194"/>
+                  <columns value="1"/>
+                  <font name="Palatino Linotype" size="24" style="1"/>
+                  <foreground color="-8694194"/>
+                  <lineWrap value="true"/>
+                  <margin top="0" left="15" bottom="0" right="0"/>
+                  <preferredSize width="36" height="33"/>
+                  <rows value="1"/>
+                  <selectionColor color="-11171459"/>
+                  <wrapStyleWord value="true"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="363e8" binding="box11" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="50" height="50"/>
+                <preferred-size width="50" height="50"/>
+                <maximum-size width="50" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-725324"/>
+              <foreground color="-8694194"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="db9ff" class="javax.swing.JButton" binding="button11" default-binding="true">
+                <constraints border-constraint="First"/>
+                <properties>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="true"/>
+                  <enabled value="true"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <font name="Palatino Linotype" size="10" style="1"/>
+                  <foreground color="-8694194"/>
+                  <horizontalAlignment value="2"/>
+                  <horizontalTextPosition value="2"/>
+                  <iconTextGap value="0"/>
+                  <inheritsPopupMenu value="true"/>
+                  <label value=" "/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <name value="1"/>
+                  <requestFocusEnabled value="false"/>
+                  <rolloverEnabled value="false"/>
+                  <text value=" "/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                  <verticalAlignment value="1"/>
+                  <verticalTextPosition value="1"/>
+                  <visible value="true"/>
+                </properties>
+              </component>
+              <component id="13488" class="javax.swing.JTextArea" binding="textArea11" default-binding="true">
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <alignmentX value="1.0"/>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <caretColor color="-8694194"/>
+                  <columns value="1"/>
+                  <font name="Palatino Linotype" size="24" style="1"/>
+                  <foreground color="-8694194"/>
+                  <lineWrap value="true"/>
+                  <margin top="0" left="15" bottom="0" right="0"/>
+                  <preferredSize width="36" height="33"/>
+                  <rows value="1"/>
+                  <selectionColor color="-11171459"/>
+                  <wrapStyleWord value="true"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="82b87" binding="box12" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="50" height="50"/>
+                <preferred-size width="50" height="50"/>
+                <maximum-size width="50" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-725324"/>
+              <foreground color="-8694194"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="91244" class="javax.swing.JButton" binding="button12" default-binding="true">
+                <constraints border-constraint="First"/>
+                <properties>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="true"/>
+                  <enabled value="true"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <font name="Palatino Linotype" size="10" style="1"/>
+                  <foreground color="-8694194"/>
+                  <horizontalAlignment value="2"/>
+                  <horizontalTextPosition value="2"/>
+                  <iconTextGap value="0"/>
+                  <inheritsPopupMenu value="true"/>
+                  <label value=" "/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <name value="1"/>
+                  <requestFocusEnabled value="false"/>
+                  <rolloverEnabled value="false"/>
+                  <text value=" "/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                  <verticalAlignment value="1"/>
+                  <verticalTextPosition value="1"/>
+                  <visible value="true"/>
+                </properties>
+              </component>
+              <component id="28843" class="javax.swing.JTextArea" binding="textArea12" default-binding="true">
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <alignmentX value="1.0"/>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <caretColor color="-8694194"/>
+                  <columns value="1"/>
+                  <font name="Palatino Linotype" size="24" style="1"/>
+                  <foreground color="-8694194"/>
+                  <lineWrap value="true"/>
+                  <margin top="0" left="15" bottom="0" right="0"/>
+                  <preferredSize width="36" height="33"/>
+                  <rows value="1"/>
+                  <selectionColor color="-11171459"/>
+                  <wrapStyleWord value="true"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="5af6b" binding="box13" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="50" height="50"/>
+                <preferred-size width="50" height="50"/>
+                <maximum-size width="50" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-725324"/>
+              <foreground color="-8694194"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="a6f64" class="javax.swing.JButton" binding="button13" default-binding="true">
+                <constraints border-constraint="First"/>
+                <properties>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="true"/>
+                  <enabled value="true"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <font name="Palatino Linotype" size="10" style="1"/>
+                  <foreground color="-8694194"/>
+                  <horizontalAlignment value="2"/>
+                  <horizontalTextPosition value="2"/>
+                  <iconTextGap value="0"/>
+                  <inheritsPopupMenu value="true"/>
+                  <label value=" "/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <name value="1"/>
+                  <requestFocusEnabled value="false"/>
+                  <rolloverEnabled value="false"/>
+                  <text value=" "/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                  <verticalAlignment value="1"/>
+                  <verticalTextPosition value="1"/>
+                  <visible value="true"/>
+                </properties>
+              </component>
+              <component id="8c7ae" class="javax.swing.JTextArea" binding="textArea13" default-binding="true">
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <alignmentX value="1.0"/>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <caretColor color="-8694194"/>
+                  <columns value="1"/>
+                  <font name="Palatino Linotype" size="24" style="1"/>
+                  <foreground color="-8694194"/>
+                  <lineWrap value="true"/>
+                  <margin top="0" left="15" bottom="0" right="0"/>
+                  <preferredSize width="36" height="33"/>
+                  <rows value="1"/>
+                  <selectionColor color="-11171459"/>
+                  <wrapStyleWord value="true"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="76877" binding="box14" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="50" height="50"/>
+                <preferred-size width="50" height="50"/>
+                <maximum-size width="50" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-725324"/>
+              <foreground color="-8694194"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="d67a4" class="javax.swing.JButton" binding="button14" default-binding="true">
+                <constraints border-constraint="First"/>
+                <properties>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="true"/>
+                  <enabled value="true"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <font name="Palatino Linotype" size="10" style="1"/>
+                  <foreground color="-8694194"/>
+                  <horizontalAlignment value="2"/>
+                  <horizontalTextPosition value="2"/>
+                  <iconTextGap value="0"/>
+                  <inheritsPopupMenu value="true"/>
+                  <label value=" "/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <name value="1"/>
+                  <requestFocusEnabled value="false"/>
+                  <rolloverEnabled value="false"/>
+                  <text value=" "/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                  <verticalAlignment value="1"/>
+                  <verticalTextPosition value="1"/>
+                  <visible value="true"/>
+                </properties>
+              </component>
+              <component id="f424" class="javax.swing.JTextArea" binding="textArea14" default-binding="true">
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <alignmentX value="1.0"/>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <caretColor color="-8694194"/>
+                  <columns value="1"/>
+                  <font name="Palatino Linotype" size="24" style="1"/>
+                  <foreground color="-8694194"/>
+                  <lineWrap value="true"/>
+                  <margin top="0" left="15" bottom="0" right="0"/>
+                  <preferredSize width="36" height="33"/>
+                  <rows value="1"/>
+                  <selectionColor color="-11171459"/>
+                  <wrapStyleWord value="true"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="b7806" binding="box15" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="50" height="50"/>
+                <preferred-size width="50" height="50"/>
+                <maximum-size width="50" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-725324"/>
+              <foreground color="-8694194"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="e86c6" class="javax.swing.JButton" binding="button15" default-binding="true">
+                <constraints border-constraint="First"/>
+                <properties>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="true"/>
+                  <enabled value="true"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <font name="Palatino Linotype" size="10" style="1"/>
+                  <foreground color="-8694194"/>
+                  <horizontalAlignment value="2"/>
+                  <horizontalTextPosition value="2"/>
+                  <iconTextGap value="0"/>
+                  <inheritsPopupMenu value="true"/>
+                  <label value=" "/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <name value="1"/>
+                  <requestFocusEnabled value="false"/>
+                  <rolloverEnabled value="false"/>
+                  <text value=" "/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                  <verticalAlignment value="1"/>
+                  <verticalTextPosition value="1"/>
+                  <visible value="true"/>
+                </properties>
+              </component>
+              <component id="15f8c" class="javax.swing.JTextArea" binding="textArea15" default-binding="true">
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <alignmentX value="1.0"/>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <caretColor color="-8694194"/>
+                  <columns value="1"/>
+                  <font name="Palatino Linotype" size="24" style="1"/>
+                  <foreground color="-8694194"/>
+                  <lineWrap value="true"/>
+                  <margin top="0" left="15" bottom="0" right="0"/>
+                  <preferredSize width="36" height="33"/>
+                  <rows value="1"/>
+                  <selectionColor color="-11171459"/>
+                  <wrapStyleWord value="true"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="ffc19" binding="box16" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="2" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="50" height="50"/>
+                <preferred-size width="50" height="50"/>
+                <maximum-size width="50" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-725324"/>
+              <foreground color="-8694194"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="249a3" class="javax.swing.JButton" binding="button16" default-binding="true">
+                <constraints border-constraint="First"/>
+                <properties>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="true"/>
+                  <enabled value="true"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <font name="Palatino Linotype" size="10" style="1"/>
+                  <foreground color="-8694194"/>
+                  <horizontalAlignment value="2"/>
+                  <horizontalTextPosition value="2"/>
+                  <iconTextGap value="0"/>
+                  <inheritsPopupMenu value="true"/>
+                  <label value=" "/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <name value="1"/>
+                  <requestFocusEnabled value="false"/>
+                  <rolloverEnabled value="false"/>
+                  <text value=" "/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                  <verticalAlignment value="1"/>
+                  <verticalTextPosition value="1"/>
+                  <visible value="true"/>
+                </properties>
+              </component>
+              <component id="bcc46" class="javax.swing.JTextArea" binding="textArea16" default-binding="true">
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <alignmentX value="1.0"/>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <caretColor color="-8694194"/>
+                  <columns value="1"/>
+                  <font name="Palatino Linotype" size="24" style="1"/>
+                  <foreground color="-8694194"/>
+                  <lineWrap value="true"/>
+                  <margin top="0" left="15" bottom="0" right="0"/>
+                  <preferredSize width="36" height="33"/>
+                  <rows value="1"/>
+                  <selectionColor color="-11171459"/>
+                  <wrapStyleWord value="true"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="8daeb" binding="box17" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="50" height="50"/>
+                <preferred-size width="50" height="50"/>
+                <maximum-size width="50" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-725324"/>
+              <foreground color="-8694194"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="c08c6" class="javax.swing.JButton" binding="button17" default-binding="true">
+                <constraints border-constraint="First"/>
+                <properties>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="true"/>
+                  <enabled value="true"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <font name="Palatino Linotype" size="10" style="1"/>
+                  <foreground color="-8694194"/>
+                  <horizontalAlignment value="2"/>
+                  <horizontalTextPosition value="2"/>
+                  <iconTextGap value="0"/>
+                  <inheritsPopupMenu value="true"/>
+                  <label value=" "/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <name value="1"/>
+                  <requestFocusEnabled value="false"/>
+                  <rolloverEnabled value="false"/>
+                  <text value=" "/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                  <verticalAlignment value="1"/>
+                  <verticalTextPosition value="1"/>
+                  <visible value="true"/>
+                </properties>
+              </component>
+              <component id="5993e" class="javax.swing.JTextArea" binding="textArea17" default-binding="true">
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <alignmentX value="1.0"/>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <caretColor color="-8694194"/>
+                  <columns value="1"/>
+                  <font name="Palatino Linotype" size="24" style="1"/>
+                  <foreground color="-8694194"/>
+                  <lineWrap value="true"/>
+                  <margin top="0" left="15" bottom="0" right="0"/>
+                  <preferredSize width="36" height="33"/>
+                  <rows value="1"/>
+                  <selectionColor color="-11171459"/>
+                  <wrapStyleWord value="true"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="ad858" binding="box18" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="50" height="50"/>
+                <preferred-size width="50" height="50"/>
+                <maximum-size width="50" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-725324"/>
+              <foreground color="-8694194"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="d9884" class="javax.swing.JButton" binding="button18" default-binding="true">
+                <constraints border-constraint="First"/>
+                <properties>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="true"/>
+                  <enabled value="true"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <font name="Palatino Linotype" size="10" style="1"/>
+                  <foreground color="-8694194"/>
+                  <horizontalAlignment value="2"/>
+                  <horizontalTextPosition value="2"/>
+                  <iconTextGap value="0"/>
+                  <inheritsPopupMenu value="true"/>
+                  <label value=" "/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <name value="1"/>
+                  <requestFocusEnabled value="false"/>
+                  <rolloverEnabled value="false"/>
+                  <text value=" "/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                  <verticalAlignment value="1"/>
+                  <verticalTextPosition value="1"/>
+                  <visible value="true"/>
+                </properties>
+              </component>
+              <component id="e294e" class="javax.swing.JTextArea" binding="textArea18" default-binding="true">
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <alignmentX value="1.0"/>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <caretColor color="-8694194"/>
+                  <columns value="1"/>
+                  <font name="Palatino Linotype" size="24" style="1"/>
+                  <foreground color="-8694194"/>
+                  <lineWrap value="true"/>
+                  <margin top="0" left="15" bottom="0" right="0"/>
+                  <preferredSize width="36" height="33"/>
+                  <rows value="1"/>
+                  <selectionColor color="-11171459"/>
+                  <wrapStyleWord value="true"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="81db6" binding="box19" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="50" height="50"/>
+                <preferred-size width="50" height="50"/>
+                <maximum-size width="50" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-725324"/>
+              <foreground color="-8694194"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="215b2" class="javax.swing.JButton" binding="button19" default-binding="true">
+                <constraints border-constraint="First"/>
+                <properties>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="true"/>
+                  <enabled value="true"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <font name="Palatino Linotype" size="10" style="1"/>
+                  <foreground color="-8694194"/>
+                  <horizontalAlignment value="2"/>
+                  <horizontalTextPosition value="2"/>
+                  <iconTextGap value="0"/>
+                  <inheritsPopupMenu value="true"/>
+                  <label value=" "/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <name value="1"/>
+                  <requestFocusEnabled value="false"/>
+                  <rolloverEnabled value="false"/>
+                  <text value=" "/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                  <verticalAlignment value="1"/>
+                  <verticalTextPosition value="1"/>
+                  <visible value="true"/>
+                </properties>
+              </component>
+              <component id="18195" class="javax.swing.JTextArea" binding="textArea19" default-binding="true">
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <alignmentX value="1.0"/>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <caretColor color="-8694194"/>
+                  <columns value="1"/>
+                  <font name="Palatino Linotype" size="24" style="1"/>
+                  <foreground color="-8694194"/>
+                  <lineWrap value="true"/>
+                  <margin top="0" left="15" bottom="0" right="0"/>
+                  <preferredSize width="36" height="33"/>
+                  <rows value="1"/>
+                  <selectionColor color="-11171459"/>
+                  <wrapStyleWord value="true"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="3cc3a" binding="box20" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="3" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="50" height="50"/>
+                <preferred-size width="50" height="50"/>
+                <maximum-size width="50" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-725324"/>
+              <foreground color="-8694194"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="2f7c9" class="javax.swing.JButton" binding="button20" default-binding="true">
+                <constraints border-constraint="First"/>
+                <properties>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="true"/>
+                  <enabled value="true"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <font name="Palatino Linotype" size="10" style="1"/>
+                  <foreground color="-8694194"/>
+                  <horizontalAlignment value="2"/>
+                  <horizontalTextPosition value="2"/>
+                  <iconTextGap value="0"/>
+                  <inheritsPopupMenu value="true"/>
+                  <label value=" "/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <name value="1"/>
+                  <requestFocusEnabled value="false"/>
+                  <rolloverEnabled value="false"/>
+                  <text value=" "/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                  <verticalAlignment value="1"/>
+                  <verticalTextPosition value="1"/>
+                  <visible value="true"/>
+                </properties>
+              </component>
+              <component id="29c4e" class="javax.swing.JTextArea" binding="textArea20" default-binding="true">
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <alignmentX value="1.0"/>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <caretColor color="-8694194"/>
+                  <columns value="1"/>
+                  <font name="Palatino Linotype" size="24" style="1"/>
+                  <foreground color="-8694194"/>
+                  <lineWrap value="true"/>
+                  <margin top="0" left="15" bottom="0" right="0"/>
+                  <preferredSize width="36" height="33"/>
+                  <rows value="1"/>
+                  <selectionColor color="-11171459"/>
+                  <wrapStyleWord value="true"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="cc35e" binding="box21" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="50" height="50"/>
+                <preferred-size width="50" height="50"/>
+                <maximum-size width="50" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-725324"/>
+              <foreground color="-8694194"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="37fec" class="javax.swing.JButton" binding="button21" default-binding="true">
+                <constraints border-constraint="First"/>
+                <properties>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="true"/>
+                  <enabled value="true"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <font name="Palatino Linotype" size="10" style="1"/>
+                  <foreground color="-8694194"/>
+                  <horizontalAlignment value="2"/>
+                  <horizontalTextPosition value="2"/>
+                  <iconTextGap value="0"/>
+                  <inheritsPopupMenu value="true"/>
+                  <label value=" "/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <name value="1"/>
+                  <requestFocusEnabled value="false"/>
+                  <rolloverEnabled value="false"/>
+                  <text value=" "/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                  <verticalAlignment value="1"/>
+                  <verticalTextPosition value="1"/>
+                  <visible value="true"/>
+                </properties>
+              </component>
+              <component id="c38c1" class="javax.swing.JTextArea" binding="textArea21" default-binding="true">
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <alignmentX value="1.0"/>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <caretColor color="-8694194"/>
+                  <columns value="1"/>
+                  <font name="Palatino Linotype" size="24" style="1"/>
+                  <foreground color="-8694194"/>
+                  <lineWrap value="true"/>
+                  <margin top="0" left="15" bottom="0" right="0"/>
+                  <preferredSize width="36" height="33"/>
+                  <rows value="1"/>
+                  <selectionColor color="-11171459"/>
+                  <wrapStyleWord value="true"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="d4cf4" binding="box22" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="50" height="50"/>
+                <preferred-size width="50" height="50"/>
+                <maximum-size width="50" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-725324"/>
+              <foreground color="-8694194"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="5a1c9" class="javax.swing.JButton" binding="button22" default-binding="true">
+                <constraints border-constraint="First"/>
+                <properties>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="true"/>
+                  <enabled value="true"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <font name="Palatino Linotype" size="10" style="1"/>
+                  <foreground color="-8694194"/>
+                  <horizontalAlignment value="2"/>
+                  <horizontalTextPosition value="2"/>
+                  <iconTextGap value="0"/>
+                  <inheritsPopupMenu value="true"/>
+                  <label value=" "/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <name value="1"/>
+                  <requestFocusEnabled value="false"/>
+                  <rolloverEnabled value="false"/>
+                  <text value=" "/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                  <verticalAlignment value="1"/>
+                  <verticalTextPosition value="1"/>
+                  <visible value="true"/>
+                </properties>
+              </component>
+              <component id="b5938" class="javax.swing.JTextArea" binding="textArea22" default-binding="true">
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <alignmentX value="1.0"/>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <caretColor color="-8694194"/>
+                  <columns value="1"/>
+                  <font name="Palatino Linotype" size="24" style="1"/>
+                  <foreground color="-8694194"/>
+                  <lineWrap value="true"/>
+                  <margin top="0" left="15" bottom="0" right="0"/>
+                  <preferredSize width="36" height="33"/>
+                  <rows value="1"/>
+                  <selectionColor color="-11171459"/>
+                  <wrapStyleWord value="true"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="5527d" binding="box23" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="50" height="50"/>
+                <preferred-size width="50" height="50"/>
+                <maximum-size width="50" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-725324"/>
+              <foreground color="-8694194"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="a1c21" class="javax.swing.JButton" binding="button23" default-binding="true">
+                <constraints border-constraint="First"/>
+                <properties>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="true"/>
+                  <enabled value="true"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <font name="Palatino Linotype" size="10" style="1"/>
+                  <foreground color="-8694194"/>
+                  <horizontalAlignment value="2"/>
+                  <horizontalTextPosition value="2"/>
+                  <iconTextGap value="0"/>
+                  <inheritsPopupMenu value="true"/>
+                  <label value=" "/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <name value="1"/>
+                  <requestFocusEnabled value="false"/>
+                  <rolloverEnabled value="false"/>
+                  <text value=" "/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                  <verticalAlignment value="1"/>
+                  <verticalTextPosition value="1"/>
+                  <visible value="true"/>
+                </properties>
+              </component>
+              <component id="8b977" class="javax.swing.JTextArea" binding="textArea23" default-binding="true">
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <alignmentX value="1.0"/>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <caretColor color="-8694194"/>
+                  <columns value="1"/>
+                  <font name="Palatino Linotype" size="24" style="1"/>
+                  <foreground color="-8694194"/>
+                  <lineWrap value="true"/>
+                  <margin top="0" left="15" bottom="0" right="0"/>
+                  <preferredSize width="36" height="33"/>
+                  <rows value="1"/>
+                  <selectionColor color="-11171459"/>
+                  <wrapStyleWord value="true"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="baa89" binding="box24" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="50" height="50"/>
+                <preferred-size width="50" height="50"/>
+                <maximum-size width="50" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-725324"/>
+              <foreground color="-8694194"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="4b4c4" class="javax.swing.JButton" binding="button24" default-binding="true">
+                <constraints border-constraint="First"/>
+                <properties>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="true"/>
+                  <enabled value="true"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <font name="Palatino Linotype" size="10" style="1"/>
+                  <foreground color="-8694194"/>
+                  <horizontalAlignment value="2"/>
+                  <horizontalTextPosition value="2"/>
+                  <iconTextGap value="0"/>
+                  <inheritsPopupMenu value="true"/>
+                  <label value=" "/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <name value="1"/>
+                  <requestFocusEnabled value="false"/>
+                  <rolloverEnabled value="false"/>
+                  <text value=" "/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                  <verticalAlignment value="1"/>
+                  <verticalTextPosition value="1"/>
+                  <visible value="true"/>
+                </properties>
+              </component>
+              <component id="82716" class="javax.swing.JTextArea" binding="textArea24" default-binding="true">
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <alignmentX value="1.0"/>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <caretColor color="-8694194"/>
+                  <columns value="1"/>
+                  <font name="Palatino Linotype" size="24" style="1"/>
+                  <foreground color="-8694194"/>
+                  <lineWrap value="true"/>
+                  <margin top="0" left="15" bottom="0" right="0"/>
+                  <preferredSize width="36" height="33"/>
+                  <rows value="1"/>
+                  <selectionColor color="-11171459"/>
+                  <wrapStyleWord value="true"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="b23ca" binding="box25" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="4" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="50" height="50"/>
+                <preferred-size width="50" height="50"/>
+                <maximum-size width="50" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-725324"/>
+              <foreground color="-8694194"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="24fbe" class="javax.swing.JButton" binding="button25" default-binding="true">
+                <constraints border-constraint="First"/>
+                <properties>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="true"/>
+                  <enabled value="true"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <font name="Palatino Linotype" size="10" style="1"/>
+                  <foreground color="-8694194"/>
+                  <horizontalAlignment value="2"/>
+                  <horizontalTextPosition value="2"/>
+                  <iconTextGap value="0"/>
+                  <inheritsPopupMenu value="true"/>
+                  <label value=" "/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <name value="1"/>
+                  <requestFocusEnabled value="false"/>
+                  <rolloverEnabled value="false"/>
+                  <text value=" "/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                  <verticalAlignment value="1"/>
+                  <verticalTextPosition value="1"/>
+                  <visible value="true"/>
+                </properties>
+              </component>
+              <component id="dd1e" class="javax.swing.JTextArea" binding="textArea25" default-binding="true">
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <alignmentX value="1.0"/>
+                  <alignmentY value="0.0"/>
+                  <background color="-725324"/>
+                  <caretColor color="-8694194"/>
+                  <columns value="1"/>
+                  <font name="Palatino Linotype" size="24" style="1"/>
+                  <foreground color="-8694194"/>
+                  <lineWrap value="true"/>
+                  <margin top="0" left="15" bottom="0" right="0"/>
+                  <preferredSize width="36" height="33"/>
+                  <rows value="1"/>
+                  <selectionColor color="-11171459"/>
+                  <text value=""/>
+                  <wrapStyleWord value="true"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
       </grid>
     </children>
   </grid>
