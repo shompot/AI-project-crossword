@@ -89,11 +89,13 @@ public class SolutionGUI
     private ArrayList<JTextArea> textlist = new ArrayList<JTextArea>();;
     private int[] colors;
     private int[] numbers;
+    private char[] solution;
     private Color dark = new Color(123,86,78);
-    public SolutionGUI( int[] colors, int[] numbers)
+    public SolutionGUI( int[] colors, int[] numbers, char[] solution)
     {
         this.colors = colors;
         this.numbers = numbers;
+        this.solution = solution;
         fillGrid();
     }
     public ArrayList<JButton> getButtonlist()
@@ -189,6 +191,10 @@ public class SolutionGUI
     {
         return this.numbers;
     }
+    public char[] getSolution()
+    {
+        return this.solution;
+    }
     public void setColors( int[] colors)
     {
         this.colors = colors;
@@ -197,12 +203,18 @@ public class SolutionGUI
     {
         this.numbers = numbers;
     }
+    public void setSolution( char[] solution)
+    {
+        this.solution = solution;
+    }
     public void fillGrid()
     {
         int[] colorsArr;
         colorsArr = this.getColors();
         int[] numbersArr;
         numbersArr = this.getNumbers();
+        char[] solution;
+        solution = this.getSolution();
         for( int i = 0; i < 25; i++)
         {
             if( colorsArr[i] == 1)
@@ -215,6 +227,7 @@ public class SolutionGUI
             {
                 getButtonlist().get(i).setText("" + numbersArr[i]);
             }
+            getTextlist().get(i).setText("" + solution[i]);
         }
     }
 }
