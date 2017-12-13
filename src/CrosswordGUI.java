@@ -8,6 +8,7 @@ import java.util.ArrayList;
 /**
  * Created by Shiha on 11/11/2017.
  */
+
 public class CrosswordGUI {
     public static final String[] options = { "Today", "Oct 24, 2017", "Nov 8, 2017", "Nov 14, 2017", "Nov 15, 2017",
                                                 "Dec 12, 2017"};
@@ -92,17 +93,28 @@ public class CrosswordGUI {
     private JPanel box23;
     private JPanel box24;
     private JPanel box25;
+    public TextComponentLogger logger;
     private ArrayList<String> acrossList = new ArrayList<String>();
     private ArrayList<String> downList = new ArrayList<String>();
     private ArrayList<JPanel> panelList = new ArrayList<JPanel>();
     private ArrayList<JButton> buttonlist = new ArrayList<JButton>();;
     private ArrayList<JTextArea> textlist = new ArrayList<JTextArea>();;
+    public ArrayList<String> words = new ArrayList<String>();
     private int[] colors;
     private int[] numbers;
     private Color dark = new Color(123,86,78);
     public CrosswordGUI()
     {
-        log.append( "\n Welcome! Starting project.");
+        logger = new TextComponentLogger(log);
+        FileLoader fileLoader = new FileLoader(logger);
+        fileLoader.loadFile();
+        words.add( "KATE");
+        words.add( "BAIT");
+        words.add( "LATE");
+        words.add( "FEET");
+        words.add( "SASS");
+        //log.append( "\n Welcome! Starting project.");
+        logger.logAction( "\n Welcome! Starting project.");
         AbstractDocument doc1=(AbstractDocument)textArea1.getDocument();
         doc1.setDocumentFilter(new DocumentSizeFilter(1));
         AbstractDocument doc2=(AbstractDocument)textArea2.getDocument();
@@ -302,7 +314,8 @@ public class CrosswordGUI {
 
     public void fillGrid()
     {
-        getLog().append( "\nRetrieve crossword...");
+        //getLog().append( "\nRetrieve crossword...");
+        logger.logAction( "\nRetrieve crossword...");
         int[] colorsArr;
         colorsArr = this.getColors();
         int[] numbersArr;
@@ -320,26 +333,78 @@ public class CrosswordGUI {
                 getButtonlist().get(i).setText("" + numbersArr[i]);
             }
         }
-        getLog().append( "\nCrossword retrieval complete!");
+        //getLog().append( "\nCrossword retrieval complete!");
+        logger.logAction(  "\nCrossword retrieval complete!");
+        CheckWords c = new CheckWords();
+        Thread t = new Thread(c);
+        t.start();
     }
     public void fillHints()
     {
         String across = "";
         String down = "";
-        getLog().append( "\nRetrieve hints...");
+        //getLog().append( "\nRetrieve hints...");
+        logger.logAction(  "\nRetrieve hints...");
         for( int i = 0; i < this.acrossList.size(); i++)
         {
             across = across + this.acrossList.get(i) + "\n";
         }
         getAcrossHints().setText( across);
-        getLog().append( "\nGot Across Hints!");
+        //getLog().append( "\nGot Across Hints!");
+        logger.logAction(  "\nGot Across Hints!");
         for( int i = 0; i < this.downList.size(); i++)
         {
             down = down + this.downList.get(i) + "\n";
         }
         getDownHints().setText( down);
-        getLog().append( "\nGot Down Hints!");
-        getLog().append( "\nHints retrieval complete!");
+        //getLog().append( "\nGot Down Hints!");
+        logger.logAction(  "\nGot Down Hints!");
+        //getLog().append( "\nHints retrieval complete!");
+        logger.logAction(  "\nHints retrieval complete!");
+    }
+
+    class CheckWords implements Runnable
+    {
+        public void run()
+        {
+            check();
+        }
+        public void check()
+        {
+            for( int i = 0; i < words.size(); i++)
+            {
+                textArea21.setText( "" + words.get(i).charAt(0));
+                textArea22.setText( "" + words.get(i).charAt(1));
+                textArea23.setText( "" + words.get(i).charAt(2));
+                textArea24.setText( "" + words.get(i).charAt(3));
+                try
+                {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e)
+                {
+                    e.printStackTrace();
+                }
+                if( words.get(i) != "SASS")
+                {
+                    textArea21.setForeground( Color.RED);
+                    textArea22.setForeground( Color.RED);
+                    textArea23.setForeground( Color.RED);
+                    textArea24.setForeground( Color.RED);
+                }
+                try
+                {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e)
+                {
+                    e.printStackTrace();
+                }
+                textArea21.setForeground( dark);
+                textArea22.setForeground( dark);
+                textArea23.setForeground( dark);
+                textArea24.setForeground( dark);
+            }
+        }
+
     }
     public static void main(String[] args) throws IOException
     {
@@ -352,7 +417,7 @@ public class CrosswordGUI {
                 JOptionPane.QUESTION_MESSAGE,
                 null,
                 options,
-                options[0]);
+                options[0]  );
         if( option == "Today") { System.out.println("Retrieving today's puzzle...Please wait"); g.readGridFromUrl();}
         else if( option == "Oct 24, 2017"){ System.out.println("Retrieving saved puzzle...Please wait"); g.readGridFromFile("crosswords/October 24, 2017.html");}
         else if( option == "Nov 8, 2017"){ System.out.println("Retrieving saved puzzle...Please wait");g.readGridFromFile("crosswords/November 8, 2017.html");}
