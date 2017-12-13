@@ -10,34 +10,28 @@ import java.util.*;
 public class DictionarySearch {
 
     // VARIABLES
-    private String clue;
-    private ArrayList<String> words;
+    private String fileAddress;
 
     // CONSTRUCTOR
-    private DictionarySearch (String clue){
-        this.clue = clue;
+    private DictionarySearch (){
+        this.fileAddress = "dictionary.txt";
     }
-
     // SETTERS
-    public void setClue(String clue) {
-        this.clue = clue;
-    }
-
     // GETTERS
-    public String getClue() { return clue; }
-    public ArrayList<String> getWords() { return words; }
+    public String getFileAddress() { return fileAddress; }
 
     // SEARCH
-    public void search() throws IOException {
-       words = searchRelativeOnes(clue);
+    public ArrayList<String> search(String clue, int length) throws IOException {
+       ArrayList <String> words = searchRelativeOnes(clue, length);
+       return  words;
     }
     //method for searching clues
     //input text = clue
-    public ArrayList <String> searchRelativeOnes(String text) throws IOException {
+    public ArrayList <String> searchRelativeOnes(String text, int length) throws IOException {
         ArrayList<String> answers= new ArrayList<String>();
         String line;
         text = text.toLowerCase();
-        FileReader fr = new FileReader("dictionary.txt");
+        FileReader fr = new FileReader(fileAddress);
         BufferedReader br = new BufferedReader(fr);
         String[] words = text.split(" ");//splitting a clue
         while ((line = br.readLine()) != null) {
@@ -53,8 +47,8 @@ public class DictionarySearch {
                 String answer = line.toString().substring(line.lastIndexOf(" ")+1);
                 String[] parts = answer.split("\\t");
                 String lastWord = parts[parts.length - 1];
-                if (lastWord.length()<=5) {
-                    answers.add(lastWord);
+                if (lastWord.length() == length) {
+                    answers.add(lastWord.toLowerCase());
                 }
                 fromIndex = index + text.length();
             }
@@ -67,9 +61,8 @@ public class DictionarySearch {
     }
 
     public static void main (String[] args) throws IOException{
-        DictionarySearch d = new DictionarySearch("One who's deep in the weeds of policy");
-        d.search();
-        ArrayList<String> words = d.getWords();
+        DictionarySearch d = new DictionarySearch();
+        ArrayList<String> words = d.search("One who's deep in the weeds of policy", 4);;
         for (int i=0; i < words.size(); i ++){
             System.out.println(words.get(i));
         }
