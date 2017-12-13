@@ -1,5 +1,6 @@
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -37,13 +38,32 @@ public class LyricsSearch {
 
     public String extractHTML(String html){
 
-        return "";
+        Document document = Jsoup.parse(html);
+        Elements elements = document.getElementsByClass("table table-condensed");
+
+        String text = elements.toString();
+        System.out.println(text);
+        return text;
+
     }
     public void extractWords (String html){
+        Document document = Jsoup.parse(html);
 
+        Elements elements = document.getElementsByTag("a");
+
+        //System.out.println("Here are the synonyms:");
+        for (int i= 0; i< elements.size(); i++) {
+            //Document d = Jsoup.parse(elements.get(i).toString());
+            //Elements el = d.getElementsByClass("text");
+            //result.add(el.text());
+            System.out.println(elements.text());
+
+        }
     }
 
-
-
+    public static void main (String[] args) throws IOException{
+        LyricsSearch s = new LyricsSearch("love");
+        s.search();
+    }
 
 }

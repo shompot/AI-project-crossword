@@ -51,7 +51,7 @@ public class TheSaurusSearch {
         Elements elements = document.getElementsByTag("a");
 
         //System.out.println("Here are the synonyms:");
-        for (int i= 0; i< elements.size() && i < elements.size(); i++) {
+        for (int i= 0; i< elements.size(); i++) {
             Document d = Jsoup.parse(elements.get(i).toString());
             Elements el = d.getElementsByClass("text");
             synonyms.add(el.text());
