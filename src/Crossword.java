@@ -18,6 +18,8 @@ public class Crossword {
     private GridNode[] grid;
     private int[] colors;
     private int[] numbers;
+    private String solutionAddress;
+    private char[] solutionArr;
 
     private ArrayList<String> acrossHints;
     private ArrayList<String> downHints;
@@ -25,6 +27,8 @@ public class Crossword {
     private ArrayList<String> downHintsOnly;
     private ArrayList<Integer> acrossHintsNums;
     private ArrayList<Integer> downHintsNums;
+    private ArrayList<String> acrossSolution;
+    private ArrayList<String> downSolution;
 
     // CONSTRUCTORS
     Crossword(){
@@ -53,16 +57,20 @@ public class Crossword {
     public int getSide() { return side; }
     public int[] getColors() { return colors; }
     public int[] getNumbers() { return numbers; }
+    public char[] getSolutionArr() { return solutionArr; }
 
     public ArrayList<String> getAcrossHints() { return acrossHints; }
     public ArrayList<String> getDownHints() { return downHints; }
     public ArrayList<Integer> getAcrossHintsNums() { return acrossHintsNums; }
     public ArrayList<Integer> getDownHintsNums() { return downHintsNums; }
+    public ArrayList<String> getAcrossSolution() { return acrossSolution; }
+    public ArrayList<String> getDownSolution() { return downSolution; }
 
     // METHODS
     // Read file methods
     public void readGridFromUrl  () throws IOException{
         String url = "https://www.nytimes.com/crosswords/game/mini";
+        solutionAddress = "crosswords/Solution December 13, 2017.html";
         Document documents = Jsoup.connect(url).get();
         String html  = documents.html();
         readCrossword(html);
@@ -70,6 +78,7 @@ public class Crossword {
 
     public void readGridFromFile (String fileName) throws IOException{
         String html = "";
+        solutionAddress = fileName.substring(0,11) + "Solution " + fileName.substring(11);
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
             String sCurrentLine;
 
@@ -88,6 +97,7 @@ public class Crossword {
 
         readGrid(html);
         readHints (html);
+        readSolution ();
     }
 
     // read grid methods
@@ -128,6 +138,7 @@ public class Crossword {
 
         return text;
     }
+
 
     public int [] getColors (String text) {
         // 0 represents white, 1 represents black
@@ -261,6 +272,86 @@ public class Crossword {
         return hintsNums;
     }
 
+    // READ SOLUTION
+    public void readSolution (){
+        readSolutionArray();
+        readAcrossSolution();
+        readDownSolution();
+    }
+
+    public void readSolutionArray (){
+        String html = "";
+        try (BufferedReader br = new BufferedReader(new FileReader(solutionAddress))) {
+            String sCurrentLine;
+
+            while ((sCurrentLine = br.readLine()) != null) {
+                html += sCurrentLine;
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // extract grid part
+        html = this.extractGridPart(html);
+
+        int size = this.side*this.side;
+        solutionArr = new char[size];
+
+        Document document = Jsoup.parse(html);
+        Elements elements = document.getElementsByTag("g");
+
+        for (int i =0; i < elements.size() && i <size ; i++){
+            char c = ' ';
+            String text = elements.get(i).text();
+            int l = text.length()-1;
+            if ( !text.isEmpty() && (Character.isLetter(text.charAt(l)))){
+                if (Character.isDigit(text.charAt(0)))
+                    c = text.charAt(l);
+                else
+                    c = text.charAt(0);
+                l--;
+            }
+            //System.out.println ("Text is " + text );
+            if (!text.isEmpty())
+                solutionArr[i] = c;
+            else
+                solutionArr[i] = ' ';
+        }
+    }
+
+    public void readAcrossSolution(){
+        //System.out.println("Across:");
+        acrossSolution = new ArrayList<String>();
+        String word;
+        for (int i = 0; i < side; i ++){
+            word = "";
+            int j = 0;
+            while (colors[i*5+j]==1 && j < side) j++;
+            while (j < side) {
+                word += solutionArr[i*5+j];
+                j++;
+            }
+            acrossSolution.add(word);
+            //System.out.println(word);
+        }
+    }
+    public void readDownSolution(){
+        //System.out.println("Down:");
+        downSolution = new ArrayList<String>();
+        String word;
+        for (int j = 0; j < side; j ++){
+            word = "";
+            int i = 0;
+            while (colors[i*5+j]==1 && i < side) i++;
+            while (i < side) {
+                word += solutionArr[i*5+j];
+                i++;
+            }
+            downSolution.add(word);
+            //System.out.println(word);
+        }
+    }
     // PRINT
     public String toString (){
         String s = "";
@@ -278,33 +369,33 @@ public class Crossword {
     public static void main(String[] args) throws IOException{
         Crossword g = new Crossword();
 
-        g.readGridFromFile("crosswords/November 14, 2017.html");
-        System.out.println(g.toString());
-
-        System.out.println("Across:");
-        for (int i = 0; i < g.getAcrossHints().size(); i++){
-            System.out.println(  g.getAcrossHints().get(i));
-        }
-        System.out.println("Down:");
-        for (int i = 0; i < g.getDownHints().size(); i++){
-            System.out.println(  g.getDownHints().get(i));
-        }
-
+        //g.readGridFromFile("crosswords/December 12, 2017.html");
         g.readGridFromUrl();
         System.out.println(g.toString());
 
-        System.out.println("Across:");
-        for (int i = 0; i < g.getAcrossHints().size(); i++){
-            System.out.println(  g.getAcrossHints().get(i));
-        }
-        System.out.println("Down:");
-        for (int i = 0; i < g.getDownHints().size(); i++){
-            System.out.println(  g.getDownHints().get(i));
+        int[] colors = g.getColors();
+        System.out.println ("Colors");
+        for (int i=0; i < g.getSide(); i ++){
+            for (int j=0; j < g.getSide(); j++)
+                System.out.print( colors [i*5 + j] + " ");
+            System.out.println ();
         }
 
-        g.readGridFromFile("crosswords/November 8, 2017.html");
-        System.out.println(g.toString());
+        int[] numbers = g.getNumbers();
+        System.out.println ("Numbers");
+        for (int i=0; i < g.getSide(); i ++){
+            for (int j=0; j < g.getSide(); j++)
+                System.out.print( numbers [i*5 + j] + " ");
+            System.out.println ();
+        }
 
+        char[] solution = g.getSolutionArr();
+        System.out.println ("Solution Arr");
+        for (int i=0; i < g.getSide(); i ++){
+            for (int j=0; j < g.getSide(); j++)
+                System.out.print( solution [i*5 + j] + " ");
+            System.out.println ();
+        }
         System.out.println("Across:");
         for (int i = 0; i < g.getAcrossHints().size(); i++){
             System.out.println(  g.getAcrossHints().get(i));
