@@ -42,7 +42,7 @@ public class LyricsSearch {
         Elements elements = document.getElementsByClass("table table-condensed");
 
         String text = elements.toString();
-        System.out.println(text);
+        //System.out.println(text);
         return text;
 
     }
@@ -53,9 +53,9 @@ public class LyricsSearch {
 
         //System.out.println("Here are the synonyms:");
         for (int i= 0; i< elements.size(); i++) {
-            //Document d = Jsoup.parse(elements.get(i).toString());
-            //Elements el = d.getElementsByClass("text");
-            //result.add(el.text());
+            Document d = Jsoup.parse(elements.get(i).toString());
+            Elements el = d.getElementsByClass("text-left visitedlyr");
+            result.add(el.text());
             System.out.println(elements.text());
 
         }
