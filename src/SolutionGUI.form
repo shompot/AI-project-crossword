@@ -139,7 +139,7 @@
                       <caretColor color="-8694194"/>
                       <columns value="1"/>
                       <editable value="false"/>
-                      <enabled value="false"/>
+                      <enabled value="true"/>
                       <font name="Palatino Linotype" size="24" style="1"/>
                       <foreground color="-8694194"/>
                       <lineWrap value="true"/>
@@ -207,7 +207,7 @@
                       <caretColor color="-8694194"/>
                       <columns value="1"/>
                       <editable value="false"/>
-                      <enabled value="false"/>
+                      <enabled value="true"/>
                       <font name="Palatino Linotype" size="24" style="1"/>
                       <foreground color="-8694194"/>
                       <lineWrap value="true"/>
@@ -272,7 +272,7 @@
                       <caretColor color="-8694194"/>
                       <columns value="1"/>
                       <editable value="false"/>
-                      <enabled value="false"/>
+                      <enabled value="true"/>
                       <font name="Palatino Linotype" size="24" style="1"/>
                       <foreground color="-8694194"/>
                       <lineWrap value="true"/>
@@ -337,7 +337,7 @@
                       <caretColor color="-8694194"/>
                       <columns value="1"/>
                       <editable value="false"/>
-                      <enabled value="false"/>
+                      <enabled value="true"/>
                       <font name="Palatino Linotype" size="24" style="1"/>
                       <foreground color="-8694194"/>
                       <lineWrap value="true"/>
@@ -402,7 +402,7 @@
                       <caretColor color="-8694194"/>
                       <columns value="1"/>
                       <editable value="false"/>
-                      <enabled value="false"/>
+                      <enabled value="true"/>
                       <font name="Palatino Linotype" size="24" style="1"/>
                       <foreground color="-8694194"/>
                       <lineWrap value="true"/>
@@ -467,7 +467,7 @@
                       <caretColor color="-8694194"/>
                       <columns value="1"/>
                       <editable value="false"/>
-                      <enabled value="false"/>
+                      <enabled value="true"/>
                       <font name="Palatino Linotype" size="24" style="1"/>
                       <foreground color="-8694194"/>
                       <lineWrap value="true"/>
@@ -532,7 +532,7 @@
                       <caretColor color="-8694194"/>
                       <columns value="1"/>
                       <editable value="false"/>
-                      <enabled value="false"/>
+                      <enabled value="true"/>
                       <font name="Palatino Linotype" size="24" style="1"/>
                       <foreground color="-8694194"/>
                       <lineWrap value="true"/>
@@ -597,7 +597,7 @@
                       <caretColor color="-8694194"/>
                       <columns value="1"/>
                       <editable value="false"/>
-                      <enabled value="false"/>
+                      <enabled value="true"/>
                       <font name="Palatino Linotype" size="24" style="1"/>
                       <foreground color="-8694194"/>
                       <lineWrap value="true"/>
@@ -662,7 +662,7 @@
                       <caretColor color="-8694194"/>
                       <columns value="1"/>
                       <editable value="false"/>
-                      <enabled value="false"/>
+                      <enabled value="true"/>
                       <font name="Palatino Linotype" size="24" style="1"/>
                       <foreground color="-8694194"/>
                       <lineWrap value="true"/>
@@ -727,7 +727,7 @@
                       <caretColor color="-8694194"/>
                       <columns value="1"/>
                       <editable value="false"/>
-                      <enabled value="false"/>
+                      <enabled value="true"/>
                       <font name="Palatino Linotype" size="24" style="1"/>
                       <foreground color="-8694194"/>
                       <lineWrap value="true"/>
@@ -792,7 +792,7 @@
                       <caretColor color="-8694194"/>
                       <columns value="1"/>
                       <editable value="false"/>
-                      <enabled value="false"/>
+                      <enabled value="true"/>
                       <font name="Palatino Linotype" size="24" style="1"/>
                       <foreground color="-8694194"/>
                       <lineWrap value="true"/>
@@ -857,7 +857,7 @@
                       <caretColor color="-8694194"/>
                       <columns value="1"/>
                       <editable value="false"/>
-                      <enabled value="false"/>
+                      <enabled value="true"/>
                       <font name="Palatino Linotype" size="24" style="1"/>
                       <foreground color="-8694194"/>
                       <lineWrap value="true"/>
@@ -922,7 +922,7 @@
                       <caretColor color="-8694194"/>
                       <columns value="1"/>
                       <editable value="false"/>
-                      <enabled value="false"/>
+                      <enabled value="true"/>
                       <font name="Palatino Linotype" size="24" style="1"/>
                       <foreground color="-8694194"/>
                       <lineWrap value="true"/>
@@ -987,7 +987,7 @@
                       <caretColor color="-8694194"/>
                       <columns value="1"/>
                       <editable value="false"/>
-                      <enabled value="false"/>
+                      <enabled value="true"/>
                       <font name="Palatino Linotype" size="24" style="1"/>
                       <foreground color="-8694194"/>
                       <lineWrap value="true"/>
@@ -1052,7 +1052,7 @@
                       <caretColor color="-8694194"/>
                       <columns value="1"/>
                       <editable value="false"/>
-                      <enabled value="false"/>
+                      <enabled value="true"/>
                       <font name="Palatino Linotype" size="24" style="1"/>
                       <foreground color="-8694194"/>
                       <lineWrap value="true"/>
@@ -1117,7 +1117,7 @@
                       <caretColor color="-8694194"/>
                       <columns value="1"/>
                       <editable value="false"/>
-                      <enabled value="false"/>
+                      <enabled value="true"/>
                       <font name="Palatino Linotype" size="24" style="1"/>
                       <foreground color="-8694194"/>
                       <lineWrap value="true"/>
@@ -1182,7 +1182,7 @@
                       <caretColor color="-8694194"/>
                       <columns value="1"/>
                       <editable value="false"/>
-                      <enabled value="false"/>
+                      <enabled value="true"/>
                       <font name="Palatino Linotype" size="24" style="1"/>
                       <foreground color="-8694194"/>
                       <lineWrap value="true"/>
@@ -1247,7 +1247,7 @@
                       <caretColor color="-8694194"/>
                       <columns value="1"/>
                       <editable value="false"/>
-                      <enabled value="false"/>
+                      <enabled value="true"/>
                       <font name="Palatino Linotype" size="24" style="1"/>
                       <foreground color="-8694194"/>
                       <lineWrap value="true"/>
@@ -1312,7 +1312,7 @@
                       <caretColor color="-8694194"/>
                       <columns value="1"/>
                       <editable value="false"/>
-                      <enabled value="false"/>
+                      <enabled value="true"/>
                       <font name="Palatino Linotype" size="24" style="1"/>
                       <foreground color="-8694194"/>
                       <lineWrap value="true"/>
@@ -1377,7 +1377,7 @@
                       <caretColor color="-8694194"/>
                       <columns value="1"/>
                       <editable value="false"/>
-                      <enabled value="false"/>
+                      <enabled value="true"/>
                       <font name="Palatino Linotype" size="24" style="1"/>
                       <foreground color="-8694194"/>
                       <lineWrap value="true"/>
@@ -1442,7 +1442,7 @@
                       <caretColor color="-8694194"/>
                       <columns value="1"/>
                       <editable value="false"/>
-                      <enabled value="false"/>
+                      <enabled value="true"/>
                       <font name="Palatino Linotype" size="24" style="1"/>
                       <foreground color="-8694194"/>
                       <lineWrap value="true"/>
@@ -1507,7 +1507,7 @@
                       <caretColor color="-8694194"/>
                       <columns value="1"/>
                       <editable value="false"/>
-                      <enabled value="false"/>
+                      <enabled value="true"/>
                       <font name="Palatino Linotype" size="24" style="1"/>
                       <foreground color="-8694194"/>
                       <lineWrap value="true"/>
@@ -1572,7 +1572,7 @@
                       <caretColor color="-8694194"/>
                       <columns value="1"/>
                       <editable value="false"/>
-                      <enabled value="false"/>
+                      <enabled value="true"/>
                       <font name="Palatino Linotype" size="24" style="1"/>
                       <foreground color="-8694194"/>
                       <lineWrap value="true"/>
@@ -1637,7 +1637,7 @@
                       <caretColor color="-8694194"/>
                       <columns value="1"/>
                       <editable value="false"/>
-                      <enabled value="false"/>
+                      <enabled value="true"/>
                       <font name="Palatino Linotype" size="24" style="1"/>
                       <foreground color="-8694194"/>
                       <lineWrap value="true"/>
@@ -1702,7 +1702,7 @@
                       <caretColor color="-8694194"/>
                       <columns value="1"/>
                       <editable value="false"/>
-                      <enabled value="false"/>
+                      <enabled value="true"/>
                       <font name="Palatino Linotype" size="24" style="1"/>
                       <foreground color="-8694194"/>
                       <lineWrap value="true"/>
