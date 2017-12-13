@@ -53,17 +53,20 @@ public class LyricsSearch {
 
         //System.out.println("Here are the synonyms:");
         for (int i= 0; i< elements.size(); i++) {
-            Document d = Jsoup.parse(elements.get(i).toString());
-            Elements el = d.getElementsByClass("text-left visitedlyr");
-            result.add(el.text());
-            System.out.println(elements.text());
-
+            String text = elements.get(i).text();
+            System.out.println(text);
+            result.add(text);
         }
     }
 
     public static void main (String[] args) throws IOException{
         LyricsSearch s = new LyricsSearch("love");
         s.search();
+        System.out.println("The titles are: ");
+        ArrayList <String> result = s.getResult();
+        for (int i=0; i <result.size(); i++){
+            System.out.println(result.get(i));
+        }
     }
 
 }
