@@ -371,7 +371,7 @@ public class Crossword {
 
         //g.readGridFromFile("crosswords/December 12, 2017.html");
         g.readGridFromUrl();
-        System.out.println(g.toString());
+        //System.out.println(g.toString());
 
         int[] colors = g.getColors();
         System.out.println ("Colors");
