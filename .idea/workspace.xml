@@ -12,7 +12,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Crossword.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Crossword.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Crossword.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-6454">
@@ -26,7 +26,66 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="TheSaurusSearch.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/TheSaurusSearch.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="31" column="4" lean-forward="false" selection-start-line="31" selection-start-column="4" selection-end-line="37" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LyricsSearch.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/LyricsSearch.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="516">
+              <caret line="34" column="27" lean-forward="false" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DocumentSizeFilter.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/DocumentSizeFilter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="70" column="59" lean-forward="true" selection-start-line="70" selection-start-column="59" selection-end-line="70" selection-end-column="59" />
+              <folding>
+                <element signature="e#0#3353#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DictionarySearch.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DictionarySearch.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="629">
+              <caret line="37" column="20" lean-forward="true" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#373#374#0" expanded="true" />
+                <element signature="e#405#406#0" expanded="true" />
+                <element signature="e#460#461#0" expanded="true" />
+                <element signature="e#492#493#0" expanded="true" />
+                <element signature="e#909#917#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -40,6 +99,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/Crossword.java" />
+        <option value="$PROJECT_DIR$/src/LyricsSearch.java" />
+        <option value="$PROJECT_DIR$/src/DictionarySearchTurac.java" />
+        <option value="$PROJECT_DIR$/src/DictionarySearch.java" />
       </list>
     </option>
   </component>
@@ -50,10 +112,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="8" />
-    <option name="y" value="44" />
-    <option name="width" value="1400" />
-    <option name="height" value="784" />
+    <option name="x" value="675" />
+    <option name="y" value="1" />
+    <option name="width" value="621" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -101,7 +163,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -117,7 +179,35 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.DictionarySearch">
+    <configuration name="DictionarySearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="DictionarySearch" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="AI-project-crossword" />
+      <envs />
+    </configuration>
+    <configuration name="DictionarySearchTurac" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="DictionarySearchTurac" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="AI-project-crossword" />
+      <envs />
+    </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -211,6 +301,17 @@
       <properties />
       <listeners />
     </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Application.DictionarySearch" />
+      <item index="1" class="java.lang.String" itemvalue="Application.DictionarySearchTurac" />
+    </list>
+    <recent_temporary>
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Application.DictionarySearch" />
+        <item index="1" class="java.lang.String" itemvalue="Application.DictionarySearchTurac" />
+        <item index="2" class="java.lang.String" itemvalue="Application.DictionarySearchTurac" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -245,7 +346,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.052050475" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.07255521" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -362,16 +463,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TheSaurusSearch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="65" column="27" lean-forward="true" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Crossword.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -458,11 +549,72 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://B:/Cholpon/Bilkent/Semester 7/AI - CS 461/Project/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="116" column="5" lean-forward="true" selection-start-line="18" selection-start-column="4" selection-end-line="116" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/uiDesigner.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7684">
-          <caret line="452" column="10" lean-forward="true" selection-start-line="452" selection-start-column="10" selection-end-line="452" selection-end-column="10" />
-          <folding />
+        <state relative-caret-position="249">
+          <caret line="450" column="10" lean-forward="true" selection-start-line="450" selection-start-column="10" selection-end-line="450" selection-end-column="10" />
+          <folding>
+            <marker date="1513188588671" expanded="true" signature="43112:43152" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="43112:43169" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="43112:43187" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="43112:43200" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="43112:43215" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="43250:45804" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="43263:45789" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="43317:43612" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="43336:43597" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="43399:43577" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="43439:43543" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="43460:43521" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="43662:43989" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="43681:43974" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="43776:43954" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="43816:43920" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="43837:43898" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="44040:44305" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="44059:44290" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="44092:44270" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="44132:44236" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="44153:44214" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="44348:44654" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="44367:44639" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="44441:44619" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="44481:44585" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="44502:44563" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="44705:45067" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="44724:45052" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="44815:45032" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="44855:44998" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="44876:44976" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="45102:45408" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="45121:45393" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="45195:45373" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="45235:45339" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="45256:45317" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="45460:45775" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="45479:45760" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="45562:45740" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="45602:45706" ph="..." />
+            <marker date="1513188588671" expanded="true" signature="45623:45684" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -474,6 +626,58 @@
             <element signature="e#7137#7145#0" expanded="true" />
             <element signature="e#7744#7752#0" expanded="true" />
             <element signature="e#8194#8203#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TheSaurusSearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="31" column="4" lean-forward="false" selection-start-line="31" selection-start-column="4" selection-end-line="37" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DictionarySearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" column="20" lean-forward="true" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#373#374#0" expanded="true" />
+            <element signature="e#405#406#0" expanded="true" />
+            <element signature="e#460#461#0" expanded="true" />
+            <element signature="e#492#493#0" expanded="true" />
+            <element signature="e#909#917#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DictionarySearchTurac.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="114" column="9" lean-forward="true" selection-start-line="114" selection-start-column="9" selection-end-line="114" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LyricsSearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="34" column="27" lean-forward="false" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DocumentSizeFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="70" column="59" lean-forward="true" selection-start-line="70" selection-start-column="59" selection-end-line="70" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#3353#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
