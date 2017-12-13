@@ -359,7 +359,6 @@ public class CrosswordGUI {
         else if( option == "Nov 15, 2017") { System.out.println("Retrieving saved puzzle...Please wait");g.readGridFromFile("crosswords/November 15, 2017.html");}
         else { crossword.getLog().append( "Cannot display puzzle"); }
 
-        int index = 0;
         JFrame frame;
         frame = new JFrame("CS461 faglAIno Crossword");
         crossword.setColors(g.getColors());
@@ -372,7 +371,13 @@ public class CrosswordGUI {
         frame.pack();
         frame.setVisible(true);
 
-
-
+        SolutionGUI solution = new SolutionGUI( g.getColors(), g.getNumbers());
+        JFrame solutionframe;
+        solutionframe = new JFrame("Solution");
+        solutionframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        solutionframe.setContentPane( solution.CWPanel);
+        solutionframe.setLocation(1020,150);
+        solutionframe.pack();
+        solutionframe.setVisible(true);
     }
 }
