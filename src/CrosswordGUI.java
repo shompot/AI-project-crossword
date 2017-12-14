@@ -372,14 +372,14 @@ public class CrosswordGUI {
                 {
                     e.printStackTrace();
                 }
-                if( words.get(i) != "best")
+                if( words.get(i) != "BEST")
                 {
                     textArea2.setForeground( Color.RED);
                     textArea3.setForeground( Color.RED);
                     textArea4.setForeground( Color.RED);
                     textArea5.setForeground( Color.RED);
                 }
-                else if( words.get(i) == "best")
+                else if( words.get(i) == "BEST")
                 {
                     return;
                 }
