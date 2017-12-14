@@ -8,6 +8,7 @@ import java.util.ArrayList;
 /**
  * Created by Shiha on 11/11/2017.
  */
+
 public class CrosswordGUI {
     public static final String[] options = { "Today", "Oct 24, 2017", "Nov 8, 2017", "Nov 14, 2017", "Nov 15, 2017",
                                                 "Dec 12, 2017"};
@@ -97,11 +98,17 @@ public class CrosswordGUI {
     private ArrayList<JPanel> panelList = new ArrayList<JPanel>();
     private ArrayList<JButton> buttonlist = new ArrayList<JButton>();;
     private ArrayList<JTextArea> textlist = new ArrayList<JTextArea>();;
+    public ArrayList<String> words = new ArrayList<String>();
     private int[] colors;
     private int[] numbers;
     private Color dark = new Color(123,86,78);
     public CrosswordGUI()
     {
+        words.add( "KATE");
+        words.add( "BAIT");
+        words.add( "LATE");
+        words.add( "FEET");
+        words.add( "SASS");
         log.append( "\n Welcome! Starting project.");
         AbstractDocument doc1=(AbstractDocument)textArea1.getDocument();
         doc1.setDocumentFilter(new DocumentSizeFilter(1));
@@ -321,6 +328,9 @@ public class CrosswordGUI {
             }
         }
         getLog().append( "\nCrossword retrieval complete!");
+        CheckWords c = new CheckWords();
+        Thread t = new Thread(c);
+        t.start();
     }
     public void fillHints()
     {
@@ -341,6 +351,50 @@ public class CrosswordGUI {
         getLog().append( "\nGot Down Hints!");
         getLog().append( "\nHints retrieval complete!");
     }
+
+    class CheckWords implements Runnable
+    {
+        public void run()
+        {
+            check();
+        }
+        public void check()
+        {
+            for( int i = 0; i < words.size(); i++)
+            {
+                textArea21.setText( "" + words.get(i).charAt(0));
+                textArea22.setText( "" + words.get(i).charAt(1));
+                textArea23.setText( "" + words.get(i).charAt(2));
+                textArea24.setText( "" + words.get(i).charAt(3));
+                try
+                {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e)
+                {
+                    e.printStackTrace();
+                }
+                if( words.get(i) != "SASS")
+                {
+                    textArea21.setForeground( Color.RED);
+                    textArea22.setForeground( Color.RED);
+                    textArea23.setForeground( Color.RED);
+                    textArea24.setForeground( Color.RED);
+                }
+                try
+                {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e)
+                {
+                    e.printStackTrace();
+                }
+                textArea21.setForeground( dark);
+                textArea22.setForeground( dark);
+                textArea23.setForeground( dark);
+                textArea24.setForeground( dark);
+            }
+        }
+
+    }
     public static void main(String[] args) throws IOException
     {
         Crossword g = new Crossword();
@@ -352,7 +406,7 @@ public class CrosswordGUI {
                 JOptionPane.QUESTION_MESSAGE,
                 null,
                 options,
-                options[0]);
+                options[0]  );
         if( option == "Today") { System.out.println("Retrieving today's puzzle...Please wait"); g.readGridFromUrl();}
         else if( option == "Oct 24, 2017"){ System.out.println("Retrieving saved puzzle...Please wait"); g.readGridFromFile("crosswords/October 24, 2017.html");}
         else if( option == "Nov 8, 2017"){ System.out.println("Retrieving saved puzzle...Please wait");g.readGridFromFile("crosswords/November 8, 2017.html");}
