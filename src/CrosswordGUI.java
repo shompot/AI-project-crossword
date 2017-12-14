@@ -362,10 +362,10 @@ public class CrosswordGUI {
         {
             for( int i = 0; i < words.size(); i++)
             {
-                textArea21.setText( "" + words.get(i).charAt(0));
-                textArea22.setText( "" + words.get(i).charAt(1));
-                textArea23.setText( "" + words.get(i).charAt(2));
-                textArea24.setText( "" + words.get(i).charAt(3));
+                textArea2.setText( "" + words.get(i).charAt(0));
+                textArea3.setText( "" + words.get(i).charAt(1));
+                textArea4.setText( "" + words.get(i).charAt(2));
+                textArea5.setText( "" + words.get(i).charAt(3));
                 try
                 {
                     Thread.sleep(1000);
@@ -373,7 +373,7 @@ public class CrosswordGUI {
                 {
                     e.printStackTrace();
                 }
-                if( words.get(i) != "SASS")
+                if( words.get(i) != "BEST")
                 {
                     textArea21.setForeground( Color.RED);
                     textArea22.setForeground( Color.RED);
