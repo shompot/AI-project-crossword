@@ -13,7 +13,7 @@ public class DictionarySearch {
     private String fileAddress;
 
     // CONSTRUCTOR
-    private DictionarySearch (){
+    public DictionarySearch (){
         this.fileAddress = "dictionary.txt";
     }
     // SETTERS

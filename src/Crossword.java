@@ -60,6 +60,10 @@ public class Crossword {
 
     public ArrayList<String> getAcrossHints() { return acrossHints; }
     public ArrayList<String> getDownHints() { return downHints; }
+
+    public ArrayList<String> getAcrossHintsOnly() { return acrossHintsOnly; }
+    public ArrayList<String> getDownHintsOnly() { return downHintsOnly; }
+
     public ArrayList<Integer> getAcrossHintsNums() { return acrossHintsNums; }
     public ArrayList<Integer> getDownHintsNums() { return downHintsNums; }
     public ArrayList<String> getAcrossSolution() { return acrossSolution; }

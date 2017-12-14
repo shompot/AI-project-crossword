@@ -8,7 +8,6 @@ import java.util.ArrayList;
 
 public class TheSaurusSearch {
     // VARIABLES
-
     private String address;
 
     // CONSTRUCTOR
@@ -80,7 +79,7 @@ public class TheSaurusSearch {
 
     public static void main (String[] args) throws IOException{
         TheSaurusSearch s = new TheSaurusSearch();
-        ArrayList <String> synonyms = s.search("prisoner", 5);
+        ArrayList <String> synonyms = s.search("appetizer", 3);
         for (int i=0; i < synonyms.size(); i ++){
             System.out.println((i+1) + ". " + synonyms.get(i));
         }
