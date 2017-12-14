@@ -13,8 +13,13 @@ public class SolvePuzzle {
     private Crossword crossword;
     private ArrayList<String> clues;
     private ArrayList<String> solution;
+<<<<<<< HEAD
     private JTextArea solveLog;
     public JPanel solvePanel;
+=======
+    private ArrayList<String> logs;
+    //private String
+>>>>>>> 068c717bf819b0515d07c86ebc03b900d0407ab0
 
     // CONSTRUCTOR
     public SolvePuzzle(){
@@ -22,29 +27,42 @@ public class SolvePuzzle {
         wordLists = new ArrayList<ArrayList<String>>();
         clues = new ArrayList<String>();
         solution = new ArrayList<String>();
+        logs= new ArrayList<String>();
+        logs.add("Solve Puzzle object is created");
     }
 
     // SETTERS
 
     // GETTERS
+<<<<<<< HEAD
     public Crossword getCrossword()
     {
         return this.crossword;
     }
+=======
+    public ArrayList<String> getLog() { return logs; }
+
+>>>>>>> 068c717bf819b0515d07c86ebc03b900d0407ab0
     // METHODS
     public void openCrossword () throws IOException{
+        logs.add("Retrieving crossword");
         crossword.readGridFromFile("crosswords/December 12, 2017.html");
         //crossword.readGridFromUrl();
     }
    public void readWordLists () throws IOException{
+<<<<<<< HEAD
 
+=======
+        logs.add("Getting Clues from the Crossword");
+>>>>>>> 068c717bf819b0515d07c86ebc03b900d0407ab0
         // get clues
         clues.addAll(crossword.getDownHintsOnly());
         clues.addAll(crossword.getAcrossHintsOnly());
 
+        logs.add("Getting Solution from the Crossword");
         // get solution
-       solution.addAll(crossword.getDownSolution());
-       solution.addAll(crossword.getAcrossSolution());
+        solution.addAll(crossword.getDownSolution());
+        solution.addAll(crossword.getAcrossSolution());
 
        // create searching instances
         GoogleSearch googleSearch = new GoogleSearch();
@@ -55,12 +73,17 @@ public class SolvePuzzle {
         // search each clue one by one
        for (int i=0; i <clues.size(); i ++){
            ArrayList<String> result = new ArrayList<String>();
-           //String[] words = clues.get(i).split("\\s+");
-           for (String word: clues.get(i).split("\\s+")) {
-               result.addAll(theSaurusSearch.search(word, solution.get(i).length()));
+           String[] words = clues.get(i).split("\\s+");
+           //for (String word: clues.get(i).split("\\s+")) {
+            if (words.length==1){
+                logs.add("Searching in TheSaurus");
+               result.addAll(theSaurusSearch.search(words[0], solution.get(i).length()));
            }
+           logs.add("Searching in Dictionary");
            result.addAll(dictSearch.search(clues.get(i), solution.get(i).length()));
+           logs.add("Searchng in Google");
            result.addAll(googleSearch.search(clues.get(i), solution.get(i).length()));
+           logs.add("Searching in Lyrics");
            result.addAll(lyricsSearch.search(clues.get(i), solution.get(i).length()));
 
            wordLists.add(result);
@@ -69,12 +92,16 @@ public class SolvePuzzle {
    }
 
     public char[][] solve() throws IOException{
+<<<<<<< HEAD
         MessageConsole mc = new MessageConsole(solveLog);
         mc.redirectOut();
         mc.redirectErr(Color.RED, null);
         mc.setMessageLines(5000);
+=======
+>>>>>>> 068c717bf819b0515d07c86ebc03b900d0407ab0
         openCrossword();
         readWordLists();
+        logs.add("Trying the retrieved words");
         char [] solutionArr = crossword.getSolutionArr();
 
         char [][] answer = new char [5][5];
