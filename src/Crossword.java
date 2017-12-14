@@ -372,8 +372,8 @@ public class Crossword {
     public static void main(String[] args) throws IOException{
         Crossword g = new Crossword();
 
-        //g.readGridFromFile("crosswords/December 12, 2017.html");
-        g.readGridFromUrl();
+        g.readGridFromFile("crosswords/December 12, 2017.html");
+        //g.readGridFromUrl();
         //System.out.println(g.toString());
 
         int[] colors = g.getColors();
