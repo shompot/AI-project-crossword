@@ -397,7 +397,8 @@ public class CrosswordGUI {
     }
     public static void main(String[] args) throws IOException
     {
-        Crossword g = new Crossword();
+        SolvePuzzle solve = new SolvePuzzle();
+        Crossword g = solve.getCrossword();
         CrosswordGUI crossword = new CrosswordGUI();
         JFrame frame0 = new JFrame("Which Crossword?");
         String option = (String) JOptionPane.showInputDialog(frame0,
@@ -427,6 +428,14 @@ public class CrosswordGUI {
         frame.pack();
         frame.setVisible(true);
 
+        JFrame solveframe;
+        solveframe = new JFrame("Solve");
+        solveframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        solveframe.setContentPane( solve.solvePanel);
+        solveframe.setLocation(20,150);
+        solveframe.pack();
+        solveframe.setVisible(true);
+
         SolutionGUI solution = new SolutionGUI( g.getColors(), g.getNumbers(), g.getSolutionArr());
         JFrame solutionframe;
         solutionframe = new JFrame("Solution");
@@ -435,5 +444,6 @@ public class CrosswordGUI {
         solutionframe.setLocation(1020,150);
         solutionframe.pack();
         solutionframe.setVisible(true);
+        solve.solve();
     }
 }
