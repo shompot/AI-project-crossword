@@ -379,7 +379,7 @@ public class CrosswordGUI {
                     textArea4.setForeground( Color.RED);
                     textArea5.setForeground( Color.RED);
                 }
-                else if( words.get(i) == "best")
+                else if( words.get(i) == "BEST")
                 {
                     return;
                 }
