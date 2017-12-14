@@ -27,12 +27,24 @@ public class SolvePuzzleV2 {
 
     // GETTERS
     public ArrayList<String> getLog() { return logs; }
+    public ArrayList<ArrayList<String>> getWordLists() {
+        return wordLists;
+    }
+
 
     // METHODS
     public void openCrossword () throws IOException{
-        System.out.println("Retrieving crossword");
+        System.out.println("Opening the crossword");
         crossword.readGridFromFile("crosswords/December 12, 2017.html");
         //crossword.readGridFromUrl();
+    }
+    public void openCrosswordFromURL () throws IOException{
+        System.out.println("Opening the crossword");
+        crossword.readGridFromUrl();
+    }
+    public void openCrosswordFromFile(String fileName)throws IOException{
+        System.out.println("Opening the crossword");
+        crossword.readGridFromFile(fileName);
     }
     public void readWordLists () throws IOException{
         System.out.println("Getting Clues from the Crossword");
@@ -78,20 +90,28 @@ public class SolvePuzzleV2 {
 
     }
 
-    public ArrayList<String> getFirstAcross() throws IOException{
-        System.out.println("Opening the Crossword");
+    public void runSolution () throws IOException{
+        //System.out.println("Opening the Crossword");
         this.openCrossword();
         System.out.println("Reading the Words");
         this.readWordLists();
         System.out.println("Done Reading the Rords");
+    }
+    public ArrayList<String> getFirstAcross() throws IOException{
+        runSolution();
         return wordLists.get(0);
+    }
+
+
+    public ArrayList<ArrayList<String>> getPossibleSolutions() throws IOException{
+        runSolution();
+        return wordLists;
     }
 
     // MAIN
     public static void main(String[] args) throws IOException{
         SolvePuzzleV2 solvePuzzle = new SolvePuzzleV2();
-        ArrayList<String> solutionForFirstAcross = solvePuzzle.getFirstAcross();
-
+        solvePuzzle.runSolution();
 
     }
 }
