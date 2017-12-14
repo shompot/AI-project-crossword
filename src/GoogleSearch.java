@@ -26,36 +26,46 @@ public class GoogleSearch {
     // METHODS
     public ArrayList<String> search (String clue, int length) throws IOException{
         result = new ArrayList<String>();
-        result = getWordsForClue(clue, length);
-        searchPages(clue, length);
+        try {
+            getWordsForClue(clue, length);
+            searchPages(clue, length);
+        }
+        catch (Exception e){
+
+        }
         return result;
     }
-    public ArrayList<String> getWordsForClue(String clue, int length) throws IOException {
+    public void getWordsForClue(String clue, int length) throws IOException {
 
-        ArrayList<String> wordList = new ArrayList<String>();
+        //ArrayList<String> wordList = new ArrayList<String>();
+        result = new ArrayList<String>();
 
-        Pattern pattern = Pattern.compile("[ ^$][a-zA-Z]{" + length + "}[ ^$]");
+        try {
 
-        String searchURL = GOOGLE_SEARCH_URL + "?q=" + clue + "&num=" + NUM_OF_HEADERS_TO_SEARCH;
-        Document doc = Jsoup.connect(searchURL).userAgent("Mozilla/5.0").get();
+            Pattern pattern = Pattern.compile("[ ^$][a-zA-Z]{" + length + "}[ ^$]");
 
-        Elements results = doc.select("h3.r > a, span.st");
+            String searchURL = GOOGLE_SEARCH_URL + "?q=" + clue + "&num=" + NUM_OF_HEADERS_TO_SEARCH;
+            Document doc = Jsoup.connect(searchURL).userAgent("Mozilla/5.0").get();
 
-        for (Element result : results) { // This one gathers headers and texts in one header, one text fashion.
-            String text = result.text();
-            Matcher matcher = pattern.matcher(text);
+            Elements results = doc.select("h3.r > a, span.st");
 
-            while(matcher.find()) {
-                String word = matcher.group().toUpperCase();
+            for (Element res : results) { // This one gathers headers and texts in one header, one text fashion.
+                String text = res.text();
+                Matcher matcher = pattern.matcher(text);
 
-                if (!wordList.contains(word)){
-                    wordList.add(word);
-                    //System.out.println(word);
+                while (matcher.find()) {
+                    String word = matcher.group().toUpperCase();
+
+                    if (!result.contains(word)) {
+                        result.add(word);
+                        //System.out.println(word);
+                    }
                 }
             }
         }
-        //System.out.println(wordList.size());
-        return wordList;
+        catch (Exception e){
+
+        }
     }
     public ArrayList<String> readLinks (String html){
         //System.out.println("Reading Links");
@@ -85,30 +95,40 @@ public class GoogleSearch {
     public void searchPages (String clue, int length)throws IOException{
         //System.out.println("Searching pages");
 
-        Pattern pattern = Pattern.compile("[ ^$][a-zA-Z]{" + length + "}[ ^$]");
+        try {
 
-        String searchURL = GOOGLE_SEARCH_URL + "?q=" + clue + "&num=" + NUM_OF_HEADERS_TO_SEARCH;
-        Document document = Jsoup.connect(searchURL).get();
-        Elements elements = document.getElementsByClass("srg");
+            Pattern pattern = Pattern.compile("[ ^$][a-zA-Z]{" + length + "}[ ^$]");
 
-        String html = elements.toString();
+            String searchURL = GOOGLE_SEARCH_URL + "?q=" + clue + "&num=" + NUM_OF_HEADERS_TO_SEARCH;
+            Document document = Jsoup.connect(searchURL).get();
+            Elements elements = document.getElementsByClass("srg");
 
-        //System.out.println(elements.toString());
+            String html = elements.toString();
 
-        ArrayList<String> links = readLinks(html);
-        readFromLinks(links, length);
+            //System.out.println(elements.toString());
+
+            ArrayList<String> links = readLinks(html);
+            readFromLinks(links, length);
+        }
+        catch (Exception e){
+
+        }
     }
 
     public void readFromLinks (ArrayList<String> links, int length) throws  IOException{
-        for (int i=0; i < links.size(); i ++){
-            try {
-                Document documents = Jsoup.connect(links.get(i)).get();
-                String html  = documents.html();
-                readFromOneLink(html, length);
-            }
-            catch (Exception e){
+        try {
+            for (int i = 0; i < links.size(); i++) {
+                try {
+                    Document documents = Jsoup.connect(links.get(i)).get();
+                    String html = documents.html();
+                    readFromOneLink(html, length);
+                } catch (Exception e) {
+
+                }
 
             }
+        }
+        catch (Exception e){
 
         }
     }
