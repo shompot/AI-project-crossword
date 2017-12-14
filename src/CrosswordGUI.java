@@ -93,7 +93,6 @@ public class CrosswordGUI {
     private JPanel box23;
     private JPanel box24;
     private JPanel box25;
-    public TextComponentLogger logger;
     private ArrayList<String> acrossList = new ArrayList<String>();
     private ArrayList<String> downList = new ArrayList<String>();
     private ArrayList<JPanel> panelList = new ArrayList<JPanel>();
@@ -105,16 +104,12 @@ public class CrosswordGUI {
     private Color dark = new Color(123,86,78);
     public CrosswordGUI()
     {
-        logger = new TextComponentLogger(log);
-        FileLoader fileLoader = new FileLoader(logger);
-        fileLoader.loadFile();
         words.add( "KATE");
         words.add( "BAIT");
         words.add( "LATE");
         words.add( "FEET");
         words.add( "SASS");
-        //log.append( "\n Welcome! Starting project.");
-        logger.logAction( "\n Welcome! Starting project.");
+        log.append( "\n Welcome! Starting project.");
         AbstractDocument doc1=(AbstractDocument)textArea1.getDocument();
         doc1.setDocumentFilter(new DocumentSizeFilter(1));
         AbstractDocument doc2=(AbstractDocument)textArea2.getDocument();
@@ -314,8 +309,7 @@ public class CrosswordGUI {
 
     public void fillGrid()
     {
-        //getLog().append( "\nRetrieve crossword...");
-        logger.logAction( "\nRetrieve crossword...");
+        getLog().append( "\nRetrieve crossword...");
         int[] colorsArr;
         colorsArr = this.getColors();
         int[] numbersArr;
@@ -333,8 +327,7 @@ public class CrosswordGUI {
                 getButtonlist().get(i).setText("" + numbersArr[i]);
             }
         }
-        //getLog().append( "\nCrossword retrieval complete!");
-        logger.logAction(  "\nCrossword retrieval complete!");
+        getLog().append( "\nCrossword retrieval complete!");
         CheckWords c = new CheckWords();
         Thread t = new Thread(c);
         t.start();
@@ -343,24 +336,20 @@ public class CrosswordGUI {
     {
         String across = "";
         String down = "";
-        //getLog().append( "\nRetrieve hints...");
-        logger.logAction(  "\nRetrieve hints...");
+        getLog().append( "\nRetrieve hints...");
         for( int i = 0; i < this.acrossList.size(); i++)
         {
             across = across + this.acrossList.get(i) + "\n";
         }
         getAcrossHints().setText( across);
-        //getLog().append( "\nGot Across Hints!");
-        logger.logAction(  "\nGot Across Hints!");
+        getLog().append( "\nGot Across Hints!");
         for( int i = 0; i < this.downList.size(); i++)
         {
             down = down + this.downList.get(i) + "\n";
         }
         getDownHints().setText( down);
-        //getLog().append( "\nGot Down Hints!");
-        logger.logAction(  "\nGot Down Hints!");
-        //getLog().append( "\nHints retrieval complete!");
-        logger.logAction(  "\nHints retrieval complete!");
+        getLog().append( "\nGot Down Hints!");
+        getLog().append( "\nHints retrieval complete!");
     }
 
     class CheckWords implements Runnable
