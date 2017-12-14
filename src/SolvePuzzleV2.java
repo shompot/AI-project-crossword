@@ -20,7 +20,7 @@ public class SolvePuzzleV2 {
         clues = new ArrayList<String>();
         solution = new ArrayList<String>();
         logs= new ArrayList<String>();
-        logs.add("Solve Puzzle object is created");
+        System.out.println("Solve Puzzle object is created");
     }
 
     // SETTERS
@@ -30,17 +30,17 @@ public class SolvePuzzleV2 {
 
     // METHODS
     public void openCrossword () throws IOException{
-        logs.add("Retrieving crossword");
+        System.out.println("Retrieving crossword");
         crossword.readGridFromFile("crosswords/December 12, 2017.html");
         //crossword.readGridFromUrl();
     }
     public void readWordLists () throws IOException{
-        logs.add("Getting Clues from the Crossword");
+        System.out.println("Getting Clues from the Crossword");
         // get clues
         clues.addAll(crossword.getAcrossHintsOnly());
         clues.addAll(crossword.getDownHintsOnly());
 
-        logs.add("Getting Solution from the Crossword");
+        System.out.println("Getting Solution from the Crossword");
         // get solution
         solution.addAll(crossword.getAcrossSolution());
         solution.addAll(crossword.getDownSolution());
@@ -55,28 +55,35 @@ public class SolvePuzzleV2 {
         // search each clue one by one
         for (int i=0; i <clues.size(); i ++){
             ArrayList<String> result = new ArrayList<String>();
+            System.out.println("Searching possible solutions for word number " + (i+1));
             String[] words = clues.get(i).split("\\s+");
             //for (String word: clues.get(i).split("\\s+")) {
             if (words.length==1){
-                logs.add("Searching in TheSaurus");
+                System.out.println("\tSearching in TheSaurus");
                 result.addAll(theSaurusSearch.search(words[0], solution.get(i).length()));
+                System.out.println("\t\t\tSaved words found in TheSaurus");
             }
-            logs.add("Searching in Dictionary");
+            System.out.println("\tSearching in Dictionary");
             result.addAll(dictSearch.search(clues.get(i), solution.get(i).length()));
-            logs.add("Searchng in Google");
+            System.out.println("\t\t\tSaved words found in Dictionary");
+            System.out.println("\tSearchng in Google");
             result.addAll(googleSearch.search(clues.get(i), solution.get(i).length()));
-            logs.add("Searching in Lyrics");
+            System.out.println("\t\t\tSaved words found in Google");
+            System.out.println("\tSearching in Lyrics");
             result.addAll(lyricsSearch.search(clues.get(i), solution.get(i).length()));
+            System.out.println("\t\t\tSaved words found in Lyrics");
 
-            wordLists.add(result);
+            wordLists.add(i,result);
         }
 
     }
 
     public ArrayList<String> getFirstAcross() throws IOException{
+        System.out.println("Opening the Crossword");
         this.openCrossword();
+        System.out.println("Reading the Words");
         this.readWordLists();
-
+        System.out.println("Done Reading the Rords");
         return wordLists.get(0);
     }
 
@@ -84,7 +91,7 @@ public class SolvePuzzleV2 {
     public static void main(String[] args) throws IOException{
         SolvePuzzleV2 solvePuzzle = new SolvePuzzleV2();
         ArrayList<String> solutionForFirstAcross = solvePuzzle.getFirstAcross();
-        
+
 
     }
 }

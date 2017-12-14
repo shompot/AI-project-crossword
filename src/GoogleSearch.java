@@ -46,7 +46,7 @@ public class GoogleSearch {
             Matcher matcher = pattern.matcher(text);
 
             while(matcher.find()) {
-                String word = matcher.group().toLowerCase();
+                String word = matcher.group().toUpperCase();
 
                 if (!wordList.contains(word)){
                     wordList.add(word);
@@ -120,17 +120,17 @@ public class GoogleSearch {
         //System.out.println("\t\t\tHere are the words:\n" + text);
         for (String word : text.split("\\s+")){
             if (word.length() == length){
-                if (!result.contains(word.toLowerCase())) {
+                if (!result.contains(word.toUpperCase())) {
                     boolean isAllLetter = true;
                     for (int j = 0; j < length; j++) {
-                        if (Character.toLowerCase(word.charAt(j))>'z' || Character.toLowerCase(word.charAt(j))<'a') {
+                        if (Character.toUpperCase(word.charAt(j))>'z' || Character.toUpperCase(word.charAt(j))<'a') {
                             isAllLetter = false;
                             break;
                         }
                     }
                     if (isAllLetter) {
-                        result.add(word.toLowerCase());
-                        //System.out.println("\t" + word.toLowerCase());
+                        result.add(word.toUpperCase());
+                        //System.out.println("\t" + word.toUpperCase());
                     }
                 }
             }
@@ -139,5 +139,6 @@ public class GoogleSearch {
     public static void main (String [] args) throws IOException{
         GoogleSearch s = new GoogleSearch();
         ArrayList<String> result = s.search("gas in vegas", 4);
+        System.out.println(result.toString());
     }
 }

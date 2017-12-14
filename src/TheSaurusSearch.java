@@ -68,7 +68,7 @@ public class TheSaurusSearch {
             Elements el = d.getElementsByClass("text");
             String word = el.text();
             if (word.length() == length)
-                synonyms.add(word);
+                synonyms.add(word.toUpperCase());
             //System.out.println(el.text());
 
         }
