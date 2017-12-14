@@ -11,8 +11,9 @@ import java.util.regex.Pattern;
 
 public class GoogleSearch {
     // VARIABLES
-    public String GOOGLE_SEARCH_URL = "https://www.google.com/search";
-    public int NUM_OF_HEADERS_TO_SEARCH = 10;
+    private String GOOGLE_SEARCH_URL = "https://www.google.com/search";
+    private int NUM_OF_HEADERS_TO_SEARCH = 10;
+    private ArrayList<String> result;
 
     // CONSTRUCTOR
     public GoogleSearch (){
@@ -24,7 +25,9 @@ public class GoogleSearch {
 
     // METHODS
     public ArrayList<String> search (String clue, int length) throws IOException{
-        ArrayList<String> result = getWordsForClue(clue, length);
+        result = new ArrayList<String>();
+        result = getWordsForClue(clue, length);
+        searchPages(clue, length);
         return result;
     }
     public ArrayList<String> getWordsForClue(String clue, int length) throws IOException {
@@ -47,12 +50,91 @@ public class GoogleSearch {
 
                 if (!wordList.contains(word)){
                     wordList.add(word);
-                    System.out.println(word);
+                    //System.out.println(word);
                 }
             }
         }
         //System.out.println(wordList.size());
         return wordList;
+    }
+    public ArrayList<String> readLinks (String html){
+        //System.out.println("Reading Links");
+        ArrayList<String> links = new ArrayList<String>();
+
+        Document document = Jsoup.parse(html);
+        Elements elements = document.getElementsByClass("r");
+
+        //System.out.println(elements.toString());
+
+        int size = elements.size();
+        //System.out.println("SIZE: " + size);
+        for (int i = 0; i < size; i ++){
+            Element link = document.select("a").get(i);
+            String absUrl = link.absUrl("href");
+
+            if (!absUrl.isEmpty()) {
+                links.add(absUrl);
+                //System.out.println(absUrl);
+            }
+            else
+                size++;
+        }
+
+        return links;
+    }
+    public void searchPages (String clue, int length)throws IOException{
+        //System.out.println("Searching pages");
+
+        Pattern pattern = Pattern.compile("[ ^$][a-zA-Z]{" + length + "}[ ^$]");
+
+        String searchURL = GOOGLE_SEARCH_URL + "?q=" + clue + "&num=" + NUM_OF_HEADERS_TO_SEARCH;
+        Document document = Jsoup.connect(searchURL).get();
+        Elements elements = document.getElementsByClass("srg");
+
+        String html = elements.toString();
+
+        //System.out.println(elements.toString());
+
+        ArrayList<String> links = readLinks(html);
+        readFromLinks(links, length);
+    }
+
+    public void readFromLinks (ArrayList<String> links, int length) throws  IOException{
+        for (int i=0; i < links.size(); i ++){
+            try {
+                Document documents = Jsoup.connect(links.get(i)).get();
+                String html  = documents.html();
+                readFromOneLink(html, length);
+            }
+            catch (Exception e){
+
+            }
+
+        }
+    }
+
+    public void readFromOneLink (String html, int length){
+        Document document = Jsoup.parse(html);
+        Elements elements = document.getAllElements();
+        String text = elements.text();
+        //System.out.println("\t\t\tHere are the words:\n" + text);
+        for (String word : text.split("\\s+")){
+            if (word.length() == length){
+                if (!result.contains(word.toLowerCase())) {
+                    boolean isAllLetter = true;
+                    for (int j = 0; j < length; j++) {
+                        if (Character.toLowerCase(word.charAt(j))>'z' || Character.toLowerCase(word.charAt(j))<'a') {
+                            isAllLetter = false;
+                            break;
+                        }
+                    }
+                    if (isAllLetter) {
+                        result.add(word.toLowerCase());
+                        //System.out.println("\t" + word.toLowerCase());
+                    }
+                }
+            }
+        }
     }
     public static void main (String [] args) throws IOException{
         GoogleSearch s = new GoogleSearch();
