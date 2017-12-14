@@ -39,7 +39,7 @@ public class LyricsSearch {
             readFromLinks(links, length);
         }
         catch (Exception e){
-            System.out.print(e.toString());
+            //System.out.print(e.toString());
         }
         return result;
     }
