@@ -98,17 +98,11 @@ public class CrosswordGUI {
     private ArrayList<JPanel> panelList = new ArrayList<JPanel>();
     private ArrayList<JButton> buttonlist = new ArrayList<JButton>();;
     private ArrayList<JTextArea> textlist = new ArrayList<JTextArea>();;
-    public ArrayList<String> words = new ArrayList<String>();
     private int[] colors;
     private int[] numbers;
     private Color dark = new Color(123,86,78);
     public CrosswordGUI()
     {
-        words.add( "KATE");
-        words.add( "BAIT");
-        words.add( "LATE");
-        words.add( "FEET");
-        words.add( "SASS");
         log.append( "\n Welcome! Starting project.");
         AbstractDocument doc1=(AbstractDocument)textArea1.getDocument();
         doc1.setDocumentFilter(new DocumentSizeFilter(1));
@@ -354,12 +348,17 @@ public class CrosswordGUI {
 
     class CheckWords implements Runnable
     {
+        SolvePuzzleV2 solvePuzzle = new SolvePuzzleV2();
+        ArrayList<String> words = new ArrayList<String>();
         public void run()
         {
             check();
         }
         public void check()
         {
+            try
+            {
+                words = solvePuzzle.getFirstAcross();
             for( int i = 0; i < words.size(); i++)
             {
                 textArea2.setText( "" + words.get(i).charAt(0));
@@ -373,12 +372,16 @@ public class CrosswordGUI {
                 {
                     e.printStackTrace();
                 }
-                if( words.get(i) != "BEST")
+                if( words.get(i) != "best")
                 {
-                    textArea21.setForeground( Color.RED);
-                    textArea22.setForeground( Color.RED);
-                    textArea23.setForeground( Color.RED);
-                    textArea24.setForeground( Color.RED);
+                    textArea2.setForeground( Color.RED);
+                    textArea3.setForeground( Color.RED);
+                    textArea4.setForeground( Color.RED);
+                    textArea5.setForeground( Color.RED);
+                }
+                else
+                {
+                    return;
                 }
                 try
                 {
@@ -387,13 +390,16 @@ public class CrosswordGUI {
                 {
                     e.printStackTrace();
                 }
-                textArea21.setForeground( dark);
-                textArea22.setForeground( dark);
-                textArea23.setForeground( dark);
-                textArea24.setForeground( dark);
+                textArea2.setForeground( dark);
+                textArea3.setForeground( dark);
+                textArea4.setForeground( dark);
+                textArea5.setForeground( dark);
+            }
+            } catch (Exception e)
+            {
+                e.printStackTrace();
             }
         }
-
     }
     public static void main(String[] args) throws IOException
     {
