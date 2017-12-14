@@ -73,17 +73,17 @@ public class SolvePuzzleV2 {
             if (words.length==1){
                 System.out.println("\tSearching in TheSaurus");
                 result.addAll(theSaurusSearch.search(words[0], solution.get(i).length()));
-                System.out.println("\t\t\tSaved words found in TheSaurus");
+                System.out.println("\t\tSaved words found in TheSaurus");
             }
             System.out.println("\tSearching in Dictionary");
             result.addAll(dictSearch.search(clues.get(i), solution.get(i).length()));
-            System.out.println("\t\t\tSaved words found in Dictionary");
+            System.out.println("\t\tSaved words found in Dictionary");
             System.out.println("\tSearchng in Google");
             result.addAll(googleSearch.search(clues.get(i), solution.get(i).length()));
-            System.out.println("\t\t\tSaved words found in Google");
+            System.out.println("\t\tSaved words found in Google");
             System.out.println("\tSearching in Lyrics");
             result.addAll(lyricsSearch.search(clues.get(i), solution.get(i).length()));
-            System.out.println("\t\t\tSaved words found in Lyrics");
+            System.out.println("\t\tSaved words found in Lyrics");
 
             wordLists.add(i,result);
         }
