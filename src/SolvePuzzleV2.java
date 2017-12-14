@@ -112,6 +112,7 @@ public class SolvePuzzleV2 {
     public static void main(String[] args) throws IOException{
         SolvePuzzleV2 solvePuzzle = new SolvePuzzleV2();
         solvePuzzle.runSolution();
+        solvePuzzle.getWordLists();
 
     }
 }

@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="758354c3-6092-419c-94ab-32a394fd3154" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AI-project-crossword/CrosswordGUI$CheckWords.class" afterPath="$PROJECT_DIR$/out/production/AI-project-crossword/CrosswordGUI$CheckWords.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CrosswordGUI.java" afterPath="$PROJECT_DIR$/src/CrosswordGUI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SolvePuzzleV2.java" afterPath="$PROJECT_DIR$/src/SolvePuzzleV2.java" />
     </list>
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,8 +33,8 @@
       <file leaf-file-name="CrosswordGUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CrosswordGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="355" column="9" lean-forward="true" selection-start-line="355" selection-start-column="9" selection-end-line="355" selection-end-column="9" />
+            <state relative-caret-position="220">
+              <caret line="361" column="43" lean-forward="false" selection-start-line="361" selection-start-column="43" selection-end-line="361" selection-end-column="43" />
               <folding>
                 <element signature="e#12364#12372#0" expanded="true" />
                 <element signature="e#12410#12411#0" expanded="true" />
@@ -46,9 +47,13 @@
       <file leaf-file-name="SolvePuzzleV2.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SolvePuzzleV2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="90" column="62" lean-forward="false" selection-start-line="90" selection-start-column="62" selection-end-line="90" selection-end-column="62" />
-              <folding />
+            <state relative-caret-position="-779">
+              <caret line="50" column="20" lean-forward="true" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
+              <folding>
+                <element signature="e#886#887#0" expanded="true" />
+                <element signature="e#918#919#0" expanded="true" />
+                <element signature="e#2359#2367#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -126,6 +131,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/SolvePuzzleV2.java" />
         <option value="$PROJECT_DIR$/src/CrosswordGUI.java" />
       </list>
     </option>
@@ -540,14 +546,14 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1513158" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.9490132" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4243421" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.108552635" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -966,14 +972,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SolvePuzzleV2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="90" column="62" lean-forward="false" selection-start-line="90" selection-start-column="62" selection-end-line="90" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="249">
@@ -982,10 +980,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/SolvePuzzleV2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-779">
+          <caret line="50" column="20" lean-forward="true" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
+          <folding>
+            <element signature="e#886#887#0" expanded="true" />
+            <element signature="e#918#919#0" expanded="true" />
+            <element signature="e#2359#2367#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/CrosswordGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="355" column="9" lean-forward="true" selection-start-line="355" selection-start-column="9" selection-end-line="355" selection-end-column="9" />
+        <state relative-caret-position="220">
+          <caret line="361" column="43" lean-forward="false" selection-start-line="361" selection-start-column="43" selection-end-line="361" selection-end-column="43" />
           <folding>
             <element signature="e#12364#12372#0" expanded="true" />
             <element signature="e#12410#12411#0" expanded="true" />
