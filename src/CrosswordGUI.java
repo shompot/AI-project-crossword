@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class CrosswordGUI {
     public static final String[] options = { "Today", "Oct 24, 2017", "Nov 8, 2017", "Nov 14, 2017", "Nov 15, 2017",
-                                                "Dec 12, 2017"};
+                                                "Dec 12, 2017", "Dec 13, 2017"};
     private JPanel CWPanel;
     private JButton button1;
     private JButton button2;
@@ -476,6 +476,7 @@ public class CrosswordGUI {
         else if( option == "Nov 14, 2017") { System.out.println("Retrieving saved puzzle...Please wait");g.readGridFromFile("crosswords/November 14, 2017.html");}
         else if( option == "Nov 15, 2017") { System.out.println("Retrieving saved puzzle...Please wait");g.readGridFromFile("crosswords/November 15, 2017.html");}
         else if( option == "Dec 12, 2017") { System.out.println("Retrieving saved puzzle...Please wait");g.readGridFromFile("crosswords/December 12, 2017.html");}
+        else if( option == "Dec 13, 2017") { System.out.println("Retrieving saved puzzle...Please wait");g.readGridFromFile("crosswords/December 13, 2017.html");}
         else { crossword.getLog().append( "Cannot display puzzle"); }
 
         JFrame frame;
