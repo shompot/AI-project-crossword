@@ -358,6 +358,8 @@ public class CrosswordGUI {
         {
             try
             {
+                solvePuzzle.runSolution();
+                solvePuzzle.getWordLists();
                 words = solvePuzzle.getFirstAcross();
             for( int i = 0; i < words.size(); i++)
             {
