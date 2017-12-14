@@ -13,13 +13,10 @@ public class SolvePuzzle {
     private Crossword crossword;
     private ArrayList<String> clues;
     private ArrayList<String> solution;
-<<<<<<< HEAD
     private JTextArea solveLog;
     public JPanel solvePanel;
-=======
     private ArrayList<String> logs;
     //private String
->>>>>>> 068c717bf819b0515d07c86ebc03b900d0407ab0
 
     // CONSTRUCTOR
     public SolvePuzzle(){
@@ -34,15 +31,12 @@ public class SolvePuzzle {
     // SETTERS
 
     // GETTERS
-<<<<<<< HEAD
     public Crossword getCrossword()
     {
         return this.crossword;
     }
-=======
     public ArrayList<String> getLog() { return logs; }
 
->>>>>>> 068c717bf819b0515d07c86ebc03b900d0407ab0
     // METHODS
     public void openCrossword () throws IOException{
         logs.add("Retrieving crossword");
@@ -50,11 +44,7 @@ public class SolvePuzzle {
         //crossword.readGridFromUrl();
     }
    public void readWordLists () throws IOException{
-<<<<<<< HEAD
-
-=======
         logs.add("Getting Clues from the Crossword");
->>>>>>> 068c717bf819b0515d07c86ebc03b900d0407ab0
         // get clues
         clues.addAll(crossword.getDownHintsOnly());
         clues.addAll(crossword.getAcrossHintsOnly());
@@ -92,13 +82,10 @@ public class SolvePuzzle {
    }
 
     public char[][] solve() throws IOException{
-<<<<<<< HEAD
         MessageConsole mc = new MessageConsole(solveLog);
         mc.redirectOut();
         mc.redirectErr(Color.RED, null);
         mc.setMessageLines(5000);
-=======
->>>>>>> 068c717bf819b0515d07c86ebc03b900d0407ab0
         openCrossword();
         readWordLists();
         logs.add("Trying the retrieved words");
