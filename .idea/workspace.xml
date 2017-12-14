@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab42197d-0864-4a7f-9875-71a1cb7bf822" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,8 +15,8 @@
       <file leaf-file-name="Crossword.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Crossword.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="77" column="40" lean-forward="true" selection-start-line="77" selection-start-column="40" selection-end-line="77" selection-end-column="40" />
+            <state relative-caret-position="1156">
+              <caret line="77" column="40" lean-forward="false" selection-start-line="77" selection-start-column="40" selection-end-line="77" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -25,14 +27,16 @@
       <file leaf-file-name="CrosswordGUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CrosswordGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="382" column="35" lean-forward="true" selection-start-line="382" selection-start-column="35" selection-end-line="382" selection-end-column="35" />
+            <state relative-caret-position="3213">
+              <caret line="410" column="47" lean-forward="true" selection-start-line="410" selection-start-column="47" selection-end-line="410" selection-end-column="47" />
               <folding>
-                <element signature="e#9981#9982#0" expanded="true" />
-                <element signature="e#10015#10016#0" expanded="true" />
+                <element signature="e#2885#2893#0" expanded="true" />
+                <element signature="e#2951#2959#0" expanded="true" />
+                <element signature="e#3018#3026#0" expanded="true" />
+                <element signature="e#3087#3096#0" expanded="true" />
+                <element signature="e#3158#3169#0" expanded="true" />
                 <element signature="e#12997#13016#0" expanded="true" />
-                <element signature="e#13113#13114#0" expanded="true" />
-                <element signature="e#13144#13145#0" expanded="true" />
+                <element signature="e#13067#13075#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -41,8 +45,8 @@
       <file leaf-file-name="SolvePuzzleV2.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SolvePuzzleV2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="42" column="36" lean-forward="true" selection-start-line="42" selection-start-column="36" selection-end-line="42" selection-end-column="36" />
+            <state relative-caret-position="1122">
+              <caret line="72" column="33" lean-forward="true" selection-start-line="72" selection-start-column="33" selection-end-line="72" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -51,8 +55,8 @@
       <file leaf-file-name="GoogleSearch.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GoogleSearch.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+            <state relative-caret-position="510">
+              <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -80,13 +84,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/SolvePuzzleV2.java" />
-        <option value="$PROJECT_DIR$/src/CrosswordGUI.java" />
         <option value="$PROJECT_DIR$/src/Crossword.java" />
+        <option value="$PROJECT_DIR$/src/CrosswordGUI.java" />
+        <option value="$PROJECT_DIR$/src/SolvePuzzleV2.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="675" />
     <option name="y" value="1" />
     <option name="width" value="621" />
@@ -107,7 +111,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -124,9 +127,10 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="AndroidView" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="RunDashboard">
@@ -386,6 +390,13 @@
     <configuration />
   </component>
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ab42197d-0864-4a7f-9875-71a1cb7bf822" name="Default" comment="" />
+      <created>1513232003413</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1513232003413</updated>
+    </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -405,7 +416,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15153733" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15080526" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -439,11 +450,13 @@
         <state relative-caret-position="17">
           <caret line="432" column="30" lean-forward="true" selection-start-line="432" selection-start-column="30" selection-end-line="432" selection-end-column="30" />
           <folding>
-            <element signature="e#9981#9982#0" expanded="true" />
-            <element signature="e#10015#10016#0" expanded="true" />
+            <element signature="e#2885#2893#0" expanded="true" />
+            <element signature="e#2951#2959#0" expanded="true" />
+            <element signature="e#3018#3026#0" expanded="true" />
+            <element signature="e#3087#3096#0" expanded="true" />
+            <element signature="e#3158#3169#0" expanded="true" />
             <element signature="e#12997#13016#0" expanded="true" />
-            <element signature="e#13113#13114#0" expanded="true" />
-            <element signature="e#13144#13145#0" expanded="true" />
+            <element signature="e#13067#13075#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -488,11 +501,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#9981#9982#0" expanded="true" />
-            <element signature="e#10015#10016#0" expanded="true" />
+            <element signature="e#2885#2893#0" expanded="true" />
+            <element signature="e#2951#2959#0" expanded="true" />
+            <element signature="e#3018#3026#0" expanded="true" />
+            <element signature="e#3087#3096#0" expanded="true" />
+            <element signature="e#3158#3169#0" expanded="true" />
             <element signature="e#12997#13016#0" expanded="true" />
-            <element signature="e#13113#13114#0" expanded="true" />
-            <element signature="e#13144#13145#0" expanded="true" />
+            <element signature="e#13067#13075#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -502,11 +517,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#9981#9982#0" expanded="true" />
-            <element signature="e#10015#10016#0" expanded="true" />
+            <element signature="e#2885#2893#0" expanded="true" />
+            <element signature="e#2951#2959#0" expanded="true" />
+            <element signature="e#3018#3026#0" expanded="true" />
+            <element signature="e#3087#3096#0" expanded="true" />
+            <element signature="e#3158#3169#0" expanded="true" />
             <element signature="e#12997#13016#0" expanded="true" />
-            <element signature="e#13113#13114#0" expanded="true" />
-            <element signature="e#13144#13145#0" expanded="true" />
+            <element signature="e#13067#13075#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -516,11 +533,13 @@
         <state relative-caret-position="289">
           <caret line="23" column="29" lean-forward="true" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
           <folding>
-            <element signature="e#9981#9982#0" expanded="true" />
-            <element signature="e#10015#10016#0" expanded="true" />
+            <element signature="e#2885#2893#0" expanded="true" />
+            <element signature="e#2951#2959#0" expanded="true" />
+            <element signature="e#3018#3026#0" expanded="true" />
+            <element signature="e#3087#3096#0" expanded="true" />
+            <element signature="e#3158#3169#0" expanded="true" />
             <element signature="e#12997#13016#0" expanded="true" />
-            <element signature="e#13113#13114#0" expanded="true" />
-            <element signature="e#13144#13145#0" expanded="true" />
+            <element signature="e#13067#13075#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -630,7 +649,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -638,7 +656,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -646,7 +663,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -654,7 +670,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -662,7 +677,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -748,8 +762,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GoogleSearch.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        <state relative-caret-position="510">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Crossword.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1156">
+          <caret line="77" column="40" lean-forward="false" selection-start-line="77" selection-start-column="40" selection-end-line="77" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -758,32 +782,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SolvePuzzleV2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="42" column="36" lean-forward="true" selection-start-line="42" selection-start-column="36" selection-end-line="42" selection-end-column="36" />
+        <state relative-caret-position="1122">
+          <caret line="72" column="33" lean-forward="true" selection-start-line="72" selection-start-column="33" selection-end-line="72" selection-end-column="33" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Crossword.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="77" column="40" lean-forward="true" selection-start-line="77" selection-start-column="40" selection-end-line="77" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CrosswordGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="382" column="35" lean-forward="true" selection-start-line="382" selection-start-column="35" selection-end-line="382" selection-end-column="35" />
+        <state relative-caret-position="3213">
+          <caret line="410" column="47" lean-forward="true" selection-start-line="410" selection-start-column="47" selection-end-line="410" selection-end-column="47" />
           <folding>
-            <element signature="e#9981#9982#0" expanded="true" />
-            <element signature="e#10015#10016#0" expanded="true" />
+            <element signature="e#2885#2893#0" expanded="true" />
+            <element signature="e#2951#2959#0" expanded="true" />
+            <element signature="e#3018#3026#0" expanded="true" />
+            <element signature="e#3087#3096#0" expanded="true" />
+            <element signature="e#3158#3169#0" expanded="true" />
             <element signature="e#12997#13016#0" expanded="true" />
-            <element signature="e#13113#13114#0" expanded="true" />
-            <element signature="e#13144#13145#0" expanded="true" />
+            <element signature="e#13067#13075#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -373,7 +373,7 @@ public class CrosswordGUI {
                 int[] colorsArr;
                 colorsArr = getColors();
                 //int textAreaIndex = 0;
-                for ( int c = 0; c < possibleSolutions.size(); c++) {
+                for ( int c = 5; c < possibleSolutions.size(); c++) {
                     System.out.println("Trying word number " + c);
                     words = possibleSolutions.get(c);
                     String s = "";
@@ -399,8 +399,10 @@ public class CrosswordGUI {
                             for (int j=0; j <words.get(i).length() && t < ((c*5)+words.get(i).length()); j++) {
                                 textlist.get(t).setText("" + words.get(i).charAt(j));
                                 t++;
-                                if (t == (c*5)+words.get(i).length())
-                                    t=c*5;
+                                if (t == (c*5)+words.get(i).length()) {
+                                    t = c * 5;
+                                    while( colors[t] == 1) t++;
+                                }
                             }
 
                         }
@@ -408,14 +410,17 @@ public class CrosswordGUI {
                             for (int j=0; j <words.get(i).length() && t < 25; j++) {
                                 textlist.get(t).setText("" + words.get(i).charAt(j));
                                 t += 5;
-                                if (t >= 25)
-                                    t%=25;
+                                if (t >= 25) {
+                                    t %= 25;
+                                    while( colors[t] == 1) t+=5;
+                                    t-=5;
+                                }
                             }
 
                         }
 
                         try {
-                            Thread.sleep(1000);
+                            Thread.sleep(400);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
@@ -443,7 +448,7 @@ public class CrosswordGUI {
                             break;
                         }
                         try {
-                            Thread.sleep(1000);
+                            Thread.sleep(400);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }

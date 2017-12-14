@@ -85,7 +85,7 @@ public class SolvePuzzleV2 {
             result.addAll(lyricsSearch.search(clues.get(i), solution.get(i).length()));
             System.out.println("\t\tSaved words found in Lyrics");
 
-            wordLists.add(i,result);
+            wordLists.add(result);
         }
 
     }
