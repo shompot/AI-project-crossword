@@ -1,15 +1,26 @@
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
 import javax.swing.*;
 import javax.swing.text.AbstractDocument;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by Shiha on 11/11/2017.
  */
 
 public class CrosswordGUI {
+
+    public static final String GOOGLE_SEARCH_URL = "https://www.google.com/search";
+    public static final int NUM_OF_HEADERS_TO_SEARCH = 200;
     public static final String[] options = { "Today", "Oct 24, 2017", "Nov 8, 2017", "Nov 14, 2017", "Nov 15, 2017",
                                                 "Dec 12, 2017", "Dec 13, 2017"};
     private JPanel CWPanel;
@@ -162,7 +173,11 @@ public class CrosswordGUI {
             @Override
             public void actionPerformed(ActionEvent e)
             {
-                fillGrid();
+                try {
+                    fillGrid();
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
             }
         });
         getHints.addActionListener(new ActionListener()
@@ -310,8 +325,16 @@ public class CrosswordGUI {
     public void setAcrossSolution(ArrayList<String> acrossSolution) { this.acrossSolution = acrossSolution; }
     public void setDownSolution(ArrayList<String> downSolution) { this.downSolution = downSolution; }
 
-    public void fillGrid()
-    {
+    public static void printPuzzle(char[][] puzzle){
+        for (int x = 0; x < 5; x++) {
+            for (int y = 0; y < 5; y++) {
+                System.out.print(puzzle[y][x]);
+            }
+            System.out.println();
+        }
+    }
+
+    public void fillGrid() throws IOException {
         getLog().append( "\nRetrieve crossword...");
         int[] colorsArr;
         colorsArr = this.getColors();
@@ -331,10 +354,133 @@ public class CrosswordGUI {
             }
         }
         getLog().append( "\nCrossword retrieval complete!");
-        CheckWords c = new CheckWords();
-        Thread t = new Thread(c);
+
+        //Tam burada snapshots listesini olustur. Sonra CheckWords'e ver.
+        //What do I need?
+        //clues, in my order
+        //across order is the same. I just need to find out the down order.
+        ArrayList<String> clues = new ArrayList<String >(10);
+        clues.add(""); clues.add(""); clues.add(""); clues.add(""); clues.add("");
+        int[] downOrder = {0, 0, 0, 0, 0};
+        for (int i=0; i<5; i++){
+            for (int j=0; j<5; j++){
+                if (downOrder[i] == 0 && this.numbers[j*5+i] != 0){
+                    downOrder[i] = this.numbers[j*5+i];
+                }
+            }
+        }
+        System.out.println("Downorder:");
+        for (int i : downOrder){
+            System.out.print(i + ", ");
+        }
+        for (int i=0; i<5; i++){//Fill down clues
+            String clue = this.downList.get(i);
+            int j = Integer.parseInt(clue.substring(0, 1));
+            clue = clue.substring(3, clue.length());
+            int indexOfClue = 0;
+            for (int k=0; k<5; k++){
+                if (downOrder[k] == j){
+                    indexOfClue = k;
+                    System.out.println(indexOfClue);
+                }
+            }
+            clues.add(indexOfClue, clue);
+        }
+        for (String s : this.acrossList){
+            clues.add(s.substring(3, s.length()));
+        }
+        for (int i=0; i<clues.size(); i++){
+            if (clues.get(i) == ""){
+                clues.remove(i);
+                i--;
+            }
+        }
+        System.out.println("Clues in my order:");
+        for (String s : clues){
+            System.out.println(s);
+        }
+
+        System.out.println("Solution Arr:");
+        for (char c : getSolution()){
+            System.out.println(c + ", ");
+        }
+        char[] solutionsArr = getSolution();
+        char[][] solutions = new char[5][5];
+        int[] charCounts = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        for (int i=0; i<5; i++){
+            for (int j=0; j<5; j++){
+                if (solutionsArr[i*5+j] == ' '){
+                    solutions[j][i] = '@';
+                } else {
+                    System.out.print(j + " incremented from " + charCounts[j] + "to ");
+                    charCounts[j]++;
+                    System.out.println(charCounts[j] + ".");
+                    System.out.print((i+5) + " incremented from " + charCounts[i+5] + " to ");
+                    charCounts[i+5]++;
+                    System.out.println(charCounts[i+5] + ".");
+                    solutions[j][i] = Character.toLowerCase(solutionsArr[i*5+j]);
+                }
+            }
+        }
+
+        printPuzzle(solutions);
+
+        System.out.println("Printing charCounts");
+        for (int i=0; i<charCounts.length; i++){
+            System.out.println(charCounts[i] + ", ");
+        }
+
+        System.out.println();
+        //solution, in my order
+        //Bu ikisini combine algosuna ver, snapshotlari al.
+        ArrayList<ArrayList<String>> wordListList = getWordsForClues(clues, charCounts);
+        ArrayList<CharGrid> snapShots = solve(solutions, wordListList);
+
+        CheckWords checkWordsInstance = new CheckWords(snapShots);
+        Thread t = new Thread(checkWordsInstance);
         t.start();
     }
+
+    public static ArrayList<ArrayList<String>> getWordsForClues (ArrayList<String> clues, int[] charCounts) throws IOException{
+        ArrayList<ArrayList<String>> wordListList = new ArrayList<ArrayList<String>>();
+        for (int i=0; i<clues.size(); i++){
+            ArrayList<String> wordList = new ArrayList<String>();
+            wordList.addAll(getWordsForClue(clues.get(i), charCounts[i]));
+            LyricsSearch ls = new LyricsSearch();
+            wordList.addAll(ls.search(clues.get(i), charCounts[i]));
+            TheSaurusSearch ts = new TheSaurusSearch();
+            wordList.addAll(ts.search(clues.get(i), charCounts[i]));
+            wordListList.add(wordList);
+        }
+        return wordListList;
+    }
+
+    public static ArrayList<String> getWordsForClue(String clue, int charCount) throws IOException{
+
+        ArrayList<String> wordList = new ArrayList<String>();
+
+        Pattern pattern = Pattern.compile("[ ^$][a-zA-Z]{" + charCount + "}[ ^$]");
+
+        String searchURL = GOOGLE_SEARCH_URL + "?q=" + clue + "&num=" + NUM_OF_HEADERS_TO_SEARCH;
+        Document doc = Jsoup.connect(searchURL).userAgent("Mozilla/5.0").get();
+
+        Elements results = doc.select("h3.r > a, span.st");
+
+        for (Element result : results) { // This one gathers headers and texts in one header, one text fashion.
+            String text = result.text();
+            Matcher matcher = pattern.matcher(text);
+
+            while(matcher.find()) {
+                String word = matcher.group().toLowerCase();
+
+                if (!wordList.contains(word)){
+                    wordList.add(word);
+                }
+            }
+        }
+        return wordList;
+    }
+
     public void fillHints()
     {
         String across = "";
@@ -355,106 +501,201 @@ public class CrosswordGUI {
         getLog().append( "\nHints retrieval complete!");
     }
 
+
+
     class CheckWords implements Runnable
     {
         SolvePuzzleV2 solvePuzzle = new SolvePuzzleV2();
         ArrayList<ArrayList<String>> possibleSolutions = new ArrayList<ArrayList<String>>();
         ArrayList<String> words = new ArrayList<String>();
+        ArrayList<CharGrid> snapshots;
+        CheckWords(ArrayList<CharGrid> snapshots){
+            this.snapshots = snapshots;
+        }
         public void run()
         {
             check();
         }
         public void check()
         {
-            try
-            {
-                solvePuzzle.runSolution();
-                possibleSolutions = solvePuzzle.getWordLists();
-                int[] colorsArr;
-                colorsArr = getColors();
-                //int textAreaIndex = 0;
-                for ( int c = 0; c < possibleSolutions.size(); c++) {
-                    System.out.println("Trying word number " + c);
-                    words = possibleSolutions.get(c);
-                    String s = "";
-                    int tIndex;
+            for (int k=0; k<this.snapshots.size(); k++){
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("Showing this snapshot:");
+                char[][] charGrid = this.snapshots.get(k).p;
+                printPuzzle(charGrid);
+                for (int i=0; i<5; i++){
+                    for(int j=0; j<5; j++){
+                        if (charGrid[j][i] == '@'){
+                            //Do nothing
+                        } else if (charGrid[j][i] == '.'){
+                            textlist.get(i*5+j).setText(" ");
+                        } else {
 
-                    if ( c < 5){
-                        tIndex=c*5;
-                        while( colors[tIndex] == 1) tIndex++;
-                        System.out.println("Across word with c = " + c);
-                        s = acrossSolution.get(c);
-                    }
-                    else {
-                        tIndex=c%5;
-                        while( colors[tIndex] == 1) tIndex+=5;
-                        tIndex-=5;
-                        System.out.println("Down word with c = " + c%5);
-                        s = downSolution.get(c%5);
-                    }
-                    for (int i = 0; i < words.size(); i++) {
-
-                        int t = tIndex;
-                        words.get(i).replaceAll("\\s+","");
-                        if (c < 5){
-                            for (int j=0; j <words.get(i).length(); j++) {
-                                textlist.get(t).setText("" + words.get(i).charAt(j));
-                                t++;
-                            }
-
+                            textlist.get(i*5+j).setText(Character.toString(Character.toUpperCase(charGrid[j][i])));
                         }
-                        else {
-                            for (int j=0; j <words.get(i).length(); j++) {
-                                textlist.get(t).setText("" + words.get(i).charAt(j));
-                                t += 5;
-                            }
-
-                        }
-
-                        try {
-                            Thread.sleep(200);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                        t=tIndex;
-                        if (!words.get(i).equals(s)) {
-
-                            if (c < 5){
-
-                                for (int j=0; j <words.get(i).length(); j++) {
-
-                                    textlist.get(t).setForeground(Color.RED);
-                                    t++;
-                                }
-
-                            }
-                            else {
-
-                                for (int j=0; j <words.get(i).length(); j++) {
-
-                                    textlist.get(t).setForeground(Color.RED);
-                                    t += 5;
-                                }
-
-                            }
-                        } else if (words.get(i).equals(s)) {
-                            break;
-                        }
-                        try {
-                            Thread.sleep(200);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                        for (int j=0; j < 25; j ++)
-                            textlist.get(j).setForeground(dark);
                     }
                 }
-            } catch (Exception e)
-            {
-                e.printStackTrace();
+            }
+
+        }
+    }
+
+    public static ArrayList<CharGrid> solve(char[][] answer, ArrayList<ArrayList<String>> wordListList){
+
+        ArrayList<CharGrid> snapShots = new ArrayList<CharGrid>();
+
+        char[][] solution = new char[5][5]; //This is going to be modified and eventually be our solution.
+        for (int i=0; i<5; i++){
+            for (int j=0; j<5; j++){
+                if (answer[i][j] == '@'){
+                    solution[i][j] = '@';
+                } else {
+                    solution[i][j] = '.';
+                }
+            }
+        }
+        //@ is for denoting black boxes.
+
+        //Attack for the clue that has most known letters. if letter numbers are equal, go for the one with least words in its wordlist.
+        //ALWAYS, first 5 is the vertical ones, the other five is horizontal ones. left to right, top to bottom.
+        int[] knownLetters = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; //-1 means that that clue has been attacked before and wont be attacked again.
+        int[] allAttacked = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1}; //to stop the loop.
+        do {
+            for (int i=0; i<5; i++){ //evaluating the vertical words.
+                int letterCount = 0;
+                int atCount = 0;
+                for (int j=0; j<5; j++){
+                    if (solution[i][j] == '@') {
+                        atCount++;
+                    } else if (solution[i][j] >= 'a' && solution[i][j] <= 'z'){
+                        letterCount++;
+                    }
+                }
+                if (knownLetters[i] != -1){
+                    if (atCount + letterCount == 5){
+                        knownLetters[i] = -1;
+                    } else {
+                        knownLetters[i] = letterCount;
+                    }
+                }
+            }
+
+            for (int i=0; i<5; i++){ //evaluating the horizontal words.
+                int letterCount = 0;
+                int atCount = 0;
+                for (int j=0; j<5; j++){
+                    if (solution[j][i] == '@') {
+                        atCount++;
+                    } else if (solution[j][i] >= 'a' && solution[j][i] <= 'z'){
+                        letterCount++;
+                    }
+                }
+                if (knownLetters[i+5] != -1){
+                    if (atCount + letterCount == 5){
+                        knownLetters[i+5] = -1;
+                    } else {
+                        knownLetters[i+5] = letterCount;
+                    }
+                }
+            }
+
+            //Find index of clue with most known letters and take corresponding arraylist.
+            int index = 0;
+            for (int i=1; i<knownLetters.length; i++){
+                if (knownLetters[i]>knownLetters[index]){
+                    index = i;
+                }
+            }
+
+            //Initializing regex and answerWord
+            String regex = "";
+            String answerWord =  "";
+
+            //Proving values to regex and answerWord
+            if (index < 5){
+                for (int i=0; i<5; i++){
+                    regex = (solution[index][i] == '@' ? regex : regex + solution[index][i]);
+                    answerWord = (answer[index][i] == '@' ? answerWord : answerWord + answer[index][i]);
+                }
+            } else {
+                for (int i=0; i<5; i++){
+                    regex = (solution[i][index-5] == '@' ? regex : regex + solution[i][index-5]);
+                    answerWord = (answer[i][index-5] == '@' ? answerWord : answerWord + answer[i][index-5]);
+                }
+            }
+
+
+            for (String s : wordListList.get(index)){
+                Pattern pattern = Pattern.compile(regex);
+                Matcher matcher = pattern.matcher(s);
+                if (matcher.find()){ //Yanlızca bunun icinde snapShotsa ekleme yap. Bunun icinde iki kez ekleme yap.
+                    String word = matcher.group();
+                    snapShots.add(generateSnapshot(solution, index, word));
+                    if (word == answerWord){ //%100 Match!
+                        regex = word;
+                    } else { //not a match, but lets keep the matching letter in mind.
+                        char[] regexCharArray = regex.toCharArray();
+                        for (int i=0; i<word.length(); i++){ //If a letter is equal, update your regex. So that your next trials are informed.
+                            if (word.charAt(i) == answerWord.charAt(i)){
+                                regexCharArray[i] = word.charAt(i);
+                            }
+                        }
+                        regex = new String(regexCharArray);
+                    }
+                    snapShots.add(generateSnapshot(solution, index, regex));
+                }
+            }
+
+            knownLetters[index] = -1; //This clue is attacked and wont be attacked again. This line is what it means.
+
+            // the string regex changed and learned over time. Let's put regex into our current solution.
+            // In short, the code below updates solution[][].
+            modifySolution(solution, index, regex);
+
+        } while (!Arrays.equals(knownLetters, allAttacked));
+
+        return snapShots;
+
+    }
+
+    public static CharGrid generateSnapshot(char[][] solution, int index, String regex){ //This does not modify solution and shouldn't.
+        char[][] snapshot = new char[5][5];
+        for (int i=0; i<5; i++){
+            for (int j=0; j<5; j++){
+                snapshot[i][j] = solution[i][j];
+            }
+        }
+        modifySolution(snapshot, index, regex);
+        System.out.println("Snapshot generated:");
+        printPuzzle(snapshot);
+        System.out.println();
+        return new CharGrid(snapshot);
+    }
+
+    public static void modifySolution(char[][] solution, int index, String regex){
+        char[] charRegex = regex.toCharArray();
+        int curr = 0; //
+        if (index < 5) {
+            for (int i=0; i<5; i++){
+                if (solution[index][i] != '@'){
+                    solution[index][i] = charRegex[curr];
+                    curr++;
+                }
+            }
+        } else {
+            for (int i=0; i<5; i++){
+                if (solution[i][index-5] != '@'){
+                    solution[i][index-5] = charRegex[curr];
+                    curr++;
+                }
             }
         }
     }
+
     public static void main(String[] args) throws IOException
     {
         SolvePuzzle solve = new SolvePuzzle();
@@ -475,6 +716,7 @@ public class CrosswordGUI {
         else if( option == "Nov 15, 2017") { System.out.println("Retrieving saved puzzle...Please wait");g.readGridFromFile("crosswords/November 15, 2017.html");}
         else if( option == "Dec 12, 2017") { System.out.println("Retrieving saved puzzle...Please wait");g.readGridFromFile("crosswords/December 12, 2017.html");}
         else if( option == "Dec 13, 2017") { System.out.println("Retrieving saved puzzle...Please wait");g.readGridFromFile("crosswords/December 13, 2017.html");}
+        else if( option == "Dec 20, 2017") { System.out.println("Retrieving saved puzzle...Please wait");g.readGridFromFile("crosswords/December 20, 2017.html");}
         else { crossword.getLog().append( "Cannot display puzzle"); }
 
         JFrame frame;
@@ -509,6 +751,6 @@ public class CrosswordGUI {
         solutionframe.setLocation(1020,150);
         solutionframe.pack();
         solutionframe.setVisible(true);
-        solve.solve();
+
     }
 }
