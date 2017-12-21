@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class CrosswordGUI {
     public static final String[] options = { "Today", "Oct 24, 2017", "Nov 8, 2017", "Nov 14, 2017", "Nov 15, 2017",
-                                                "Dec 12, 2017"};
+                                                "Dec 12, 2017", "Dec 13, 2017"};
     private JPanel CWPanel;
     private JButton button1;
     private JButton button2;
@@ -98,17 +98,14 @@ public class CrosswordGUI {
     private ArrayList<JPanel> panelList = new ArrayList<JPanel>();
     private ArrayList<JButton> buttonlist = new ArrayList<JButton>();;
     private ArrayList<JTextArea> textlist = new ArrayList<JTextArea>();;
-    public ArrayList<String> words = new ArrayList<String>();
-    private int[] colors;
-    private int[] numbers;
+    public int[] colors;
+    public int[] numbers;
+    private char[] solution;
+    private ArrayList<String> acrossSolution;
+    private ArrayList<String> downSolution;
     private Color dark = new Color(123,86,78);
     public CrosswordGUI()
     {
-        words.add( "KATE");
-        words.add( "BAIT");
-        words.add( "LATE");
-        words.add( "FEET");
-        words.add( "SASS");
         log.append( "\n Welcome! Starting project.");
         AbstractDocument doc1=(AbstractDocument)textArea1.getDocument();
         doc1.setDocumentFilter(new DocumentSizeFilter(1));
@@ -306,6 +303,12 @@ public class CrosswordGUI {
     {
         this.downList = downList;
     }
+    public void setSolution (char[] solution) {this.solution = solution;}
+    public char[] getSolution () { return this.solution; }
+    public ArrayList<String> getAcrossSolution() { return acrossSolution; }
+    public ArrayList<String> getDownSolution() { return downSolution; }
+    public void setAcrossSolution(ArrayList<String> acrossSolution) { this.acrossSolution = acrossSolution; }
+    public void setDownSolution(ArrayList<String> downSolution) { this.downSolution = downSolution; }
 
     public void fillGrid()
     {
@@ -354,50 +357,108 @@ public class CrosswordGUI {
 
     class CheckWords implements Runnable
     {
+        SolvePuzzleV2 solvePuzzle = new SolvePuzzleV2();
+        ArrayList<ArrayList<String>> possibleSolutions = new ArrayList<ArrayList<String>>();
+        ArrayList<String> words = new ArrayList<String>();
         public void run()
         {
             check();
         }
         public void check()
         {
-            for( int i = 0; i < words.size(); i++)
+            try
             {
-                textArea21.setText( "" + words.get(i).charAt(0));
-                textArea22.setText( "" + words.get(i).charAt(1));
-                textArea23.setText( "" + words.get(i).charAt(2));
-                textArea24.setText( "" + words.get(i).charAt(3));
-                try
-                {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e)
-                {
-                    e.printStackTrace();
+                solvePuzzle.runSolution();
+                possibleSolutions = solvePuzzle.getWordLists();
+                int[] colorsArr;
+                colorsArr = getColors();
+                //int textAreaIndex = 0;
+                for ( int c = 0; c < possibleSolutions.size(); c++) {
+                    System.out.println("Trying word number " + c);
+                    words = possibleSolutions.get(c);
+                    String s = "";
+                    int tIndex;
+
+                    if ( c < 5){
+                        tIndex=c*5;
+                        while( colors[tIndex] == 1) tIndex++;
+                        System.out.println("Across word with c = " + c);
+                        s = acrossSolution.get(c);
+                    }
+                    else {
+                        tIndex=c%5;
+                        while( colors[tIndex] == 1) tIndex+=5;
+                        tIndex-=5;
+                        System.out.println("Down word with c = " + c%5);
+                        s = downSolution.get(c%5);
+                    }
+                    for (int i = 0; i < words.size(); i++) {
+
+                        int t = tIndex;
+                        words.get(i).replaceAll("\\s+","");
+                        if (c < 5){
+                            for (int j=0; j <words.get(i).length(); j++) {
+                                textlist.get(t).setText("" + words.get(i).charAt(j));
+                                t++;
+                            }
+
+                        }
+                        else {
+                            for (int j=0; j <words.get(i).length(); j++) {
+                                textlist.get(t).setText("" + words.get(i).charAt(j));
+                                t += 5;
+                            }
+
+                        }
+
+                        try {
+                            Thread.sleep(200);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        t=tIndex;
+                        if (!words.get(i).equals(s)) {
+
+                            if (c < 5){
+
+                                for (int j=0; j <words.get(i).length(); j++) {
+
+                                    textlist.get(t).setForeground(Color.RED);
+                                    t++;
+                                }
+
+                            }
+                            else {
+
+                                for (int j=0; j <words.get(i).length(); j++) {
+
+                                    textlist.get(t).setForeground(Color.RED);
+                                    t += 5;
+                                }
+
+                            }
+                        } else if (words.get(i).equals(s)) {
+                            break;
+                        }
+                        try {
+                            Thread.sleep(200);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        for (int j=0; j < 25; j ++)
+                            textlist.get(j).setForeground(dark);
+                    }
                 }
-                if( words.get(i) != "SASS")
-                {
-                    textArea21.setForeground( Color.RED);
-                    textArea22.setForeground( Color.RED);
-                    textArea23.setForeground( Color.RED);
-                    textArea24.setForeground( Color.RED);
-                }
-                try
-                {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e)
-                {
-                    e.printStackTrace();
-                }
-                textArea21.setForeground( dark);
-                textArea22.setForeground( dark);
-                textArea23.setForeground( dark);
-                textArea24.setForeground( dark);
+            } catch (Exception e)
+            {
+                e.printStackTrace();
             }
         }
-
     }
     public static void main(String[] args) throws IOException
     {
-        Crossword g = new Crossword();
+        SolvePuzzle solve = new SolvePuzzle();
+        Crossword g = solve.getCrossword();
         CrosswordGUI crossword = new CrosswordGUI();
         JFrame frame0 = new JFrame("Which Crossword?");
         String option = (String) JOptionPane.showInputDialog(frame0,
@@ -413,6 +474,7 @@ public class CrosswordGUI {
         else if( option == "Nov 14, 2017") { System.out.println("Retrieving saved puzzle...Please wait");g.readGridFromFile("crosswords/November 14, 2017.html");}
         else if( option == "Nov 15, 2017") { System.out.println("Retrieving saved puzzle...Please wait");g.readGridFromFile("crosswords/November 15, 2017.html");}
         else if( option == "Dec 12, 2017") { System.out.println("Retrieving saved puzzle...Please wait");g.readGridFromFile("crosswords/December 12, 2017.html");}
+        else if( option == "Dec 13, 2017") { System.out.println("Retrieving saved puzzle...Please wait");g.readGridFromFile("crosswords/December 13, 2017.html");}
         else { crossword.getLog().append( "Cannot display puzzle"); }
 
         JFrame frame;
@@ -421,11 +483,23 @@ public class CrosswordGUI {
         crossword.setNumbers( g.getNumbers());
         crossword.setAcrossList( g.getAcrossHints());
         crossword.setDownList( g.getDownHints());
+        crossword.setSolution (g.getSolutionArr());
+        crossword.setAcrossSolution(g.getAcrossSolution());
+        crossword.setDownSolution(g.getDownSolution());
+
         frame.setContentPane(crossword.CWPanel);
         frame.setLocation(400,150);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
+
+        JFrame solveframe;
+        solveframe = new JFrame("Solve");
+        solveframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        solveframe.setContentPane( solve.solvePanel);
+        solveframe.setLocation(20,150);
+        solveframe.pack();
+        solveframe.setVisible(true);
 
         SolutionGUI solution = new SolutionGUI( g.getColors(), g.getNumbers(), g.getSolutionArr());
         JFrame solutionframe;
@@ -435,5 +509,6 @@ public class CrosswordGUI {
         solutionframe.setLocation(1020,150);
         solutionframe.pack();
         solutionframe.setVisible(true);
+        solve.solve();
     }
 }

@@ -97,7 +97,7 @@ public class LyricsSearch {
 
             //System.out.println(text + ":");
             for (String word : text.split("\\s+")){
-                if (word.length() == length && (!result.contains(word.toLowerCase()))){
+                if (word.length() == length && (!result.contains(word.toUpperCase()))){
                     boolean isAllLetter = true;
                     for (int j=0; j < length; j ++){
                         if (!Character.isLetter(word.charAt(j))){
@@ -106,7 +106,7 @@ public class LyricsSearch {
                         }
                     }
                     if (isAllLetter) {
-                        result.add(word.toLowerCase());
+                        result.add(word.toUpperCase());
                         //System.out.println("\t" + word);
                     }
                 }
@@ -129,7 +129,7 @@ public class LyricsSearch {
         //System.out.println("\t\t\tHere are the words:\n" + text);
         for (String word : text.split("\\s+")){
             if (word.length() == length){
-                if (!result.contains(word.toLowerCase())) {
+                if (!result.contains(word.toUpperCase())) {
                     boolean isAllLetter = true;
                     for (int j = 0; j < length; j++) {
                         if (!Character.isLetter(word.charAt(j))) {
@@ -138,7 +138,7 @@ public class LyricsSearch {
                         }
                     }
                     if (isAllLetter) {
-                        result.add(word.toLowerCase());
+                        result.add(word.toUpperCase());
                         //System.out.println("\t" + word);
                     }
                 }

@@ -1,3 +1,5 @@
+import javax.swing.*;
+import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -5,11 +7,14 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class SolvePuzzle {
+
     // VARIABLES
     private ArrayList<ArrayList<String>> wordLists;
     private Crossword crossword;
     private ArrayList<String> clues;
     private ArrayList<String> solution;
+    private JTextArea solveLog;
+    public JPanel solvePanel;
     private ArrayList<String> logs;
     //private String
 
@@ -26,6 +31,10 @@ public class SolvePuzzle {
     // SETTERS
 
     // GETTERS
+    public Crossword getCrossword()
+    {
+        return this.crossword;
+    }
     public ArrayList<String> getLog() { return logs; }
 
     // METHODS
@@ -73,6 +82,10 @@ public class SolvePuzzle {
    }
 
     public char[][] solve() throws IOException{
+        MessageConsole mc = new MessageConsole(solveLog);
+        mc.redirectOut();
+        mc.redirectErr(Color.RED, null);
+        mc.setMessageLines(5000);
         openCrossword();
         readWordLists();
         logs.add("Trying the retrieved words");

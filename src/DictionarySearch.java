@@ -48,7 +48,7 @@ public class DictionarySearch {
                 String[] parts = answer.split("\\t");
                 String lastWord = parts[parts.length - 1];
                 if (lastWord.length() == length) {
-                    answers.add(lastWord.toLowerCase());
+                    answers.add(lastWord.toUpperCase());
                 }
                 fromIndex = index + text.length();
             }
