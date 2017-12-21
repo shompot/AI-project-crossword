@@ -73,7 +73,7 @@ public class Crossword {
     // Read file methods
     public void readGridFromUrl  () throws IOException{
         String url = "https://www.nytimes.com/crosswords/game/mini";
-        solutionAddress = "crosswords/Solution December 20, 2017.html";
+        solutionAddress = "crosswords/Solution December 21, 2017.html";
         Document documents = Jsoup.connect(url).get();
         String html  = documents.html();
         readCrossword(html);
