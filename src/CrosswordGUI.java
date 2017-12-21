@@ -324,7 +324,7 @@ public class CrosswordGUI {
                 getPanellist().get(i).setBackground(dark);
                 getTextlist().get(i).setBackground( dark);
                 getButtonlist().get(i).setBackground( dark);
-                getTextlist().get(i).setEnabled(false);
+                getTextlist().get(i).setForeground(dark);
                 getTextlist().get(i).setEditable(false);
             }
             if( numbersArr[i] != 0)
