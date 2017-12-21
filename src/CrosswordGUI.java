@@ -433,21 +433,28 @@ public class CrosswordGUI {
         System.out.println();
         //solution, in my order
         //Bu ikisini combine algosuna ver, snapshotlari al.
-        ArrayList<ArrayList<String>> wordListList = getWordsForClues(clues, charCounts);
-        ArrayList<CharGrid> snapShots = solve(solutions, wordListList);
+        getLog().append( "\nNow, looking for answers online. Patience is key here.");
 
-        CheckWords checkWordsInstance = new CheckWords(snapShots);
+        getLog().append( "\nWe've got them all! Now watch as FaglAIno tries to solve the puzzle...");
+        CheckWords checkWordsInstance = new CheckWords(this, clues, charCounts, solutions);
         Thread t = new Thread(checkWordsInstance);
         t.start();
     }
 
-    public static ArrayList<ArrayList<String>> getWordsForClues (ArrayList<String> clues, int[] charCounts) throws IOException{
+    public static ArrayList<ArrayList<String>> getWordsForClues (ArrayList<String> clues, int[] charCounts, CrosswordGUI cw) throws IOException{
         ArrayList<ArrayList<String>> wordListList = new ArrayList<ArrayList<String>>();
         for (int i=0; i<clues.size(); i++){
             ArrayList<String> wordList = new ArrayList<String>();
-            wordList.addAll(getWordsForClue(clues.get(i), charCounts[i]));
+            cw.getLog().append( "\nChecking Google for clue #" + i + "...");
+            try {
+                wordList.addAll(getWordsForClue(clues.get(i), charCounts[i]));
+            } catch (Exception e){
+                System.out.println("GOOGLE FAILED!");
+            }
+            cw.getLog().append( "\nChecking Lyrics for clue #" + i + "...");
             LyricsSearch ls = new LyricsSearch();
             wordList.addAll(ls.search(clues.get(i), charCounts[i]));
+            cw.getLog().append( "\nChecking Thesaurus for clue #" + i + "...");
             TheSaurusSearch ts = new TheSaurusSearch();
             wordList.addAll(ts.search(clues.get(i), charCounts[i]));
             wordListList.add(wordList);
@@ -462,22 +469,26 @@ public class CrosswordGUI {
         Pattern pattern = Pattern.compile("[ ^$][a-zA-Z]{" + charCount + "}[ ^$]");
 
         String searchURL = GOOGLE_SEARCH_URL + "?q=" + clue + "&num=" + NUM_OF_HEADERS_TO_SEARCH;
-        Document doc = Jsoup.connect(searchURL).userAgent("Mozilla/5.0").get();
+        try{
+            Document doc = Jsoup.connect(searchURL).userAgent("Mozilla/5.0").get();
+            Elements results = doc.select("h3.r > a, span.st");
 
-        Elements results = doc.select("h3.r > a, span.st");
+            for (Element result : results) { // This one gathers headers and texts in one header, one text fashion.
+                String text = result.text();
+                Matcher matcher = pattern.matcher(text);
 
-        for (Element result : results) { // This one gathers headers and texts in one header, one text fashion.
-            String text = result.text();
-            Matcher matcher = pattern.matcher(text);
+                while(matcher.find()) {
+                    String word = matcher.group().toLowerCase();
 
-            while(matcher.find()) {
-                String word = matcher.group().toLowerCase();
-
-                if (!wordList.contains(word)){
-                    wordList.add(word);
+                    if (!wordList.contains(word)){
+                        wordList.add(word);
+                    }
                 }
             }
+        } catch (Exception e){
+            System.out.println("GOOGLE FAILED");
         }
+
         return wordList;
     }
 
@@ -505,19 +516,33 @@ public class CrosswordGUI {
 
     class CheckWords implements Runnable
     {
-        SolvePuzzleV2 solvePuzzle = new SolvePuzzleV2();
-        ArrayList<ArrayList<String>> possibleSolutions = new ArrayList<ArrayList<String>>();
-        ArrayList<String> words = new ArrayList<String>();
-        ArrayList<CharGrid> snapshots;
-        CheckWords(ArrayList<CharGrid> snapshots){
-            this.snapshots = snapshots;
+        public ArrayList<CharGrid> snapshots;
+        public CrosswordGUI cw;
+        public ArrayList<String> clues;
+        int[] charCounts;
+        char[][] solution;
+
+        CheckWords(CrosswordGUI cw, ArrayList<String> clues, int[] charCounts, char[][] solution){
+            this.cw = cw;
+            this.clues = clues;
+            this.charCounts = charCounts;
+            this.solution = solution;
         }
         public void run()
         {
-            check();
+            try {
+                check();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
-        public void check()
-        {
+        public void check() throws IOException {
+
+            ArrayList<ArrayList<String>> wordListList = getWordsForClues(clues, charCounts, cw);
+            this.snapshots = solve(solution, wordListList);
+
+            getLog().append( "\nBuraya tum interneti bitirmeden gelmemesi lazim. Gelirse bu programi idam edin.");
+
             for (int k=0; k<this.snapshots.size(); k++){
                 try {
                     Thread.sleep(100);
