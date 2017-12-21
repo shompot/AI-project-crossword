@@ -95,7 +95,7 @@ public class SolvePuzzleV2 {
         this.openCrossword();
         System.out.println("Reading the Words");
         this.readWordLists();
-        System.out.println("Done Reading the Rords");
+        System.out.println("Done Reading the Words");
     }
     public ArrayList<String> getFirstAcross() throws IOException{
         runSolution();

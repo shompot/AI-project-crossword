@@ -436,7 +436,8 @@ public class CrosswordGUI {
                             }
                             else {
 
-                                for (int j=0; j <words.get(i).length(); j++) {
+                                for (int j=0; j <words.get(i).length(); j++)
+                                {
 
                                     textlist.get(t).setForeground(Color.RED);
                                     if( textlist.get(t).getBackground() == dark)

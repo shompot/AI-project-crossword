@@ -71,7 +71,7 @@ public class SolvePuzzle {
            }
            logs.add("Searching in Dictionary");
            result.addAll(dictSearch.search(clues.get(i), solution.get(i).length()));
-           logs.add("Searchng in Google");
+           logs.add("Searching in Google");
            result.addAll(googleSearch.search(clues.get(i), solution.get(i).length()));
            logs.add("Searching in Lyrics");
            result.addAll(lyricsSearch.search(clues.get(i), solution.get(i).length()));
@@ -154,7 +154,6 @@ public class SolvePuzzle {
             int index = 0;
             for (int i=1; i<knownLetters.length; i++){
                 if (knownLetters[i]>knownLetters[index]){
-                    System.out.println("WWW");
                     index = i;
                 }
             }
