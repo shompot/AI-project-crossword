@@ -35,7 +35,8 @@ public class SolvePuzzleV2 {
     // METHODS
     public void openCrossword () throws IOException{
         System.out.println("Opening the crossword");
-        crossword.readGridFromFile("crosswords/December 14, 2017.html");
+        System.out.println(crossword.getOption());
+        crossword.readGridFromFile("crosswords/December 12, 2017.html");
         //crossword.readGridFromUrl();
     }
     public void openCrosswordFromURL () throws IOException{

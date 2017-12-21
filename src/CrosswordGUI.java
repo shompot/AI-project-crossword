@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class CrosswordGUI {
     public static final String[] options = { "Today", "Oct 24, 2017", "Nov 8, 2017", "Nov 14, 2017", "Nov 15, 2017",
-                                                "Dec 12, 2017", "Dec 13, 2017"};
+                                                "Dec 12, 2017", "Dec 13, 2017", "Dec 14, 2017"};
     private JPanel CWPanel;
     private JButton button1;
     private JButton button2;
@@ -459,6 +459,7 @@ public class CrosswordGUI {
     {
         SolvePuzzle solve = new SolvePuzzle();
         Crossword g = solve.getCrossword();
+        solve.openCrossword();
         CrosswordGUI crossword = new CrosswordGUI();
         JFrame frame0 = new JFrame("Which Crossword?");
         String option = (String) JOptionPane.showInputDialog(frame0,
@@ -468,14 +469,57 @@ public class CrosswordGUI {
                 null,
                 options,
                 options[0]  );
-        if( option == "Today") { System.out.println("Retrieving today's puzzle...Please wait"); g.readGridFromUrl();}
-        else if( option == "Oct 24, 2017"){ System.out.println("Retrieving saved puzzle...Please wait"); g.readGridFromFile("crosswords/October 24, 2017.html");}
-        else if( option == "Nov 8, 2017"){ System.out.println("Retrieving saved puzzle...Please wait");g.readGridFromFile("crosswords/November 8, 2017.html");}
-        else if( option == "Nov 14, 2017") { System.out.println("Retrieving saved puzzle...Please wait");g.readGridFromFile("crosswords/November 14, 2017.html");}
-        else if( option == "Nov 15, 2017") { System.out.println("Retrieving saved puzzle...Please wait");g.readGridFromFile("crosswords/November 15, 2017.html");}
-        else if( option == "Dec 12, 2017") { System.out.println("Retrieving saved puzzle...Please wait");g.readGridFromFile("crosswords/December 12, 2017.html");}
-        else if( option == "Dec 13, 2017") { System.out.println("Retrieving saved puzzle...Please wait");g.readGridFromFile("crosswords/December 13, 2017.html");}
-        else { crossword.getLog().append( "Cannot display puzzle"); }
+        if( option == "Today") {
+            System.out.println("Retrieving today's puzzle...Please wait");
+            String s = "crosswords/December 21, 2017.html";
+            g.setOption(s);
+            g.readGridFromUrl();
+        }
+        else if( option == "Oct 24, 2017"){
+            System.out.println("Retrieving saved puzzle...Please wait");
+            String s = "crosswords/October 24, 2017.html";
+            g.setOption(s);
+            g.readGridFromFile(s);
+        }
+        else if( option == "Nov 8, 2017"){
+            System.out.println("Retrieving saved puzzle...Please wait");
+            String s = "crosswords/November 8, 2017.html";
+            g.setOption(s);
+            g.readGridFromFile(s);
+        }
+        else if( option == "Nov 14, 2017") {
+            System.out.println("Retrieving saved puzzle...Please wait");
+            String s = "crosswords/November 14, 2017.html";
+            g.setOption(s);
+            g.readGridFromFile(s);
+        }
+        else if( option == "Nov 15, 2017") {
+            System.out.println("Retrieving saved puzzle...Please wait");
+            String s = "crosswords/November 15, 2017.html";
+            g.setOption(s);
+            g.readGridFromFile(s);
+        }
+        else if( option == "Dec 12, 2017") {
+            System.out.println("Retrieving saved puzzle...Please wait");
+            String s = "crosswords/December 12, 2017.html";
+            g.setOption(s);
+            g.readGridFromFile(s);
+        }
+        else if( option == "Dec 13, 2017") {
+            System.out.println("Retrieving saved puzzle...Please wait");
+            String s = "crosswords/December 13, 2017.html";
+            g.setOption(s);
+            g.readGridFromFile(s);
+        }
+        else if(option == "Dec 14, 2017") {
+            System.out.println("Retrieving saved puzzle...Please wait");
+            String s = "crosswords/December 14, 2017.html";
+            g.setOption(s);
+            g.readGridFromFile(s);
+        }
+        else {
+            crossword.getLog().append( "Cannot display puzzle");
+        }
 
         JFrame frame;
         frame = new JFrame("CS461 faglAIno Crossword");

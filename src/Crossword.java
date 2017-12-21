@@ -19,6 +19,7 @@ public class Crossword {
     private int[] numbers;
     private String solutionAddress;
     private char[] solutionArr;
+    private String option;
 
     private ArrayList<String> acrossHints;
     private ArrayList<String> downHints;
@@ -48,6 +49,7 @@ public class Crossword {
     // SETTERS
     //public void setGrid(GridNode[] grid) { this.grid = grid; }
     public void setSide(int side) { this.side = side; }
+    public void setOption(String option) { this.option = option; }
    // public void setColors(int[] colors) { this.colors = colors; }
     //public void setNumbers(int[] numbers) { this.numbers = numbers; }
 
@@ -57,6 +59,9 @@ public class Crossword {
     public int[] getColors() { return colors; }
     public int[] getNumbers() { return numbers; }
     public char[] getSolutionArr() { return solutionArr; }
+    public String getOption() { return option; }
+
+
 
     public ArrayList<String> getAcrossHints() { return acrossHints; }
     public ArrayList<String> getDownHints() { return downHints; }
