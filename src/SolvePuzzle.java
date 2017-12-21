@@ -40,7 +40,7 @@ public class SolvePuzzle {
     // METHODS
     public void openCrossword () throws IOException{
         logs.add("Retrieving crossword");
-        crossword.readGridFromFile("crosswords/December 12, 2017.html");
+        crossword.readGridFromFile(crossword.getOption());
         //crossword.readGridFromUrl();
     }
    public void readWordLists () throws IOException{

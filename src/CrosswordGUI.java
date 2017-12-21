@@ -324,6 +324,8 @@ public class CrosswordGUI {
                 getPanellist().get(i).setBackground(dark);
                 getTextlist().get(i).setBackground( dark);
                 getButtonlist().get(i).setBackground( dark);
+                getTextlist().get(i).setEnabled(false);
+                getTextlist().get(i).setEditable(false);
             }
             if( numbersArr[i] != 0)
             {
@@ -424,6 +426,10 @@ public class CrosswordGUI {
                                 for (int j=0; j <words.get(i).length(); j++) {
 
                                     textlist.get(t).setForeground(Color.RED);
+                                    if( textlist.get(t).getBackground() == dark)
+                                    {
+                                        textlist.get(t).setForeground(dark);
+                                    }
                                     t++;
                                 }
 
@@ -433,11 +439,16 @@ public class CrosswordGUI {
                                 for (int j=0; j <words.get(i).length(); j++) {
 
                                     textlist.get(t).setForeground(Color.RED);
+                                    if( textlist.get(t).getBackground() == dark)
+                                    {
+                                        textlist.get(t).setForeground(dark);
+                                    }
                                     t += 5;
                                 }
 
                             }
                         } else if (words.get(i).equals(s)) {
+                            textlist.get(t).setEditable(false);
                             break;
                         }
                         try {
@@ -459,7 +470,6 @@ public class CrosswordGUI {
     {
         SolvePuzzle solve = new SolvePuzzle();
         Crossword g = solve.getCrossword();
-        solve.openCrossword();
         CrosswordGUI crossword = new CrosswordGUI();
         JFrame frame0 = new JFrame("Which Crossword?");
         String option = (String) JOptionPane.showInputDialog(frame0,

@@ -35,7 +35,6 @@ public class SolvePuzzleV2 {
     // METHODS
     public void openCrossword () throws IOException{
         System.out.println("Opening the crossword");
-        System.out.println(crossword.getOption());
         crossword.readGridFromFile("crosswords/December 12, 2017.html");
         //crossword.readGridFromUrl();
     }
@@ -72,19 +71,19 @@ public class SolvePuzzleV2 {
             String[] words = clues.get(i).split("\\s+");
             //for (String word: clues.get(i).split("\\s+")) {
             if (words.length==1){
-                System.out.println("\tSearching in TheSaurus");
+                System.out.println("\tSearching in Thesaurus");
                 result.addAll(theSaurusSearch.search(words[0], solution.get(i).length()));
-                System.out.println("\t\tSaved words found in TheSaurus");
+                System.out.println("\t\tSaved words found in Thesaurus");
             }
             System.out.println("\tSearching in Dictionary");
             result.addAll(dictSearch.search(clues.get(i), solution.get(i).length()));
             System.out.println("\t\tSaved words found in Dictionary");
-            System.out.println("\tSearchng in Google");
-            result.addAll(googleSearch.search(clues.get(i), solution.get(i).length()));
-            System.out.println("\t\tSaved words found in Google");
             System.out.println("\tSearching in Lyrics");
             result.addAll(lyricsSearch.search(clues.get(i), solution.get(i).length()));
             System.out.println("\t\tSaved words found in Lyrics");
+            System.out.println("\tSearchng in Google");
+            result.addAll(googleSearch.search(clues.get(i), solution.get(i).length()));
+            System.out.println("\t\tSaved words found in Google");
 
             wordLists.add(result);
         }
