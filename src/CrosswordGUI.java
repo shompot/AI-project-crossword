@@ -796,6 +796,7 @@ public class CrosswordGUI {
         g.readGridFromFile("crosswords/December 20, 2017.html");}
         else { crossword.getLog().append( "Cannot display puzzle"); }
 
+        //shows Crossword Grid and hints
         JFrame frame;
         frame = new JFrame("CS461 faglAIno Crossword");
         crossword.setColors(g.getColors());
@@ -805,7 +806,6 @@ public class CrosswordGUI {
         crossword.setSolution (g.getSolutionArr());
         crossword.setAcrossSolution(g.getAcrossSolution());
         crossword.setDownSolution(g.getDownSolution());
-
         frame.setContentPane(crossword.CWPanel);
         frame.setLocation(400,150);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -820,6 +820,7 @@ public class CrosswordGUI {
         solveframe.pack();
         solveframe.setVisible(true);
 
+        //Shows original solution of crossword
         SolutionGUI solution = new SolutionGUI( g.getColors(), g.getNumbers(), g.getSolutionArr());
         JFrame solutionframe;
         solutionframe = new JFrame("Solution");
