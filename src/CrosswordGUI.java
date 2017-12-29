@@ -21,64 +21,14 @@ public class CrosswordGUI {
 
     public static final String GOOGLE_SEARCH_URL = "https://www.google.com/search";
     public static final int NUM_OF_HEADERS_TO_SEARCH = 200;
+    //variables, constants, objects
+    //crossword fetching options
     public static final String[] options = { "Today", "Oct 24, 2017", "Nov 8, 2017", "Nov 14, 2017", "Nov 15, 2017",
                                                 "Dec 12, 2017", "Dec 13, 2017"};
+    //Crossword Panel
     private JPanel CWPanel;
-    private JButton button1;
-    private JButton button2;
-    private JButton button3;
-    private JButton button4;
-    private JButton button5;
-    private JButton button6;
-    private JButton button7;
-    private JButton button8;
-    private JButton button9;
-    private JButton button10;
-    private JButton button11;
-    private JButton button12;
-    private JButton button13;
-    private JButton button14;
-    private JButton button15;
-    private JButton button16;
-    private JButton button17;
-    private JButton button18;
-    private JButton button19;
-    private JButton button20;
-    private JButton button21;
-    private JButton button22;
-    private JButton button23;
-    private JButton button24;
-    private JButton button25;
-    private JTextArea log;
-    private JButton getCrossword;
-    private JButton getHints;
-    private JTextArea downHints;
-    private JTextArea acrossHints;
-    private JTextArea textArea1;
-    private JTextArea textArea2;
-    private JTextArea textArea3;
-    private JTextArea textArea4;
-    private JTextArea textArea5;
-    private JTextArea textArea6;
-    private JTextArea textArea7;
-    private JTextArea textArea8;
-    private JTextArea textArea9;
-    private JTextArea textArea10;
-    private JTextArea textArea11;
-    private JTextArea textArea12;
-    private JTextArea textArea13;
-    private JTextArea textArea14;
-    private JTextArea textArea15;
-    private JTextArea textArea16;
-    private JTextArea textArea17;
-    private JTextArea textArea18;
-    private JTextArea textArea19;
-    private JTextArea textArea20;
-    private JTextArea textArea21;
-    private JTextArea textArea22;
-    private JTextArea textArea23;
-    private JTextArea textArea24;
-    private JTextArea textArea25;
+    //Crossword Grid
+    //Grid Panels that have the buttons and text areas
     private JPanel box1;
     private JPanel box2;
     private JPanel box3;
@@ -104,6 +54,71 @@ public class CrosswordGUI {
     private JPanel box23;
     private JPanel box24;
     private JPanel box25;
+    //Disabled JButtons that "hold" the numbers of the white squares
+    private JButton button1;
+    private JButton button2;
+    private JButton button3;
+    private JButton button4;
+    private JButton button5;
+    private JButton button6;
+    private JButton button7;
+    private JButton button8;
+    private JButton button9;
+    private JButton button10;
+    private JButton button11;
+    private JButton button12;
+    private JButton button13;
+    private JButton button14;
+    private JButton button15;
+    private JButton button16;
+    private JButton button17;
+    private JButton button18;
+    private JButton button19;
+    private JButton button20;
+    private JButton button21;
+    private JButton button22;
+    private JButton button23;
+    private JButton button24;
+    private JButton button25;
+    //Enabled JTextAreas that are within the white squares within the crossword grids
+    private JTextArea textArea1;
+    private JTextArea textArea2;
+    private JTextArea textArea3;
+    private JTextArea textArea4;
+    private JTextArea textArea5;
+    private JTextArea textArea6;
+    private JTextArea textArea7;
+    private JTextArea textArea8;
+    private JTextArea textArea9;
+    private JTextArea textArea10;
+    private JTextArea textArea11;
+    private JTextArea textArea12;
+    private JTextArea textArea13;
+    private JTextArea textArea14;
+    private JTextArea textArea15;
+    private JTextArea textArea16;
+    private JTextArea textArea17;
+    private JTextArea textArea18;
+    private JTextArea textArea19;
+    private JTextArea textArea20;
+    private JTextArea textArea21;
+    private JTextArea textArea22;
+    private JTextArea textArea23;
+    private JTextArea textArea24;
+    private JTextArea textArea25;
+    //Hints
+    //Disabled JTextAreas where hints are listed
+    private JTextArea downHints;
+    private JTextArea acrossHints;
+    //Log
+    //JTextArea for the log that tracks the software development
+    private JTextArea log;
+    //Prompt Buttons
+    //JButtons to prompt getting the grid and the hints
+    private JButton getCrossword;
+    private JButton getHints;
+
+    //ArrayLists and Arrays
     private ArrayList<String> acrossList = new ArrayList<String>();
     private ArrayList<String> downList = new ArrayList<String>();
     private ArrayList<JPanel> panelList = new ArrayList<JPanel>();
@@ -114,10 +129,16 @@ public class CrosswordGUI {
     private char[] solution;
     private ArrayList<String> acrossSolution;
     private ArrayList<String> downSolution;
+    //Color
     private Color dark = new Color(123,86,78);
+
+    //Constructor
     public CrosswordGUI()
     {
+        //Display Starting Project in the log
         log.append( "\n Welcome! Starting project.");
+        //To limit the text area to only 1 letter
+        //uses LimitLines Document class and DocumentSize Filter
         AbstractDocument doc1=(AbstractDocument)textArea1.getDocument();
         doc1.setDocumentFilter(new DocumentSizeFilter(1));
         AbstractDocument doc2=(AbstractDocument)textArea2.getDocument();
@@ -168,11 +189,13 @@ public class CrosswordGUI {
         doc24.setDocumentFilter(new DocumentSizeFilter(1));
         AbstractDocument doc25=(AbstractDocument)textArea25.getDocument();
         doc25.setDocumentFilter(new DocumentSizeFilter(1));
+        //action listener for the get crossword button
         getCrossword.addActionListener(new ActionListener()
         {
             @Override
             public void actionPerformed(ActionEvent e)
             {
+                //call fillGrid() method
                 try {
                     fillGrid();
                 } catch (IOException e1) {
@@ -180,15 +203,21 @@ public class CrosswordGUI {
                 }
             }
         });
+        //get hints button action listener
         getHints.addActionListener(new ActionListener()
         {
             @Override
             public void actionPerformed(ActionEvent e)
             {
+                //call fillHint() method
                 fillHints();
             }
         });
     }
+
+    //Getters and Setters
+    //GETTERS
+    //getButtonList: fills list of buttons that hold numbers
     public ArrayList<JButton> getButtonlist()
     {
         buttonlist.add( button1);
@@ -218,6 +247,7 @@ public class CrosswordGUI {
         buttonlist.add( button25);
         return buttonlist;
     }
+    //get text list: fills list of text areas that are editable squares
     public ArrayList<JTextArea> getTextlist() {
         textlist.add(textArea1);
         textlist.add(textArea2);
@@ -246,6 +276,7 @@ public class CrosswordGUI {
         textlist.add(textArea25);
         return textlist;
     }
+    //getpanellist: fills list with panels that hold the editable squares and their corresponding numbers
     public ArrayList<JPanel> getPanellist() {
         panelList.add(box1);
         panelList.add(box2);
@@ -282,14 +313,6 @@ public class CrosswordGUI {
     {
         return this.numbers;
     }
-    public void setColors( int[] colors)
-    {
-        this.colors = colors;
-    }
-    public void setNumbers( int[] numbers)
-    {
-        this.numbers = numbers;
-    }
     public JTextArea getDownHints()
     {
         return this.downHints;
@@ -310,6 +333,18 @@ public class CrosswordGUI {
     {
         return this.downList;
     }
+    public ArrayList<String> getAcrossSolution() { return acrossSolution; }
+    public ArrayList<String> getDownSolution() { return downSolution; }
+    public char[] getSolution () { return this.solution; }
+    //SETTERS
+    public void setColors( int[] colors)
+    {
+        this.colors = colors;
+    }
+    public void setNumbers( int[] numbers)
+    {
+        this.numbers = numbers;
+    }
     public void setAcrossList( ArrayList<String> acrossList)
     {
         this.acrossList = acrossList;
@@ -319,12 +354,11 @@ public class CrosswordGUI {
         this.downList = downList;
     }
     public void setSolution (char[] solution) {this.solution = solution;}
-    public char[] getSolution () { return this.solution; }
-    public ArrayList<String> getAcrossSolution() { return acrossSolution; }
-    public ArrayList<String> getDownSolution() { return downSolution; }
     public void setAcrossSolution(ArrayList<String> acrossSolution) { this.acrossSolution = acrossSolution; }
     public void setDownSolution(ArrayList<String> downSolution) { this.downSolution = downSolution; }
 
+
+    //printPuzzle method-- for TESTING
     public static void printPuzzle(char[][] puzzle){
         for (int x = 0; x < 5; x++) {
             for (int y = 0; y < 5; y++) {
@@ -334,22 +368,30 @@ public class CrosswordGUI {
         }
     }
 
+    //fillGrid method() fills the crossword Grid-- FOR GUI
     public void fillGrid() throws IOException {
+        //display in log that retrieval is initiated
         getLog().append( "\nRetrieve crossword...");
+        //need array of colors that we got from the html from website
         int[] colorsArr;
         colorsArr = this.getColors();
+        //need array of numbers that we got from the html from website
         int[] numbersArr;
         numbersArr = this.getNumbers();
+        //lop in the arraylists and copy the puzzle int ours accordingly
         for( int i = 0; i < 25; i++)
         {
             if( colorsArr[i] == 1)
             {
+                //if the array has value of 1 it means it is black so copy into ours as black
                 getPanellist().get(i).setBackground(dark);
                 getTextlist().get(i).setBackground( dark);
                 getButtonlist().get(i).setBackground( dark);
             }
             if( numbersArr[i] != 0)
             {
+                //..if value is 0, it means it is white and fillable so the text should be empty and the
+                //number should appear
                 getButtonlist().get(i).setText("" + numbersArr[i]);
             }
         }
@@ -492,6 +534,7 @@ public class CrosswordGUI {
         return wordList;
     }
 
+    //fillHints method- copies the hints
     public void fillHints()
     {
         String across = "";
@@ -501,13 +544,13 @@ public class CrosswordGUI {
         {
             across = across + this.acrossList.get(i) + "\n";
         }
-        getAcrossHints().setText( across);
+        getAcrossHints().setText( across); //across hints copied
         getLog().append( "\nGot Across Hints!");
         for( int i = 0; i < this.downList.size(); i++)
         {
             down = down + this.downList.get(i) + "\n";
         }
-        getDownHints().setText( down);
+        getDownHints().setText( down); //down hints copied
         getLog().append( "\nGot Down Hints!");
         getLog().append( "\nHints retrieval complete!");
     }
@@ -721,11 +764,13 @@ public class CrosswordGUI {
         }
     }
 
+    //Run this main method!
     public static void main(String[] args) throws IOException
     {
         SolvePuzzle solve = new SolvePuzzle();
         Crossword g = solve.getCrossword();
         CrosswordGUI crossword = new CrosswordGUI();
+        //Pop up frame asking which crossword to solve
         JFrame frame0 = new JFrame("Which Crossword?");
         String option = (String) JOptionPane.showInputDialog(frame0,
                 "Which crossword would you like to solve?",
@@ -735,15 +780,23 @@ public class CrosswordGUI {
                 options,
                 options[0]  );
         if( option == "Today") { System.out.println("Retrieving today's puzzle...Please wait"); g.readGridFromUrl();}
-        else if( option == "Oct 24, 2017"){ System.out.println("Retrieving saved puzzle...Please wait"); g.readGridFromFile("crosswords/October 24, 2017.html");}
-        else if( option == "Nov 8, 2017"){ System.out.println("Retrieving saved puzzle...Please wait");g.readGridFromFile("crosswords/November 8, 2017.html");}
-        else if( option == "Nov 14, 2017") { System.out.println("Retrieving saved puzzle...Please wait");g.readGridFromFile("crosswords/November 14, 2017.html");}
-        else if( option == "Nov 15, 2017") { System.out.println("Retrieving saved puzzle...Please wait");g.readGridFromFile("crosswords/November 15, 2017.html");}
-        else if( option == "Dec 12, 2017") { System.out.println("Retrieving saved puzzle...Please wait");g.readGridFromFile("crosswords/December 12, 2017.html");}
-        else if( option == "Dec 13, 2017") { System.out.println("Retrieving saved puzzle...Please wait");g.readGridFromFile("crosswords/December 13, 2017.html");}
-        else if( option == "Dec 20, 2017") { System.out.println("Retrieving saved puzzle...Please wait");g.readGridFromFile("crosswords/December 20, 2017.html");}
+        else if( option == "Oct 24, 2017"){ System.out.println("Retrieving saved puzzle...Please wait");
+        g.readGridFromFile("crosswords/October 24, 2017.html");}
+        else if( option == "Nov 8, 2017"){ System.out.println("Retrieving saved puzzle...Please wait");
+        g.readGridFromFile("crosswords/November 8, 2017.html");}
+        else if( option == "Nov 14, 2017") { System.out.println("Retrieving saved puzzle...Please wait");
+        g.readGridFromFile("crosswords/November 14, 2017.html");}
+        else if( option == "Nov 15, 2017") { System.out.println("Retrieving saved puzzle...Please wait");
+        g.readGridFromFile("crosswords/November 15, 2017.html");}
+        else if( option == "Dec 12, 2017") { System.out.println("Retrieving saved puzzle...Please wait");
+        g.readGridFromFile("crosswords/December 12, 2017.html");}
+        else if( option == "Dec 13, 2017") { System.out.println("Retrieving saved puzzle...Please wait");
+        g.readGridFromFile("crosswords/December 13, 2017.html");}
+        else if( option == "Dec 20, 2017") { System.out.println("Retrieving saved puzzle...Please wait");
+        g.readGridFromFile("crosswords/December 20, 2017.html");}
         else { crossword.getLog().append( "Cannot display puzzle"); }
 
+        //shows Crossword Grid and hints
         JFrame frame;
         frame = new JFrame("CS461 faglAIno Crossword");
         crossword.setColors(g.getColors());
@@ -753,7 +806,6 @@ public class CrosswordGUI {
         crossword.setSolution (g.getSolutionArr());
         crossword.setAcrossSolution(g.getAcrossSolution());
         crossword.setDownSolution(g.getDownSolution());
-
         frame.setContentPane(crossword.CWPanel);
         frame.setLocation(400,150);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -768,6 +820,7 @@ public class CrosswordGUI {
         solveframe.pack();
         solveframe.setVisible(true);
 
+        //Shows original solution of crossword
         SolutionGUI solution = new SolutionGUI( g.getColors(), g.getNumbers(), g.getSolutionArr());
         JFrame solutionframe;
         solutionframe = new JFrame("Solution");
