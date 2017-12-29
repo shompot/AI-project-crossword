@@ -58,7 +58,7 @@ public class GoogleSearch {
 
                     if (!result.contains(word)) {
                         result.add(word);
-                        //System.out.println(word);
+                        System.out.println(word);
                     }
                 }
             }
@@ -99,19 +99,19 @@ public class GoogleSearch {
 
             Pattern pattern = Pattern.compile("[ ^$][a-zA-Z]{" + length + "}[ ^$]");
 
-            String searchURL = GOOGLE_SEARCH_URL + "?q=" + clue + "&num=" + NUM_OF_HEADERS_TO_SEARCH;
+            String searchURL = GOOGLE_SEARCH_URL + "?q=" + clue + "-\"crossword solver\""  + "&num=" + NUM_OF_HEADERS_TO_SEARCH;
             Document document = Jsoup.connect(searchURL).get();
             Elements elements = document.getElementsByClass("srg");
 
             String html = elements.toString();
 
-            //System.out.println(elements.toString());
+            System.out.println(elements.toString());
 
             ArrayList<String> links = readLinks(html);
             readFromLinks(links, length);
         }
         catch (Exception e){
-
+            //System.out.print(e);
         }
     }
 
@@ -137,7 +137,7 @@ public class GoogleSearch {
         Document document = Jsoup.parse(html);
         Elements elements = document.getAllElements();
         String text = elements.text();
-        //System.out.println("\t\t\tHere are the words:\n" + text);
+        System.out.println("\t\t\tHere are the words:\n" + text);
         for (String word : text.split("\\s+")){
             if (word.length() == length){
                 if (!result.contains(word.toUpperCase())) {
@@ -158,7 +158,7 @@ public class GoogleSearch {
     }
     public static void main (String [] args) throws IOException{
         GoogleSearch s = new GoogleSearch();
-        ArrayList<String> result = s.search("gas in vegas", 4);
+        ArrayList<String> result = s.search("love", 4);
         System.out.println(result.toString());
     }
 }

@@ -23,8 +23,7 @@ public class CrosswordGUI {
     public static final int NUM_OF_HEADERS_TO_SEARCH = 200;
     //variables, constants, objects
     //crossword fetching options
-    public static final String[] options = { "Today", "Oct 24, 2017", "Nov 8, 2017", "Nov 14, 2017", "Nov 15, 2017",
-                                                "Dec 12, 2017", "Dec 13, 2017"};
+    public static final String[] options = { "Today", "Dec 12, 2017", "Dec 13, 2017", "Dec 14, 2017", "Dec 20, 2017", "Dec 21, 2017", "Dec 29, 2017"};
     //Crossword Panel
     private JPanel CWPanel;
     //Crossword Grid
@@ -499,6 +498,15 @@ public class CrosswordGUI {
             cw.getLog().append( "\nChecking Thesaurus for clue #" + i + "...");
             TheSaurusSearch ts = new TheSaurusSearch();
             wordList.addAll(ts.search(clues.get(i), charCounts[i]));
+            cw.getLog().append( "\nChecking Dictionary.com for clue #" + i + "...");
+            DictionarySearch2 ds = new DictionarySearch2();
+            wordList.addAll(ds.getWords(clues.get(i), charCounts[i]));
+            cw.getLog().append( "\nChecking Britannica for clue #" + i + "...");
+            BritannicaSearch bs = new BritannicaSearch();
+            wordList.addAll(bs.search(clues.get(i), charCounts[i]));
+            cw.getLog().append( "\nChecking Google for clue #" + i + "...");
+            GoogleSearch gs = new GoogleSearch();
+            wordList.addAll(gs.search(clues.get(i), charCounts[i]));
             wordListList.add(wordList);
         }
         return wordListList;
@@ -780,20 +788,18 @@ public class CrosswordGUI {
                 options,
                 options[0]  );
         if( option == "Today") { System.out.println("Retrieving today's puzzle...Please wait"); g.readGridFromUrl();}
-        else if( option == "Oct 24, 2017"){ System.out.println("Retrieving saved puzzle...Please wait");
-        g.readGridFromFile("crosswords/October 24, 2017.html");}
-        else if( option == "Nov 8, 2017"){ System.out.println("Retrieving saved puzzle...Please wait");
-        g.readGridFromFile("crosswords/November 8, 2017.html");}
-        else if( option == "Nov 14, 2017") { System.out.println("Retrieving saved puzzle...Please wait");
-        g.readGridFromFile("crosswords/November 14, 2017.html");}
-        else if( option == "Nov 15, 2017") { System.out.println("Retrieving saved puzzle...Please wait");
-        g.readGridFromFile("crosswords/November 15, 2017.html");}
         else if( option == "Dec 12, 2017") { System.out.println("Retrieving saved puzzle...Please wait");
         g.readGridFromFile("crosswords/December 12, 2017.html");}
         else if( option == "Dec 13, 2017") { System.out.println("Retrieving saved puzzle...Please wait");
         g.readGridFromFile("crosswords/December 13, 2017.html");}
+        else if( option == "Dec 14, 2017") { System.out.println("Retrieving saved puzzle...Please wait");
+        g.readGridFromFile("crosswords/December 14, 2017.html");}
         else if( option == "Dec 20, 2017") { System.out.println("Retrieving saved puzzle...Please wait");
         g.readGridFromFile("crosswords/December 20, 2017.html");}
+        else if( option == "Dec 21, 2017") { System.out.println("Retrieving saved puzzle...Please wait");
+            g.readGridFromFile("crosswords/December 21, 2017.html");}
+        else if( option == "Dec 29, 2017") { System.out.println("Retrieving saved puzzle...Please wait");
+            g.readGridFromFile("crosswords/December 29, 2017.html");}
         else { crossword.getLog().append( "Cannot display puzzle"); }
 
         //shows Crossword Grid and hints

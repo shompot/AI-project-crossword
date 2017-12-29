@@ -59,7 +59,7 @@ public class BritannicaSearch {
         for (int i= 0; i< elements.size(); i++) {
             String text = elements.get(i).text();
 
-            System.out.println(text + ":");
+            //System.out.println(text + ":");
             for (String word : text.split("\\s+")){
                 if (word.length() == length && (!result.contains(word.toUpperCase()))){
                     boolean isAllLetter = true;
@@ -71,7 +71,7 @@ public class BritannicaSearch {
                     }
                     if (isAllLetter) {
                         result.add(word.toUpperCase());
-                        System.out.println("\t" + word);
+                        //System.out.println("\t" + word);
                     }
                 }
             }
