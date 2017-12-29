@@ -5,7 +5,13 @@ import org.jsoup.select.Elements;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.TimeZone;
 
 import static java.lang.Math.sqrt;
 
@@ -73,7 +79,7 @@ public class Crossword {
     // Read file methods
     public void readGridFromUrl  () throws IOException{
         String url = "https://www.nytimes.com/crosswords/game/mini";
-        solutionAddress = "crosswords/Solution December 21, 2017.html";
+        solutionAddress = "crosswords/Solution "+ getTodaysPuzzleFile();
         Document documents = Jsoup.connect(url).get();
         String html  = documents.html();
         readCrossword(html);
@@ -355,6 +361,46 @@ public class Crossword {
             //System.out.println(word);
         }
     }
+
+    public String getTodaysPuzzleFile (){
+
+        String currentPuzzleFile;
+        // Now my default time zone is in EST
+        TimeZone.setDefault(TimeZone.getTimeZone("EST"));
+        Date today = new Date();
+        LocalDateTime dateTime = today.toInstant().atZone(ZoneId.of("America/New_York")).toLocalDateTime();
+        int currentHour = dateTime.getHour();
+        int dayOfWeek = dateTime.getDayOfWeek().getValue();
+        int checkHour = 22;
+
+        //System.out.println("Today according to EST is " + dateTime);
+        // weekends
+        if (dayOfWeek >= 6){
+            checkHour = 18;
+            //System.out.println("It is weekend");
+        }
+
+        //System.out.println("Check hour is: " + checkHour);
+
+        if (currentHour >= checkHour){
+            dateTime = dateTime.plusDays(1);
+            //System.out.println("Add one day");
+        }
+
+        int day = dateTime.getDayOfMonth();
+        String month = dateTime.getMonth().toString().toLowerCase();
+        month = Character.toUpperCase(month.charAt(0)) + month.substring(1,month.length());
+        int year = dateTime.getYear();
+
+        //System.out.println("Today according to EST is " + dateTime);
+
+        currentPuzzleFile = month + " " + day + ", " + year + ".html";
+
+        //System.out.println("Today according to EST is " + currentPuzzleFile);
+        //System.out.println("Day of the week is " + dayOfWeek + " and Hour is " + currentHour);
+
+        return currentPuzzleFile;
+    }
     // PRINT
     public String toString (){
         String s = "";
@@ -370,10 +416,11 @@ public class Crossword {
 
     // MAIN
     public static void main(String[] args) throws IOException{
+
         Crossword g = new Crossword();
 
-        g.readGridFromFile("crosswords/December 12, 2017.html");
-        //g.readGridFromUrl();
+        //g.readGridFromFile("crosswords/December 12, 2017.html");
+        g.readGridFromUrl();
         //System.out.println(g.toString());
 
         int[] colors = g.getColors();

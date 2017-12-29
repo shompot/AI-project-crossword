@@ -23,7 +23,15 @@ public class TheSaurusSearch {
 
     // SEARCH
     public ArrayList<String> search (String word, int length) throws IOException{
+
         ArrayList<String> synonyms = new ArrayList<String>();
+
+        String[] words = word.split("\\s+");
+        //for (String word: clues.get(i).split("\\s+")) {
+        if (words.length>1){
+            return synonyms;
+        }
+
         String url = this.address + word;
         try {
             Document documents = Jsoup.connect(url).get();

@@ -44,7 +44,7 @@ public class GoogleSearch {
 
             Pattern pattern = Pattern.compile("[ ^$][a-zA-Z]{" + length + "}[ ^$]");
 
-            String searchURL = GOOGLE_SEARCH_URL + "?q=" + clue + "&num=" + NUM_OF_HEADERS_TO_SEARCH;
+            String searchURL = GOOGLE_SEARCH_URL + "?q=" + clue + "-\"crossword solver\"" + "&num=" + NUM_OF_HEADERS_TO_SEARCH;
             Document doc = Jsoup.connect(searchURL).userAgent("Mozilla/5.0").get();
 
             Elements results = doc.select("h3.r > a, span.st");
